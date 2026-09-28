@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architectural Lighting for Modern Living | OnOff Lighting & co.</title>
+<meta name="description" content="Discover OnOff Lighting & co.: iconic and innovative lighting designed by award-winning creators. Shop online with complimentary delivery and returns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-off-white: #f5f3f0;
+  --color-light-gray: #e8e6e3;
+  --color-mid-gray: #999;
+  --color-dark-gray: #333;
+  --color-text: #1a1a1a;
+  --color-text-light: #666;
+  --color-border: #ddd;
+
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+
+  --header-height: 60px;
+  --topbar-height: 32px;
+  --total-header: calc(var(--topbar-height) + var(--header-height));
+  --page-padding: 80px;
+  --section-spacing: 100px;
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--color-text); background: var(--color-white); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  height: var(--topbar-height);
+  background: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.topbar a { color: var(--color-white); transition: opacity var(--transition-fast); }
+.topbar a:hover { opacity: 0.7; }
+.topbar-left { display: flex; align-items: center; gap: 6px; }
+.topbar-left svg { width: 14px; height: 14px; }
+.topbar-right { display: flex; align-items: center; gap: 4px; }
+.topbar-right svg { width: 12px; height: 12px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-light-gray);
+  transition: background var(--transition-medium), border-color var(--transition-medium);
+}
+.header.is-hero {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+.header.is-hero .header-inner { color: var(--color-white); }
+.header.is-hero .logo { color: var(--color-white); }
+.header.is-hero .nav-link { color: var(--color-white); }
+.header.is-hero .header-icon svg { stroke: var(--color-white); }
+
+.header-inner {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  transition: color var(--transition-medium);
+}
+
+.header-left { display: flex; align-items: center; gap: 40px; }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  transition: color var(--transition-medium);
+  white-space: nowrap;
+}
+.logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--color-white);
+  padding: 1px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+.logo:hover .logo-img {
+  transform: scale(1.08);
+}
+
+.main-nav { display: flex; align-items: center; gap: 28px; }
+.nav-link {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  transition: opacity var(--transition-fast), color var(--transition-medium);
+  position: relative;
+  padding: 4px 0;
+  white-space: nowrap;
+}
+.nav-link:hover { opacity: 0.6; }
+.nav-link .nav-arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  vertical-align: middle;
+  transition: transform var(--transition-fast);
+}
+
+.header-right { display: flex; align-items: center; gap: 18px; }
+.header-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+.header-icon:hover { opacity: 0.6; }
+.header-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-black);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke var(--transition-medium);
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transition: transform var(--transition-medium), opacity var(--transition-medium), background var(--transition-medium);
+}
+.header.is-hero .menu-toggle span { background: var(--color-white); }
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-white);
+  z-index: 999;
+  padding: 40px 24px;
+  transform: translateX(-100%);
+  transition: transform var(--transition-medium);
+  overflow-y: auto;
+}
+.mobile-menu.is-open { transform: translateX(0); }
+.mobile-menu .mobile-nav-link {
+  display: block;
+  font-size: 22px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-light-gray);
+  color: var(--color-text);
+}
+.mobile-menu .mobile-nav-link:last-child { border-bottom: none; }
+
+/* ============================================================
+   SEARCH OVERLAY
+   ============================================================ */
+.search-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.98);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+.search-overlay.is-open { opacity: 1; pointer-events: all; }
+.search-overlay-inner { width: 100%; max-width: 600px; padding: 0 24px; }
+.search-overlay input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--color-black);
+  font-size: 32px;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  padding: 12px 0;
+  outline: none;
+  background: transparent;
+}
+.search-overlay .search-close {
+  position: absolute;
+  top: 30px; right: 40px;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--color-black);
+  background: none;
+  border: none;
+  line-height: 1;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 600px;
+  overflow: hidden;
+  margin-top: calc(-1 * var(--header-height));
+}
+.hero-image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 8s ease-out;
+}
+.hero:hover .hero-image { transform: scale(1.03); }
+.hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 var(--page-padding) 80px;
+  color: var(--color-white);
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+.hero-cta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  padding: 14px 28px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.hero-cta:hover { background: var(--color-white); color: var(--color-black); }
+
+/* Hero gradient overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   CATEGORY SECTION
+   ============================================================ */
+.section-category {
+  background: var(--color-off-white);
+  padding: 80px 0 90px;
+}
+.section-category .section-header {
+  text-align: center;
+  padding: 0 var(--page-padding);
+  margin-bottom: 50px;
+}
+.section-category .section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--color-text);
+}
+.section-category .section-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.category-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--page-padding);
+  margin-bottom: 24px;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+.category-nav-counter { letter-spacing: 0.02em; }
+.category-nav-arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  background: transparent;
+}
+.category-nav-arrow:hover { background: var(--color-black); border-color: var(--color-black); }
+.category-nav-arrow:hover svg { stroke: var(--color-white); }
+.category-nav-arrow svg {
+  width: 14px; height: 14px;
+  stroke: var(--color-text);
+  fill: none;
+  stroke-width: 2;
+  transition: stroke var(--transition-fast);
+}
+
+.category-track-wrapper {
+  overflow: hidden;
+  padding: 0 var(--page-padding);
+}
+.category-track {
+  display: flex;
+  gap: 20px;
+  transition: transform var(--transition-slow);
+}
+.category-card {
+  flex: 0 0 calc(33.333% - 14px);
+  cursor: pointer;
+  position: relative;
+}
+.category-card-image-wrapper { overflow: hidden; }
+.category-card-image {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition-slow);
+}
+.category-card:hover .category-card-image { transform: scale(1.04); }
+.category-card-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  color: var(--color-text);
+}
+.category-card-sub {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-top: 4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Category professional lighting photography */
+.img-cat-table {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-cat-pendant {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-cat-wall {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-cat-floor {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-cat-portable {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1606170033648-5d55a3edf314?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-cat-ceiling {
+  background-color: #f5f3ef;
+  background-image: url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ============================================================
+   PROMOTIONAL HERO SECTIONS
+   ============================================================ */
+.promo-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+.promo-hero-image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 6s ease-out;
+}
+.promo-hero:hover .promo-hero-image { transform: scale(1.02); }
+.promo-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.promo-hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 var(--page-padding) 70px;
+  color: var(--color-white);
+  z-index: 2;
+}
+.promo-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+.promo-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 300;
+  line-height: 1.08;
+  max-width: 580px;
+  margin-bottom: 28px;
+}
+.promo-hero-cta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  padding: 14px 28px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.promo-hero-cta:hover { background: var(--color-white); color: var(--color-black); }
+
+/* ============================================================
+   EDITORIAL TEXT SECTION
+   ============================================================ */
+.section-editorial {
+  background: var(--color-off-white);
+  padding: 100px var(--page-padding);
+  text-align: center;
+}
+.editorial-pretitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 30px;
+}
+.editorial-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3.2vw, 42px);
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   ROOM EXPLORATION SECTION
+   ============================================================ */
+.section-rooms {
+  background: var(--color-white);
+  padding: 90px var(--page-padding);
+}
+.section-rooms .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-rooms .section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+.section-rooms .section-desc {
+  font-size: 14px;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.room-card { cursor: pointer; }
+.room-card-image-wrapper { overflow: hidden; }
+.room-card-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--transition-slow);
+}
+.room-card:hover .room-card-image { transform: scale(1.04); }
+.room-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 16px;
+  color: var(--color-text);
+}
+.room-card-link {
+  font-size: 12px;
+  color: var(--color-text-light);
+  margin-top: 6px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Room exploration images */
+.img-room-dining {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-room-bedroom {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-room-living {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ============================================================
+   CULTURE / EDITORIAL LARGE TEXT
+   ============================================================ */
+.section-culture {
+  background: var(--color-off-white);
+  padding: 110px var(--page-padding);
+  text-align: center;
+}
+.culture-pretitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 35px;
+}
+.culture-text {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 950px;
+  margin: 0 auto;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   DESIGNER SECTION
+   ============================================================ */
+.section-designer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.designer-image {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.75) 100%),
+              url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  position: relative;
+}
+.designer-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.1);
+}
+.designer-content {
+  position: absolute;
+  top: 40px;
+  left: var(--page-padding);
+  z-index: 2;
+  color: var(--color-white);
+}
+.designer-pretitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+.designer-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  max-width: 500px;
+  margin-bottom: 24px;
+}
+.designer-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+.designer-cta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  padding: 14px 28px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.designer-cta:hover { background: var(--color-white); color: var(--color-black); }
+
+/* ============================================================
+   FAMILIES SECTION
+   ============================================================ */
+.section-families {
+  background: var(--color-off-white);
+  padding: 90px var(--page-padding);
+}
+.families-pretitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 28px;
+}
+.families-list {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 36px;
+}
+.families-list a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: opacity var(--transition-fast);
+}
+.families-list a:hover { opacity: 0.5; }
+.families-cta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  padding: 14px 28px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.families-cta:hover { background: var(--color-black); color: var(--color-white); }
+
+/* ============================================================
+   NEWSLETTER SECTION
+   ============================================================ */
+.section-newsletter {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 80px var(--page-padding);
+}
+.newsletter-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.newsletter-desc {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+  max-width: 900px;
+}
+.newsletter-field { display: flex; flex-direction: column; gap: 6px; }
+.newsletter-field label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.newsletter-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: var(--color-white);
+  padding: 10px 0;
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.newsletter-field input:focus { border-color: var(--color-white); }
+.newsletter-field input::placeholder { color: rgba(255,255,255,0.35); }
+.newsletter-submit {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background: var(--color-white);
+  border: 1px solid var(--color-white);
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+}
+.newsletter-submit:hover { background: transparent; color: var(--color-white); }
+.newsletter-consent {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  opacity: 0.6;
+  max-width: 600px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.newsletter-consent input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--color-white);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 60px var(--page-padding) 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.footer-column-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.footer-link {
+  display: block;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  padding: 5px 0;
+  transition: color var(--transition-fast);
+}
+.footer-link:hover { color: var(--color-white); }
+
+.footer-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.footer-perk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+}
+.footer-perk svg {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(255,255,255,0.7);
+  fill: none;
+  stroke-width: 1.5;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-social { display: flex; gap: 18px; }
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  transition: opacity var(--transition-fast);
+}
+.footer-social a:hover { opacity: 0.6; }
+.footer-social svg {
+  width: 18px; height: 18px;
+  fill: var(--color-white);
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+.footer-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--color-white);
+  padding: 1px;
+  flex-shrink: 0;
+}
+.footer-country {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  background: none;
+  border: none;
+}
+.footer-country:hover { color: var(--color-white); }
+.footer-country svg {
+  width: 10px; height: 10px;
+  fill: rgba(255,255,255,0.7);
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATION
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE - TABLET (1024px and below)
+   ============================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: 40px;
+    --section-spacing: 70px;
+  }
+  .main-nav { display: none; }
+  .menu-toggle { display: flex; }
+
+  .hero { height: 75vh; }
+  .hero-title { font-size: clamp(36px, 5vw, 56px); }
+
+  .category-card { flex: 0 0 calc(50% - 10px); }
+  .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .newsletter-form { grid-template-columns: 1fr 1fr; }
+
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+/* ============================================================
+   RESPONSIVE - MOBILE (768px and below)
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 24px;
+    --section-spacing: 50px;
+    --header-height: 54px;
+  }
+  .topbar {
+    padding: 0 16px;
+    font-size: 10px;
+  }
+  .topbar-left span { display: none; }
+
+  .header-inner { padding: 0 16px; }
+  .logo { font-size: 13px; gap: 8px; }
+  .logo-img { width: 30px; height: 30px; }
+  .header-right { gap: 14px; }
+
+  .hero { height: 70vh; min-height: 450px; }
+  .hero-content { padding: 0 24px 50px; }
+  .hero-title { max-width: 100%; }
+
+  .section-category { padding: 60px 0 70px; }
+  .section-category .section-header { padding: 0 24px; }
+  .category-nav { padding: 0 24px; }
+  .category-track-wrapper { padding: 0 24px; }
+  .category-card { flex: 0 0 calc(80% - 10px); }
+
+  .promo-hero { height: 70vh; min-height: 400px; }
+  .promo-hero-content { padding: 0 24px 50px; }
+
+  .section-editorial { padding: 70px 24px; }
+  .section-rooms { padding: 60px 24px; }
+  .rooms-grid { grid-template-columns: 1fr; gap: 30px; }
+  .room-card-image { aspect-ratio: 16/10; }
+
+  .section-culture { padding: 70px 24px; }
+
+  .designer-image { height: 60vh; }
+  .designer-content { left: 24px; top: 30px; }
+
+  .section-families { padding: 60px 24px; }
+
+  .section-newsletter { padding: 50px 24px; }
+  .newsletter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .footer { padding: 50px 24px 24px; }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .footer-logo { order: -1; }
+}
+
+/* ============================================================
+   RESPONSIVE - SMALL MOBILE (430px and below)
+   ============================================================ */
+@media (max-width: 430px) {
+  :root {
+    --page-padding: 18px;
+    --header-height: 50px;
+  }
+  .topbar { height: 28px; font-size: 9px; }
+  .logo { font-size: 12px; gap: 6px; }
+  .logo-img { width: 26px; height: 26px; }
+
+  .hero { height: 65vh; min-height: 380px; }
+  .hero-content { padding: 0 18px 40px; }
+  .hero-eyebrow { font-size: 10px; margin-bottom: 10px; }
+  .hero-cta { padding: 12px 22px; font-size: 11px; }
+
+  .promo-hero { height: 60vh; min-height: 350px; }
+  .promo-hero-content { padding: 0 18px 40px; }
+
+  .category-card { flex: 0 0 calc(85% - 6px); }
+
+  .families-list { font-size: clamp(24px, 6vw, 32px); }
+
+  .newsletter-title { font-size: 24px; }
+  
+  .search-overlay { padding-top: 120px; }
+  .search-overlay input { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOPBAR
+     ============================================================ -->
+<div class="topbar">
+  <a href="#" class="topbar-left">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM6 8l2-2 2 2M6 10l2 2 2-2"/>
+    </svg>
+    <span style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+  </a>
+  <a href="#" class="topbar-right">
+    <span>Professional Space</span>
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M1 11L11 1M11 1H4M11 1v7"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header is-hero" id="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="#" class="logo" aria-label="OnOff Lighting & co.">
+        <img src="onoff-logo.png" alt="OnOff Lighting & co. Logo" class="logo-img">
+        <span class="logo-text">OnOff Lighting co.</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#" class="nav-link">Shop Products
+          <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3l3 3 3-3"/></svg>
+        </a>
+        <a href="#" class="nav-link">Last Call</a>
+        <a href="#" class="nav-link">Iconic Pieces</a>
+        <a href="#" class="nav-link">Shop by Room
+          <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3l3 3 3-3"/></svg>
+        </a>
+        <a href="#" class="nav-link">Designers</a>
+        <a href="#" class="nav-link">Stories</a>
+        <a href="#" class="nav-link">About Us</a>
+        <a href="#" class="nav-link">Trade Program</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="header-icon" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="header-icon" aria-label="Store Locator">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </button>
+      <button class="header-icon" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="header-icon" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SEARCH OVERLAY
+     ============================================================ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-overlay-inner">
+    <input type="text" placeholder="What are you looking for?">
+  </div>
+  <button class="search-close" id="searchClose">&times;</button>
+</div>
+
+<!-- ============================================================
+     MOBILE MENU
+     ============================================================ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" class="mobile-nav-link">Shop Products</a>
+  <a href="#" class="mobile-nav-link">Last Call</a>
+  <a href="#" class="mobile-nav-link">Iconic Pieces</a>
+  <a href="#" class="mobile-nav-link">Shop by Room</a>
+  <a href="#" class="mobile-nav-link">Designers</a>
+  <a href="#" class="mobile-nav-link">Stories</a>
+  <a href="#" class="mobile-nav-link">About Us</a>
+  <a href="#" class="mobile-nav-link">Trade Program</a>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" id="heroSection">
+  <div class="hero-image" role="img" aria-label="Sculptural pendant light in an architectural interior" id="heroImg"></div>
+  <div class="hero-content reveal">
+    <p class="hero-eyebrow">By Elena Vassari</p>
+    <h1 class="hero-title">Forma: a sculpture of light</h1>
+    <a href="#" class="hero-cta">Discover Now</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORY SECTION
+     ============================================================ -->
+<section class="section-category">
+  <div class="section-header reveal">
+    <h2 class="section-title">Light by category</h2>
+    <p class="section-desc">Table, floor, suspension, wall, outdoor: every design has its role to play. Each category is an invitation to explore timeless forms and new creations, all crafted to shape the way we live.</p>
+  </div>
+  <div class="category-nav">
+    <span class="category-nav-counter" id="categoryCounter">1 - 3 of 6</span>
+    <button class="category-nav-arrow" id="categoryPrev" aria-label="Previous">
+      <svg viewBox="0 0 14 14"><path d="M9 2L4 7l5 5"/></svg>
+    </button>
+    <button class="category-nav-arrow" id="categoryNext" aria-label="Next">
+      <svg viewBox="0 0 14 14"><path d="M5 2l5 5-5 5"/></svg>
+    </button>
+  </div>
+  <div class="category-track-wrapper">
+    <div class="category-track" id="categoryTrack">
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-table"></div></div>
+        <p class="category-card-label">Table</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-pendant"></div></div>
+        <p class="category-card-label">Pendant</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-wall"></div></div>
+        <p class="category-card-label">Wall</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-floor"></div></div>
+        <p class="category-card-label">Floor</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-portable"></div></div>
+        <p class="category-card-label">Portable</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+      <div class="category-card">
+        <div class="category-card-image-wrapper"><div class="category-card-image img-cat-ceiling"></div></div>
+        <p class="category-card-label">Ceiling</p>
+        <p class="category-card-sub">Discover the collection</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDITORIAL TEXT SECTION
+     ============================================================ -->
+<section class="section-editorial reveal">
+  <p class="editorial-pretitle">The World of OnOff Lighting & co.</p>
+  <p class="editorial-title">Light is not simply illumination — it is atmosphere, emotion, the warmth that draws people together, the halo that gathers life around the table, the quiet joy of a design you love to live with. Every lamp has a story. Find the one that feels like yours.</p>
+</section>
+
+<!-- ============================================================
+     PROMO HERO 1 — Portable Light Collection
+     ============================================================ -->
+<section class="promo-hero">
+  <div class="promo-hero-image" role="img" aria-label="Portable table lamp glowing warmly" id="promoImg1"></div>
+  <div class="promo-hero-content reveal">
+    <p class="promo-hero-eyebrow">2026 Edition</p>
+    <h2 class="promo-hero-title">Solara Unplugged: light in motion</h2>
+    <a href="#" class="promo-hero-cta">Discover Now</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROMO HERO 2 — Heritage Collection
+     ============================================================ -->
+<section class="promo-hero">
+  <div class="promo-hero-image" role="img" aria-label="Minimalist floor lamp in a serene bedroom" id="promoImg2"></div>
+  <div class="promo-hero-content reveal">
+    <p class="promo-hero-eyebrow">A Masterpiece Reimagined</p>
+    <h2 class="promo-hero-title">Kenzo by Marco Bellini</h2>
+    <a href="#" class="promo-hero-cta">Discover More</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROOMS SECTION
+     ============================================================ -->
+<section class="section-rooms">
+  <div class="section-header reveal">
+    <h2 class="section-title">Explore the OnOff home</h2>
+    <p class="section-desc">The right light transforms a space. Find the perfect fixture for every room in your home.</p>
+  </div>
+  <div class="rooms-grid">
+    <div class="room-card reveal">
+      <div class="room-card-image-wrapper"><div class="room-card-image img-room-dining"></div></div>
+      <p class="room-card-label">Dining Room</p>
+      <p class="room-card-link">Discover the selection</p>
+    </div>
+    <div class="room-card reveal">
+      <div class="room-card-image-wrapper"><div class="room-card-image img-room-bedroom"></div></div>
+      <p class="room-card-label">Bedroom</p>
+      <p class="room-card-link">Discover the selection</p>
+    </div>
+    <div class="room-card reveal">
+      <div class="room-card-image-wrapper"><div class="room-card-image img-room-living"></div></div>
+      <p class="room-card-label">Living Room</p>
+      <p class="room-card-link">Discover the selection</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CULTURE OF LIGHT
+     ============================================================ -->
+<section class="section-culture reveal">
+  <p class="culture-pretitle">A Culture of Light</p>
+  <p class="culture-text">Since 1991, OnOff Lighting & co. has partnered with the most innovative architects and designers to create lighting that transcends function. Our lamps are not mere objects — they are expressions of a philosophy where technology meets poetry, where engineering becomes art, and where light becomes the defining element of how we experience space.</p>
+</section>
+
+<!-- ============================================================
+     DESIGNER SECTION
+     ============================================================ -->
+<section class="section-designer">
+  <div class="designer-image" role="img" aria-label="Designer working with glass and light">
+    <div class="designer-overlay"></div>
+    <div class="designer-content reveal">
+      <p class="designer-pretitle">Behind the Design: The Bright Idea</p>
+      <h2 class="designer-title">Where vision meets craft</h2>
+      <p class="designer-desc">Discover the creative minds behind OnOff Lighting & co.'s most iconic pieces. From sketch to sculpture, every design begins with a singular vision of light.</p>
+      <a href="#" class="designer-cta">Discover Our Designers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAMILIES SECTION
+     ============================================================ -->
+<section class="section-families reveal">
+  <p class="families-pretitle">OnOff Collections</p>
+  <p class="families-list">
+    <a href="#">Orbit</a>,
+    <a href="#">Linea</a>,
+    <a href="#">Arc</a>,
+    <a href="#">Forma</a>,
+    <a href="#">Nova</a>,
+    <a href="#">Luna</a>,
+    <a href="#">Studio</a>,
+    <a href="#">Solara</a>,
+    <a href="#">and more</a>.
+  </p>
+  <a href="#" class="families-cta">Discover All Collections</a>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================ -->
+<section class="section-newsletter">
+  <div class="reveal">
+    <h2 class="newsletter-title">Join our Newsletter and stay up to date.</h2>
+    <p class="newsletter-desc">Only the best inspiration, news, and content from the world of OnOff Lighting & co.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <div class="newsletter-field">
+        <label for="nl-first">First Name</label>
+        <input type="text" id="nl-first" placeholder="First name" required>
+      </div>
+      <div class="newsletter-field">
+        <label for="nl-last">Last Name</label>
+        <input type="text" id="nl-last" placeholder="Last name" required>
+      </div>
+      <div class="newsletter-field">
+        <label for="nl-email">Email</label>
+        <input type="email" id="nl-email" placeholder="Email address" required>
+      </div>
+      <button type="submit" class="newsletter-submit">Subscribe</button>
+    </form>
+    <label class="newsletter-consent">
+      <input type="checkbox">
+      I consent to receiving marketing communications from OnOff Lighting & co. I can unsubscribe at any time. See our Privacy Policy for details.
+    </label>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3 class="footer-column-title">Contact</h3>
+      <a href="#" class="footer-link">Support and Contacts</a>
+      <a href="#" class="footer-link">Notice to Customers</a>
+      <a href="#" class="footer-link">FAQ's</a>
+      <a href="#" class="footer-link">Do Not Sell My Personal Information</a>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-column-title">Service</h3>
+      <a href="#" class="footer-link">Store Locator</a>
+      <a href="#" class="footer-link">Spare Parts</a>
+      <a href="#" class="footer-link">Shipping</a>
+      <a href="#" class="footer-link">Returns</a>
+      <a href="#" class="footer-link">Payment</a>
+      <a href="#" class="footer-link">Warranty</a>
+      <a href="#" class="footer-link">Corporate Gifting</a>
+      <a href="#" class="footer-link">Book an Appointment</a>
+    </div>
+    <div class="footer-column">
+      <h3 class="footer-column-title">Content</h3>
+      <a href="#" class="footer-link">Lighting Guide</a>
+      <a href="#" class="footer-link">Accessibility</a>
+      <a href="#" class="footer-link">Cookie Policy</a>
+      <a href="#" class="footer-link">Terms &amp; Conditions</a>
+      <a href="#" class="footer-link">Privacy</a>
+      <a href="#" class="footer-link">Compliance</a>
+    </div>
+    <div class="footer-column">
+      <div class="footer-perks">
+        <div class="footer-perk">
+          <svg viewBox="0 0 24 24"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/></svg>
+          <span>Free shipping on orders over $50</span>
+        </div>
+        <div class="footer-perk">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>1-2 Year Warranty</span>
+        </div>
+        <div class="footer-perk">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span>10% off the first purchase for new registered users</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+      <a href="#" aria-label="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.425 1.808-2.425.852 0 1.264.64 1.264 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.481 1.806 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.282a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.222-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.527-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      </a>
+    </div>
+    <button class="footer-country" id="countrySelector">
+      <span>United States</span>
+      <svg viewBox="0 0 10 10"><path d="M2 4l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+    <div class="footer-logo">
+      <img src="onoff-logo.png" alt="OnOff Lighting & co. Logo" class="footer-logo-img">
+      <span class="footer-logo-text">OnOff Lighting & co.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- SET GENERATED IMAGES ---- */
+  var artifactBase = '';
+  // Try to use the generated images if available, otherwise use CSS gradient fallbacks
+  var heroImg = document.getElementById('heroImg');
+  var promoImg1 = document.getElementById('promoImg1');
+  var promoImg2 = document.getElementById('promoImg2');
+  
+  // Attempt to load generated images from the artifact directory
+  // These paths are relative to where the HTML file is opened
+  var generatedImages = {
+    hero: 'hero_main_1790619748476.jpg',
+    promo1: 'hero_promo1_1790619778622.jpg',
+    promo2: 'hero_promo2_1790619817886.jpg'
+  };
+
+  // Try different base paths for the images
+  var basePaths = [
+    '../.gemini/antigravity-ide/brain/a31f23ba-a0f6-4052-9e84-96e1cb92ce47/',
+    './',
+    ''
+  ];
+
+  function trySetImage(el, filename, fallbackGradient) {
+    var img = new Image();
+    var tried = 0;
+    function tryNext() {
+      if (tried >= basePaths.length) {
+        // Fall back to CSS gradient
+        el.style.background = fallbackGradient;
+        return;
+      }
+      img.onload = function() {
+        el.style.backgroundImage = 'url(' + basePaths[tried] + filename + ')';
+      };
+      img.onerror = function() {
+        tried++;
+        tryNext();
+      };
+      img.src = basePaths[tried] + filename;
+    }
+    tryNext();
+  }
+
+  trySetImage(heroImg, generatedImages.hero, 
+    'linear-gradient(135deg, #1a1a18 0%, #2a2520 30%, #3a3025 50%, #1a1a18 70%, #0e0e0c 100%)');
+  trySetImage(promoImg1, generatedImages.promo1, 
+    'linear-gradient(145deg, #2a2018 0%, #4a3520 35%, #3a2a18 60%, #1a1510 100%)');
+  trySetImage(promoImg2, generatedImages.promo2, 
+    'linear-gradient(160deg, #b8a88a 0%, #9a8a6a 30%, #7a6a4a 55%, #5a4a3a 100%)');
+
+  /* ---- HEADER SCROLL BEHAVIOR ---- */
+  var header = document.getElementById('header');
+  var heroSection = document.getElementById('heroSection');
+
+  function updateHeader() {
+    if (!heroSection) return;
+    var heroBottom = heroSection.getBoundingClientRect().bottom;
+    if (heroBottom <= 60) {
+      header.classList.remove('is-hero');
+    } else {
+      header.classList.add('is-hero');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  /* ---- MOBILE MENU ---- */
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open');
+    document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    // When menu opens, ensure header isn't transparent
+    if (mobileMenu.classList.contains('is-open')) {
+      header.classList.remove('is-hero');
+    } else {
+      updateHeader();
+    }
+  });
+
+  /* ---- SEARCH OVERLAY ---- */
+  var searchToggle = document.getElementById('searchToggle');
+  var searchOverlay = document.getElementById('searchOverlay');
+  var searchClose = document.getElementById('searchClose');
+
+  searchToggle.addEventListener('click', function() {
+    searchOverlay.classList.add('is-open');
+    setTimeout(function() {
+      searchOverlay.querySelector('input').focus();
+    }, 100);
+  });
+  searchClose.addEventListener('click', function() {
+    searchOverlay.classList.remove('is-open');
+  });
+  searchOverlay.addEventListener('click', function(e) {
+    if (e.target === searchOverlay) {
+      searchOverlay.classList.remove('is-open');
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      searchOverlay.classList.remove('is-open');
+    }
+  });
+
+  /* ---- CATEGORY CAROUSEL ---- */
+  var track = document.getElementById('categoryTrack');
+  var prevBtn = document.getElementById('categoryPrev');
+  var nextBtn = document.getElementById('categoryNext');
+  var counter = document.getElementById('categoryCounter');
+
+  var categoryPage = 0;
+  var totalCards = 6;
+
+  function getCardsPerView() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function updateCarousel() {
+    var perView = getCardsPerView();
+    var totalPages = Math.ceil(totalCards / perView);
+    if (categoryPage >= totalPages) categoryPage = totalPages - 1;
+    if (categoryPage < 0) categoryPage = 0;
+
+    var cards = track.querySelectorAll('.category-card');
+    if (cards.length === 0) return;
+    var cardWidth = cards[0].offsetWidth;
+    var gap = 20;
+    var offset = categoryPage * perView * (cardWidth + gap);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+
+    var start = categoryPage * perView + 1;
+    var end = Math.min(start + perView - 1, totalCards);
+    counter.textContent = start + ' - ' + end + ' of ' + totalCards;
+  }
+
+  prevBtn.addEventListener('click', function() {
+    categoryPage--;
+    updateCarousel();
+  });
+  nextBtn.addEventListener('click', function() {
+    categoryPage++;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', function() {
+    updateCarousel();
+  });
+  
+  // Initial carousel update after layout settles
+  setTimeout(updateCarousel, 100);
+
+  /* ---- SCROLL REVEAL ---- */
+  var reveals = document.querySelectorAll('.reveal');
+
+  function checkReveals() {
+    var trigger = window.innerHeight * 0.88;
+    for (var i = 0; i < reveals.length; i++) {
+      var top = reveals[i].getBoundingClientRect().top;
+      if (top < trigger) {
+        reveals[i].classList.add('is-visible');
+      }
+    }
+  }
+  window.addEventListener('scroll', checkReveals, { passive: true });
+  window.addEventListener('load', checkReveals);
+  // Run immediately and after a short delay for layout
+  checkReveals();
+  setTimeout(checkReveals, 300);
+
+  /* ---- NEWSLETTER FORM ---- */
+  var nlForm = document.getElementById('newsletterForm');
+  nlForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = nlForm.querySelector('.newsletter-submit');
+    var origText = btn.textContent;
+    btn.textContent = 'Subscribed \u2713';
+    btn.style.background = '#2a7a2a';
+    btn.style.borderColor = '#2a7a2a';
+    btn.style.color = '#fff';
+    setTimeout(function() {
+      btn.textContent = origText;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      btn.style.color = '';
+      nlForm.reset();
+    }, 2500);
+  });
+
+  /* ---- COUNTRY SELECTOR ---- */
+  var countrySelector = document.getElementById('countrySelector');
+  countrySelector.addEventListener('click', function() {
+    // Simple country selector interaction
+    var countries = ['United States', 'United Kingdom', 'Italy', 'France', 'Germany', 'Netherlands', 'Spain', 'Switzerland'];
+    var current = countrySelector.querySelector('span').textContent;
+    var idx = countries.indexOf(current);
+    var next = countries[(idx + 1) % countries.length];
+    countrySelector.querySelector('span').textContent = next;
+  });
+
+})();
+</script>
+
+</body>
+</html>
