@@ -1679,12 +1679,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   justify-content: center;
   padding: 44px 20px 20px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .search-modal-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -2009,12 +2011,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   -webkit-backdrop-filter: blur(4px);
   z-index: 99990;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .cart-drawer-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -2723,10 +2727,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     </div>
 
     <div class="rooms-hero-badges">
-      <div class="hero-pill-badge">
-        <span class="dot"></span>
-        <span>Connected to <strong>ONOFF.html</strong> & <strong>Navbar.html</strong></span>
-      </div>
       <div class="hero-pill-badge">
         <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1v14M1 8h14"/></svg>
         <span>6 Tailored Spatial Blueprints</span>
@@ -3579,7 +3579,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     <div class="footer-col">
       <h5>Client Service</h5>
       <ul>
-        <li><a href="ONOFF.html">Return to Home (ONOFF.html)</a></li>
+        <li><a href="ONOFF.html">Return to Home</a></li>
         <li><a href="#conciergeSection">Lighting Concierge</a></li>
         <li><a href="#">BIM & Revit Downloads</a></li>
         <li><a href="#">Shipping & Warranty</a></li>
@@ -3588,7 +3588,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 OnOff Lighting & co. S.p.A. All rights reserved.</p>
-    <p><a href="ONOFF.html" style="text-decoration: underline;">Switch to Main Story (ONOFF.html)</a> &bull; <a href="Navbar.html" style="text-decoration: underline;">Shop Products (Navbar.html)</a></p>
+    <p><a href="ONOFF.html" style="text-decoration: underline;">Switch to Main Story</a> &bull; <a href="Navbar.html" style="text-decoration: underline;">Shop Products</a></p>
   </div>
 </footer>
 

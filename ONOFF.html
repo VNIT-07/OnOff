@@ -1778,12 +1778,14 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   padding: 44px 20px 20px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .search-modal-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -2108,12 +2110,14 @@ input, textarea, select { font-family: inherit; }
   -webkit-backdrop-filter: blur(4px);
   z-index: 99990;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .cart-drawer-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -2617,7 +2621,7 @@ input, textarea, select { font-family: inherit; }
         </div>
         <a href="#designerSection" class="nav-link">Designers</a>
         <a href="#cultureSection" class="nav-link">Stories</a>
-        <a href="ONOFF.html" class="nav-link">About Us</a>
+        <a href="aboutUs.html" class="nav-link">About Us</a>
         <a href="#footer" class="nav-link">Trade Program</a>
       </nav>
     </div>

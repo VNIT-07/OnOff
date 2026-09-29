@@ -1760,12 +1760,14 @@ button {
   justify-content: center;
   padding: 44px 20px 20px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .search-modal-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
@@ -2090,12 +2092,14 @@ button {
   -webkit-backdrop-filter: blur(4px);
   z-index: 99990;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .cart-drawer-backdrop.is-open {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
