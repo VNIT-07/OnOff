@@ -151,6 +151,563 @@ input, textarea, select { font-family: inherit; }
   transition: transform var(--transition-fast);
 }
 
+/* ============================================================
+   FLOS-STYLE SHOP PRODUCTS MEGA MENU & NAVBAR EXTENSIONS
+   ============================================================ */
+.nav-item-dropdown {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link.has-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-link.has-dropdown .nav-arrow {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.header.is-flyout-open .nav-link.has-dropdown .nav-arrow,
+.nav-item-dropdown:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/* Header state when mega menu is open or hovered */
+.header.is-flyout-open,
+.header:has(.nav-item-dropdown:hover),
+.header:has(.mega-menu:hover) {
+  background: var(--color-white) !important;
+  border-bottom-color: var(--color-light-gray) !important;
+}
+
+.header.is-hero.is-flyout-open .header-inner,
+.header.is-hero:has(.nav-item-dropdown:hover) .header-inner,
+.header.is-hero:has(.mega-menu:hover) .header-inner {
+  color: var(--color-text) !important;
+}
+
+.header.is-hero.is-flyout-open .logo,
+.header.is-hero:has(.nav-item-dropdown:hover) .logo,
+.header.is-hero:has(.mega-menu:hover) .logo {
+  color: var(--color-black) !important;
+}
+
+.header.is-hero.is-flyout-open .nav-link,
+.header.is-hero:has(.nav-item-dropdown:hover) .nav-link,
+.header.is-hero:has(.mega-menu:hover) .nav-link {
+  color: var(--color-text) !important;
+}
+
+.header.is-hero.is-flyout-open .header-icon svg,
+.header.is-hero:has(.nav-item-dropdown:hover) .header-icon svg,
+.header.is-hero:has(.mega-menu:hover) .header-icon svg {
+  stroke: var(--color-black) !important;
+}
+
+.header.is-hero.is-flyout-open .menu-toggle span,
+.header.is-hero:has(.nav-item-dropdown:hover) .menu-toggle span,
+.header.is-hero:has(.mega-menu:hover) .menu-toggle span {
+  background: var(--color-black) !important;
+}
+
+/* MEGA MENU CONTAINER */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-light-gray);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.12), 0 10px 25px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+  z-index: 1050;
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow-y: auto;
+}
+
+/* Open states for Shop Products and Shop by Room */
+.header:has(#shopProductsNavItem:hover) #shopProductsFlyout,
+#shopProductsFlyout:hover,
+#shopProductsFlyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.header:has(#shopByRoomNavItem:hover) #shopByRoomFlyout,
+#shopByRoomFlyout:hover,
+#shopByRoomFlyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.header:has(#shopProductsFlyout.is-open) #shopProductsNavItem .nav-arrow,
+#shopProductsNavItem:hover .nav-arrow,
+.header:has(#shopByRoomFlyout.is-open) #shopByRoomNavItem .nav-arrow,
+#shopByRoomNavItem:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.mega-menu-inner {
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 34px var(--page-padding) 38px;
+}
+
+/* Top bar inside mega menu */
+.mega-menu-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-light-gray);
+  margin-bottom: 22px;
+}
+
+.mega-menu-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mega-menu-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mega-menu-subtitle {
+  font-size: 13px;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.mega-menu-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  padding: 4px 0;
+  position: relative;
+  transition: opacity var(--transition-fast);
+}
+
+.mega-menu-all-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.mega-menu-all-link:hover::after {
+  transform: scaleX(0.5);
+}
+
+.mega-menu-all-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.mega-menu-all-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Quick Categories Filter Pills */
+.mega-menu-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.mega-pill {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--color-off-white);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.mega-pill:hover,
+.mega-pill.active {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* Main Content: Categories (Left) + Editorial Spotlight (Right) */
+.mega-menu-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.mega-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.mega-cat-item {
+  display: flex;
+  flex-direction: column;
+  background: #faf9f7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+}
+
+.mega-cat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.mega-cat-img-box {
+  width: 100%;
+  aspect-ratio: 16/11;
+  overflow: hidden;
+  background: #f0ede8;
+  position: relative;
+}
+
+.mega-cat-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.mega-cat-item:hover .mega-cat-img-box img {
+  transform: scale(1.06);
+}
+
+.mega-cat-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  color: var(--color-dark-gray);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.mega-cat-tag.is-new {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.mega-cat-details {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--color-white);
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.mega-cat-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-black);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mega-cat-title svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all var(--transition-fast);
+}
+
+.mega-cat-item:hover .mega-cat-title svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mega-cat-subtitle {
+  font-size: 11px;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+/* Editorial Spotlight Card */
+.mega-spotlight {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  min-height: 360px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.mega-spotlight-img-box {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.mega-spotlight-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  opacity: 0.92;
+}
+
+.mega-spotlight:hover .mega-spotlight-img-box img {
+  transform: scale(1.05);
+}
+
+.mega-spotlight-content {
+  padding: 22px 22px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #111111;
+}
+
+.mega-spotlight-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #d4b584;
+  margin-bottom: 6px;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.mega-spotlight-desc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #aaaaaa;
+  margin-bottom: 16px;
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 9px 16px;
+  width: fit-content;
+  transition: all var(--transition-fast);
+}
+
+.mega-spotlight:hover .mega-spotlight-btn {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.mega-spotlight-btn svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--transition-fast);
+}
+
+.mega-spotlight:hover .mega-spotlight-btn svg {
+  transform: translateX(4px);
+}
+
+/* Mega Menu Footer Strip */
+.mega-menu-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 22px;
+  margin-top: 24px;
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.mega-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.mega-footer-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-footer-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-black);
+}
+
+/* Backdrop overlay when mega menu is open */
+.mega-backdrop {
+  position: fixed;
+  inset: 0;
+  top: calc(var(--topbar-height) + var(--header-height));
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mega-backdrop.is-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Mobile sub-menu accordion for Shop Products */
+.mobile-nav-group {
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.mobile-sub-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mobile-sub-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.mobile-sub-toggle.is-open svg {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  display: none;
+  padding: 6px 0 14px 14px;
+}
+
+.mobile-submenu.is-open {
+  display: block;
+}
+
+.mobile-sublink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--color-text-light);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: color var(--transition-fast);
+}
+
+.mobile-sublink:hover {
+  color: var(--color-black);
+}
+
+.mobile-sublink:last-child {
+  border-bottom: none;
+}
+
+.mobile-sublink .sub-badge {
+  font-size: 10px;
+  background: var(--color-off-white);
+  padding: 2px 7px;
+  border-radius: 10px;
+  color: var(--color-dark-gray);
+}
+
+/* Responsive queries */
+@media (max-width: 1200px) {
+  .mega-categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mega-menu-body {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .mega-menu {
+    display: none; /* Mobile menu handles navigation */
+  }
+}
+
 .header-right { display: flex; align-items: center; gap: 18px; }
 .header-icon {
   width: 22px;
@@ -575,36 +1132,147 @@ input, textarea, select { font-family: inherit; }
   max-width: 600px;
   margin: 0 auto;
 }
+/* Room filter tabs */
+.room-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.room-tab-btn {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: var(--color-off-white);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.room-tab-btn:hover {
+  background: var(--color-light-gray);
+}
+
+.room-tab-btn.is-active {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
 .rooms-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 28px;
 }
-.room-card { cursor: pointer; }
-.room-card-image-wrapper { overflow: hidden; }
+
+.room-card {
+  cursor: pointer;
+  background: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.room-card-image-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
 .room-card-image {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
   transition: transform var(--transition-slow);
 }
-.room-card:hover .room-card-image { transform: scale(1.04); }
-.room-card-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 16px;
-  color: var(--color-text);
+
+.room-card:hover .room-card-image {
+  transform: scale(1.05);
 }
-.room-card-link {
-  font-size: 12px;
+
+.room-card-body {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.room-card-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a07842;
+  margin-bottom: 6px;
+}
+
+.room-card-label {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.room-card-desc {
+  font-size: 13px;
   color: var(--color-text-light);
-  margin-top: 6px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.room-card-fixtures {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  margin-top: auto;
+}
+
+.fixture-pill {
+  font-size: 10px;
+  background: var(--color-off-white);
+  color: var(--color-dark-gray);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.room-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
   text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
+  text-underline-offset: 4px;
+}
+
+.room-card-link svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--transition-fast);
+}
+
+.room-card:hover .room-card-link svg {
+  transform: translateX(4px);
 }
 
 /* Room exploration images */
@@ -623,6 +1291,24 @@ input, textarea, select { font-family: inherit; }
 .img-room-living {
   background-color: #2b2520;
   background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-room-office {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-room-kitchen {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+}
+.img-room-outdoor {
+  background-color: #2b2520;
+  background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80');
   background-size: cover;
   background-position: center;
 }
@@ -1070,8 +1756,813 @@ input, textarea, select { font-family: inherit; }
 
   .newsletter-title { font-size: 24px; }
   
-  .search-overlay { padding-top: 120px; }
-  .search-overlay input { font-size: 22px; }
+  .cart-drawer { width: 100%; }
+  .search-modal-container { max-height: 94vh; }
+  .search-modal-header { padding: 14px 16px; }
+  .search-results-scrollable { padding: 12px 16px 20px; }
+  .search-suggestions-bar { padding: 10px 16px; }
+}
+
+/* ============================================================
+   REAL-TIME SEARCH MODAL (LUXURY FLOS STYLE)
+   ============================================================ */
+.search-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 44px 20px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.search-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-modal-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 960px;
+  max-height: 86vh;
+  border-radius: 4px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(-20px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-modal-backdrop.is-open .search-modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.search-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+}
+
+.search-input-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  color: #888888;
+  pointer-events: none;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 14px 44px 14px 46px;
+  font-size: 15px;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fbfbfb;
+}
+
+.search-input-wrap input:focus {
+  border-color: #111111;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: #ebebeb;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #555555;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.search-clear-btn.is-visible {
+  opacity: 1;
+}
+
+.search-clear-btn:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.search-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #777777;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.search-modal-close:hover {
+  color: #111111;
+}
+
+.search-suggestions-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.suggestions-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888888;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.search-tag-chip {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.search-tag-chip:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.search-results-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 4px;
+  font-size: 12px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.search-hint-key kbd {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-results-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.search-result-card {
+  border: 1px solid #ececec;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-color: #d0d0d0;
+}
+
+.search-card-thumb {
+  position: relative;
+  height: 170px;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.search-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.search-result-card:hover .search-card-thumb img {
+  transform: scale(1.05);
+}
+
+.search-badge-cat {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(17, 17, 17, 0.85);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.search-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.search-card-designer {
+  font-size: 11px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.search-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.search-card-room {
+  font-size: 11px;
+  color: #a07842;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.search-card-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.search-card-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.search-card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.search-btn-view {
+  background: #f2f2f2;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #333333;
+  transition: background 0.2s ease;
+}
+
+.search-btn-view:hover { background: #e0e0e0; }
+
+.search-btn-add {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-btn-add:hover { background: #333333; }
+.search-btn-add.added { background: #2a7a2a !important; }
+
+.search-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.search-empty-state svg {
+  margin-bottom: 12px;
+  color: #aaa;
+}
+
+.search-empty-state h4 {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   ACTIVE CART DRAWER (SLIDE-IN LUXURY)
+   ============================================================ */
+.cart-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.cart-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 92vw;
+  background: #ffffff;
+  z-index: 99995;
+  box-shadow: -12px 0 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-header-title h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0;
+}
+
+.cart-header-count {
+  font-weight: 500;
+  color: #888888;
+}
+
+.cart-drawer-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #777777;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.2s ease;
+}
+
+.cart-drawer-close:hover {
+  color: #111111;
+}
+
+.cart-shipping-tracker {
+  background: #faf8f5;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f0eae1;
+}
+
+.shipping-tracker-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a5a29;
+  margin-bottom: 6px;
+}
+
+.shipping-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #e9e0d4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.shipping-progress-fill {
+  height: 100%;
+  background: #a07842;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.cart-items-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+.cart-item-img {
+  width: 76px;
+  height: 76px;
+  background: #f4f4f4;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 2px;
+}
+
+.cart-item-designer {
+  font-size: 11px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.cart-item-finish {
+  display: inline-block;
+  font-size: 10px;
+  background: #f2f2f2;
+  padding: 2px 6px;
+  border-radius: 2px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cart-qty-btn {
+  background: #f8f8f8;
+  border: none;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.cart-qty-btn:hover { background: #e5e5e5; }
+
+.cart-qty-val {
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cart-item-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.cart-item-remove:hover { color: #d00; }
+
+.cart-empty-view {
+  text-align: center;
+  padding: 80px 20px;
+  color: #777;
+}
+
+.cart-empty-view svg {
+  margin-bottom: 16px;
+  color: #bbb;
+}
+
+.cart-empty-view h4 {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cart-empty-view p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cart-empty-btn {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.cart-drawer-footer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid #ebebeb;
+  background: #fafafa;
+}
+
+.cart-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.cart-total-row {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  padding-top: 10px;
+  border-top: 1px dashed #dddddd;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.cart-tax-notice {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.cart-checkout-btn {
+  width: 100%;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 8px;
+}
+
+.cart-checkout-btn:hover { background: #333333; }
+
+.cart-continue-btn {
+  width: 100%;
+  background: none;
+  border: 1px solid #dddddd;
+  color: #444444;
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-continue-btn:hover {
+  background: #ffffff;
+  border-color: #111111;
+  color: #111111;
+}
+
+/* ============================================================
+   CHECKOUT RESERVATION MODAL
+   ============================================================ */
+.checkout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 100005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.checkout-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.checkout-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 4px;
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+}
+
+.checkout-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0f7f0;
+  color: #2a7a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.checkout-modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.checkout-modal-header p {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+.checkout-summary-box {
+  background: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.checkout-form-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.chk-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  outline: none;
+  font-family: inherit;
+}
+
+.chk-input:focus { border-color: #111; }
+
+.btn-confirm-order {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 6px;
+}
+
+.btn-confirm-order:hover { background: #333333; }
+
+/* Toast Notification */
+.onoff-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  background: #111111;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 100010;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.onoff-toast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 </style>
 </head>
@@ -1101,23 +2592,33 @@ input, textarea, select { font-family: inherit; }
 <header class="header is-hero" id="header">
   <div class="header-inner">
     <div class="header-left">
-      <a href="#" class="logo" aria-label="OnOff Lighting & co.">
+      <a href="ONOFF.html" class="logo" aria-label="OnOff Lighting & co.">
         <img src="onoff-logo.png" alt="OnOff Lighting & co. Logo" class="logo-img">
         <span class="logo-text">OnOff Lighting co.</span>
       </a>
       <nav class="main-nav" id="mainNav">
-        <a href="#" class="nav-link">Shop Products
-          <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3l3 3 3-3"/></svg>
-        </a>
-        <a href="#" class="nav-link">Last Call</a>
-        <a href="#" class="nav-link">Iconic Pieces</a>
-        <a href="#" class="nav-link">Shop by Room
-          <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3l3 3 3-3"/></svg>
-        </a>
-        <a href="#" class="nav-link">Designers</a>
-        <a href="#" class="nav-link">Stories</a>
-        <a href="#" class="nav-link">About Us</a>
-        <a href="#" class="nav-link">Trade Program</a>
+        <div class="nav-item-dropdown" id="shopProductsNavItem">
+          <a href="Navbar.html" class="nav-link has-dropdown" id="shopProductsLink" aria-expanded="false" aria-haspopup="true" aria-controls="shopProductsFlyout">
+            <span>Shop Products</span>
+            <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M1 3l3 3 3-3"/>
+            </svg>
+          </a>
+        </div>
+        <a href="#categoryTrack" class="nav-link">Last Call</a>
+        <a href="#heroSection" class="nav-link">Iconic Pieces</a>
+        <div class="nav-item-dropdown" id="shopByRoomNavItem">
+          <a href="ShopByRoom.html" class="nav-link has-dropdown" id="shopByRoomLink" aria-expanded="false" aria-haspopup="true" aria-controls="shopByRoomFlyout">
+            <span>Shop by Room</span>
+            <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M1 3l3 3 3-3"/>
+            </svg>
+          </a>
+        </div>
+        <a href="#designerSection" class="nav-link">Designers</a>
+        <a href="#cultureSection" class="nav-link">Stories</a>
+        <a href="ONOFF.html" class="nav-link">About Us</a>
+        <a href="#footer" class="nav-link">Trade Program</a>
       </nav>
     </div>
     <div class="header-right">
@@ -1130,38 +2631,624 @@ input, textarea, select { font-family: inherit; }
       <button class="header-icon" aria-label="Account">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
-      <button class="header-icon" aria-label="Cart">
+      <button class="header-icon" id="cartToggleBtn" aria-label="Cart" style="position: relative;">
         <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count-badge" id="cartBadge" style="position: absolute; top: -3px; right: -6px; background: var(--color-black); color: #fff; font-size: 9px; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">0</span>
       </button>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
+
+  <!-- ============================================================
+       FLOS-STYLE SHOP PRODUCTS MEGA MENU FLYOUT
+       ============================================================ -->
+  <div class="mega-menu" id="shopProductsFlyout" role="region" aria-label="Shop Products Mega Menu">
+    <div class="mega-menu-inner">
+      <!-- Mega Menu Header -->
+      <div class="mega-menu-header">
+        <div class="mega-menu-heading">
+          <h2 class="mega-menu-title">Shop Products</h2>
+          <span class="mega-menu-subtitle">Architectural & decorative illumination designed by master creators</span>
+        </div>
+        <a href="Navbar.html" class="mega-menu-all-link">
+          <span>View All Lighting (148 Designs)</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="mega-menu-pills">
+        <a href="Navbar.html" class="mega-pill active">All Lighting</a>
+        <a href="Navbar.html?category=table" class="mega-pill">Table Lamps</a>
+        <a href="Navbar.html?category=floor" class="mega-pill">Floor Lamps</a>
+        <a href="Navbar.html?category=suspension" class="mega-pill">Suspension & Pendants</a>
+        <a href="Navbar.html?category=wall" class="mega-pill">Wall & Ceiling</a>
+        <a href="Navbar.html?category=portable" class="mega-pill">Portable & Cordless</a>
+        <a href="Navbar.html?category=outdoor" class="mega-pill">Outdoor</a>
+        <a href="Navbar.html?category=new" class="mega-pill">New Arrivals 2026</a>
+        <a href="Navbar.html?category=iconic" class="mega-pill">Iconic Families</a>
+      </div>
+
+      <!-- Mega Menu Main Body: Categories Grid + Editorial Spotlight -->
+      <div class="mega-menu-body">
+        <!-- 8 Category Cards Grid -->
+        <div class="mega-categories-grid">
+          <!-- 1. Table Lamps -->
+          <a href="Navbar.html?category=table" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=600&q=80" alt="Table Lamps" loading="lazy">
+              <span class="mega-cat-tag">36 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Table Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Desk, bedside & ambient reading</span>
+            </div>
+          </a>
+
+          <!-- 2. Floor Lamps -->
+          <a href="Navbar.html?category=floor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80" alt="Floor Lamps" loading="lazy">
+              <span class="mega-cat-tag">24 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Floor Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Sculptural arches & direct uplights</span>
+            </div>
+          </a>
+
+          <!-- 3. Suspension & Pendants -->
+          <a href="Navbar.html?category=suspension" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80" alt="Suspension Lamps" loading="lazy">
+              <span class="mega-cat-tag">42 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Suspension Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Architectural chandeliers & pendants</span>
+            </div>
+          </a>
+
+          <!-- 4. Wall & Ceiling -->
+          <a href="Navbar.html?category=wall" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Wall and Ceiling Lamps" loading="lazy">
+              <span class="mega-cat-tag">28 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Wall & Ceiling
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Minimalist sconces & flush mounts</span>
+            </div>
+          </a>
+
+          <!-- 5. Portable & Cordless -->
+          <a href="Navbar.html?category=portable" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=600&q=80" alt="Portable Lamps" loading="lazy">
+              <span class="mega-cat-tag">14 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Portable & Cordless
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Rechargeable indoor & outdoor light</span>
+            </div>
+          </a>
+
+          <!-- 6. Outdoor Architectural -->
+          <a href="Navbar.html?category=outdoor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80" alt="Outdoor Lighting" loading="lazy">
+              <span class="mega-cat-tag">18 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Outdoor Lighting
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">IP65 bollards, sconces & garden posts</span>
+            </div>
+          </a>
+
+          <!-- 7. New Arrivals -->
+          <a href="Navbar.html?category=new" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1606170033648-5d55a3edf314?auto=format&fit=crop&w=600&q=80" alt="New Arrivals 2026" loading="lazy">
+              <span class="mega-cat-tag is-new">NEW 2026</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                New Arrivals
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Latest silhouettes & metallic editions</span>
+            </div>
+          </a>
+
+          <!-- 8. Iconic Families -->
+          <a href="Navbar.html?category=iconic" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="hero_promo1_1790619778622.jpg" alt="Iconic Design Families" loading="lazy">
+              <span class="mega-cat-tag">Masterpieces</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Iconic Families
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Forma, Arco, Snoopy & Coordinates</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Editorial Spotlight Feature Card -->
+        <a href="Navbar.html?category=suspension&highlight=forma" class="mega-spotlight">
+          <div class="mega-spotlight-img-box">
+            <img src="hero_main_1790619748476.jpg" alt="Forma Sculptural Pendant">
+            <div class="mega-spotlight-overlay"></div>
+          </div>
+          <div class="mega-spotlight-content">
+            <div>
+              <span class="mega-spotlight-eyebrow">SPOTLIGHT EDITORIAL</span>
+              <h3 class="mega-spotlight-title">Forma: A Sculpture of Pure Light</h3>
+              <p class="mega-spotlight-desc">Designed by Elena Vassari. A continuous interplay of hand-spun brass and diffuse opaline spheres for contemporary living.</p>
+            </div>
+            <div class="mega-spotlight-btn">
+              <span>Explore Collection</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mega Menu Footer Service Strip -->
+      <div class="mega-menu-footer">
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <strong>Complimentary Delivery & Returns</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">On all residential & commercial fixture orders</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>5-Year Precision Warranty</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Original factory warranty on all LED architectural modules</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <strong>Trade Concierge & BIM Support</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Photometric IES, Revit 3D files & architect support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOS-STYLE SHOP BY ROOM MEGA MENU FLYOUT
+       ============================================================ -->
+  <div class="mega-menu" id="shopByRoomFlyout" role="region" aria-label="Shop by Room Mega Menu">
+    <div class="mega-menu-inner">
+      <!-- Mega Menu Header -->
+      <div class="mega-menu-header">
+        <div class="mega-menu-heading">
+          <h2 class="mega-menu-title">Shop by Room</h2>
+          <span class="mega-menu-subtitle">Curated lighting compositions engineered for distinct spatial atmospheres</span>
+        </div>
+        <a href="ShopByRoom.html" class="mega-menu-all-link">
+          <span>Explore All 6 Spaces & Guides</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Quick Room Filter Pills -->
+      <div class="mega-menu-pills">
+        <a href="ShopByRoom.html" class="mega-pill active">All Environments</a>
+        <a href="ShopByRoom.html?room=living" class="mega-pill">Living Room</a>
+        <a href="ShopByRoom.html?room=dining" class="mega-pill">Dining Room</a>
+        <a href="ShopByRoom.html?room=bedroom" class="mega-pill">Bedroom</a>
+        <a href="ShopByRoom.html?room=kitchen" class="mega-pill">Kitchen & Island</a>
+        <a href="ShopByRoom.html?room=office" class="mega-pill">Home Office</a>
+        <a href="ShopByRoom.html?room=outdoor" class="mega-pill">Outdoor Terrace</a>
+      </div>
+
+      <!-- Main Body: 6 Room Cards Grid + Spatial Architecture Spotlight -->
+      <div class="mega-menu-body">
+        <div class="mega-categories-grid">
+          <!-- 1. Living Room -->
+          <a href="ShopByRoom.html?room=living" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living Room Lighting" loading="lazy">
+              <span class="mega-cat-tag">Ambient & Accent</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Living Room
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Arches, floor lamps & warm chandeliers</span>
+            </div>
+          </a>
+
+          <!-- 2. Dining Room -->
+          <a href="ShopByRoom.html?room=dining" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Dining Room Lighting" loading="lazy">
+              <span class="mega-cat-tag">Over-Table Focus</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Dining Room
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Suspension spheres, lattices & dimmers</span>
+            </div>
+          </a>
+
+          <!-- 3. Bedroom -->
+          <a href="ShopByRoom.html?room=bedroom" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&q=80" alt="Bedroom Lighting" loading="lazy">
+              <span class="mega-cat-tag">Rest & Reading</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Bedroom
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Bedside reading sconces & cozy low-Kelvin</span>
+            </div>
+          </a>
+
+          <!-- 4. Kitchen & Island -->
+          <a href="ShopByRoom.html?room=kitchen" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen & Island Lighting" loading="lazy">
+              <span class="mega-cat-tag">Functional & Crisp</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Kitchen & Island
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Linear pendants, track & high-CRI food prep</span>
+            </div>
+          </a>
+
+          <!-- 5. Workspace & Study -->
+          <a href="ShopByRoom.html?room=office" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80" alt="Home Office Lighting" loading="lazy">
+              <span class="mega-cat-tag">Anti-Glare Task</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Workspace & Study
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Precision desk lamps & balanced eye comfort</span>
+            </div>
+          </a>
+
+          <!-- 6. Outdoor Terrace -->
+          <a href="ShopByRoom.html?room=outdoor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Outdoor Terrace Lighting" loading="lazy">
+              <span class="mega-cat-tag">IP65 Exterior</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Outdoor & Patio
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Architectural bollards & portable lanterns</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Editorial Spotlight Feature Card -->
+        <a href="ShopByRoom.html?room=living" class="mega-spotlight">
+          <div class="mega-spotlight-img-box">
+            <img src="hero_promo2_1790619817886.jpg" alt="Layered Lighting Masterclass">
+            <div class="mega-spotlight-overlay"></div>
+          </div>
+          <div class="mega-spotlight-content">
+            <div>
+              <span class="mega-spotlight-eyebrow">SPATIAL ARCHITECTURE</span>
+              <h3 class="mega-spotlight-title">The Art of Layered Lighting</h3>
+              <p class="mega-spotlight-desc">Discover how top interior architects combine ambient diffuse ceiling light, directional task lamps, and sculptural accent pieces to transform living spaces.</p>
+            </div>
+            <div class="mega-spotlight-btn">
+              <span>Explore Room Guides</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mega Menu Footer Service Strip -->
+      <div class="mega-menu-footer">
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <strong>Spatial Lighting Layouts</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Tailored room-by-room lumen & placement guides</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div>
+            <strong>Smart Scene Dimming</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Casambi, DALI & TRIAC circadian warmth setups</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <strong>Complimentary Lighting Concierge</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Send your floor plans for fixture recommendations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
+<!-- Backdrop overlay for mega menu -->
+<div class="mega-backdrop" id="megaBackdrop"></div>
+
 <!-- ============================================================
-     SEARCH OVERLAY
+     REAL-TIME LIVE SEARCH MODAL (FLOS-STYLE)
      ============================================================ -->
-<div class="search-overlay" id="searchOverlay">
-  <div class="search-overlay-inner">
-    <input type="text" placeholder="What are you looking for?">
+<div class="search-modal-backdrop" id="realtimeSearchModal" role="dialog" aria-modal="true" aria-label="Real-time Luminaire Search">
+  <div class="search-modal-container">
+    <div class="search-modal-header">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="liveSearchInput" placeholder="Search luminaires, designers, finishes, rooms (e.g. Arco, Snoopy, Living Room, Flos)..." autocomplete="off" spellcheck="false">
+        <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search" onclick="clearLiveSearch()">&times;</button>
+      </div>
+      <button class="search-modal-close" id="searchModalCloseBtn" onclick="closeLiveSearch()" aria-label="Close Search">&times;</button>
+    </div>
+
+    <!-- Quick Query Suggestions / Trending Chips -->
+    <div class="search-suggestions-bar">
+      <span class="suggestions-label">Trending:</span>
+      <button class="search-tag-chip" onclick="applySearchQuery('Arco')">Arco Floor</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Pendant')">Suspension</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Living Room')">Living Room</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Table')">Table Lamps</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Cordless')">Portable</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Outdoor')">Outdoor</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Castiglioni')">Castiglioni</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Brass')">Brass</button>
+    </div>
+
+    <!-- Live Search Meta / Status -->
+    <div class="search-results-meta">
+      <span id="searchResultCountText">Showing all 12 luminaires</span>
+      <span class="search-hint-key">Press <kbd>ESC</kbd> to close</span>
+    </div>
+
+    <!-- Live Results Container -->
+    <div class="search-results-scrollable" id="searchResultsContainer">
+      <!-- Injected by JavaScript in real time -->
+    </div>
   </div>
-  <button class="search-close" id="searchClose">&times;</button>
+</div>
+
+<!-- ============================================================
+     ACTIVE SLIDE-OUT SHOPPING BAG DRAWER
+     ============================================================ -->
+<div class="cart-drawer-backdrop" id="cartDrawerBackdrop" onclick="closeCartDrawer()"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Your Shopping Bag">
+  <div class="cart-drawer-header">
+    <div class="cart-header-title">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <h3>Shopping Bag <span class="cart-header-count" id="cartDrawerCount">(0)</span></h3>
+    </div>
+    <button class="cart-drawer-close" id="cartDrawerCloseBtn" onclick="closeCartDrawer()" aria-label="Close Bag">&times;</button>
+  </div>
+
+  <!-- Free White-Glove Delivery Tier Tracker -->
+  <div class="cart-shipping-tracker">
+    <div class="shipping-tracker-text" id="shippingTrackerText">Add $1,500 for Complimentary White-Glove Delivery</div>
+    <div class="shipping-progress-bar">
+      <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Cart Item List -->
+  <div class="cart-items-container" id="cartItemsContainer">
+    <!-- Injected dynamically by JavaScript -->
+  </div>
+
+  <!-- Cart Drawer Footer -->
+  <div class="cart-drawer-footer" id="cartDrawerFooter">
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <span class="cart-subtotal-val" id="cartSubtotalVal">$0</span>
+    </div>
+    <div class="cart-summary-row shipping-row">
+      <span>Insured White-Glove Delivery</span>
+      <span id="cartShippingVal">Complimentary over $1,500</span>
+    </div>
+    <div class="cart-summary-row cart-total-row">
+      <span>Total</span>
+      <span class="cart-total-val" id="cartTotalVal">$0</span>
+    </div>
+    <p class="cart-tax-notice">State sales tax & architectural white-glove installation calculated at final reservation.</p>
+
+    <button class="cart-checkout-btn" onclick="openCheckoutModal()">
+      Proceed to Reservation Checkout &rarr;
+    </button>
+    <button class="cart-continue-btn" onclick="closeCartDrawer()">
+      Continue Exploring OnOff
+    </button>
+  </div>
+</aside>
+
+<!-- ============================================================
+     CHECKOUT RESERVATION MODAL
+     ============================================================ -->
+<div class="checkout-modal-overlay" id="checkoutModal">
+  <div class="checkout-modal-card">
+    <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
+    <div class="checkout-badge-icon">✓</div>
+    <div class="checkout-modal-header">
+      <h3>Architectural Reservation</h3>
+      <p>Reserve this configuration directly with our Milan atelier. An OnOff lighting specialist will confirm serials & lead times.</p>
+    </div>
+    <div class="checkout-summary-box" id="checkoutSummaryBox"></div>
+    <form class="checkout-form-compact" onsubmit="confirmOrderSuccess(event)">
+      <div class="form-row-2">
+        <input type="text" placeholder="Your Full Name" class="chk-input" id="chkName" required value="Arch. Matteo Rossi">
+        <input type="email" placeholder="Email Address" class="chk-input" id="chkEmail" required value="m.rossi@studio-arch.it">
+      </div>
+      <input type="text" placeholder="Delivery Address / Project Site" class="chk-input" id="chkAddress" required value="Via Montenapoleone 18, Milan, Italy">
+      <button type="submit" class="btn-confirm-order">Confirm Atelier Reservation</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     NOTIFICATION TOAST
+     ============================================================ -->
+<div class="onoff-toast" id="onoffToast">
+  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="#a07842" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>
+  <span id="toastMsg">Added to your shopping bag</span>
 </div>
 
 <!-- ============================================================
      MOBILE MENU
      ============================================================ -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" class="mobile-nav-link">Shop Products</a>
-  <a href="#" class="mobile-nav-link">Last Call</a>
-  <a href="#" class="mobile-nav-link">Iconic Pieces</a>
-  <a href="#" class="mobile-nav-link">Shop by Room</a>
-  <a href="#" class="mobile-nav-link">Designers</a>
-  <a href="#" class="mobile-nav-link">Stories</a>
-  <a href="#" class="mobile-nav-link">About Us</a>
-  <a href="#" class="mobile-nav-link">Trade Program</a>
+  <!-- Expandable Shop Products Accordion -->
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-link mobile-sub-toggle" id="mobileShopToggle">
+      <span>Shop Products</span>
+      <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
+    </div>
+    <div class="mobile-submenu" id="mobileShopSubmenu">
+      <a href="Navbar.html" class="mobile-sublink" style="font-weight: 600; color: var(--color-black);">
+        <span>View All Lighting (148)</span>
+        <span class="sub-badge">All</span>
+      </a>
+      <a href="Navbar.html?category=table" class="mobile-sublink">
+        <span>Table Lamps</span>
+        <span class="sub-badge">36</span>
+      </a>
+      <a href="Navbar.html?category=floor" class="mobile-sublink">
+        <span>Floor Lamps</span>
+        <span class="sub-badge">24</span>
+      </a>
+      <a href="Navbar.html?category=suspension" class="mobile-sublink">
+        <span>Suspension & Chandeliers</span>
+        <span class="sub-badge">42</span>
+      </a>
+      <a href="Navbar.html?category=wall" class="mobile-sublink">
+        <span>Wall & Ceiling</span>
+        <span class="sub-badge">28</span>
+      </a>
+      <a href="Navbar.html?category=portable" class="mobile-sublink">
+        <span>Portable & Cordless</span>
+        <span class="sub-badge">14</span>
+      </a>
+      <a href="Navbar.html?category=outdoor" class="mobile-sublink">
+        <span>Outdoor Lighting</span>
+        <span class="sub-badge">18</span>
+      </a>
+      <a href="Navbar.html?category=new" class="mobile-sublink">
+        <span>New Arrivals 2026</span>
+        <span class="sub-badge" style="background:#000; color:#fff;">NEW</span>
+      </a>
+      <a href="Navbar.html?category=iconic" class="mobile-sublink">
+        <span>Iconic Pieces & Families</span>
+        <span class="sub-badge">Icons</span>
+      </a>
+    </div>
+  </div>
+  <a href="#categoryTrack" class="mobile-nav-link">Last Call</a>
+  <!-- Expandable Shop by Room Accordion -->
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-link mobile-sub-toggle" id="mobileRoomsToggle">
+      <span>Shop by Room</span>
+      <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
+    </div>
+    <div class="mobile-submenu" id="mobileRoomsSubmenu">
+      <a href="#roomsSection" onclick="filterRoomSection('all'); closeMobileMenu()" class="mobile-sublink" style="font-weight: 600; color: var(--color-black);">
+        <span>All 6 Spaces & Guides</span>
+        <span class="sub-badge">All</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('living'); closeMobileMenu()" class="mobile-sublink">
+        <span>Living Room</span>
+        <span class="sub-badge">Ambient</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('dining'); closeMobileMenu()" class="mobile-sublink">
+        <span>Dining Room</span>
+        <span class="sub-badge">Chandelier</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('bedroom'); closeMobileMenu()" class="mobile-sublink">
+        <span>Bedroom</span>
+        <span class="sub-badge">Bedside</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('kitchen'); closeMobileMenu()" class="mobile-sublink">
+        <span>Kitchen & Island</span>
+        <span class="sub-badge">Track</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('office'); closeMobileMenu()" class="mobile-sublink">
+        <span>Workspace & Study</span>
+        <span class="sub-badge">Task</span>
+      </a>
+      <a href="#roomsSection" onclick="filterRoomSection('outdoor'); closeMobileMenu()" class="mobile-sublink">
+        <span>Outdoor & Terrace</span>
+        <span class="sub-badge">IP65</span>
+      </a>
+    </div>
+  </div>
+  <a href="#designerSection" class="mobile-nav-link">Designers</a>
+  <a href="#cultureSection" class="mobile-nav-link">Stories</a>
+  <a href="aboutUs.html" class="mobile-nav-link">About Us</a>
+  <a href="#footer" class="mobile-nav-link">Trade Program</a>
 </div>
 
 <!-- ============================================================
@@ -1262,28 +3349,151 @@ input, textarea, select { font-family: inherit; }
 </section>
 
 <!-- ============================================================
-     ROOMS SECTION
+     ROOMS SECTION — SHOP BY ROOM
      ============================================================ -->
-<section class="section-rooms">
+<section class="section-rooms" id="roomsSection">
   <div class="section-header reveal">
-    <h2 class="section-title">Explore the OnOff home</h2>
-    <p class="section-desc">The right light transforms a space. Find the perfect fixture for every room in your home.</p>
+    <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #a07842; margin-bottom: 8px;">CURATED SPATIAL COLLECTIONS</p>
+    <h2 class="section-title">Shop by Room: Explore the OnOff Home</h2>
+    <p class="section-desc">The right light sculpts architecture, creates visual hierarchy, and sets emotional tone. Browse lighting compositions engineered for each distinct interior and exterior environment.</p>
   </div>
-  <div class="rooms-grid">
-    <div class="room-card reveal">
-      <div class="room-card-image-wrapper"><div class="room-card-image img-room-dining"></div></div>
-      <p class="room-card-label">Dining Room</p>
-      <p class="room-card-link">Discover the selection</p>
+
+  <!-- Room Filter Tabs -->
+  <div class="room-tabs reveal" id="roomFilterTabs">
+    <button class="room-tab-btn is-active" data-room="all" onclick="filterRoomSection('all')">All Spaces (6)</button>
+    <button class="room-tab-btn" data-room="living" onclick="filterRoomSection('living')">Living Room</button>
+    <button class="room-tab-btn" data-room="dining" onclick="filterRoomSection('dining')">Dining Room</button>
+    <button class="room-tab-btn" data-room="bedroom" onclick="filterRoomSection('bedroom')">Bedroom</button>
+    <button class="room-tab-btn" data-room="kitchen" onclick="filterRoomSection('kitchen')">Kitchen & Island</button>
+    <button class="room-tab-btn" data-room="office" onclick="filterRoomSection('office')">Workspace</button>
+    <button class="room-tab-btn" data-room="outdoor" onclick="filterRoomSection('outdoor')">Outdoor Terrace</button>
+  </div>
+
+  <div class="rooms-grid" id="roomsGrid">
+    <!-- 1. Living Room -->
+    <div class="room-card reveal" data-room="living" onclick="window.location.href='ShopByRoom.html?room=living'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-living"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">Ambient & Accent Focal Points</span>
+        <h3 class="room-card-label">Living Room</h3>
+        <p class="room-card-desc">Layered illumination combining dramatic sweeping arches, dimmable suspensions, and soft indirect perimeter wash for conversational comfort.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">Arco Floor</span>
+          <span class="fixture-pill">Forma Pendant</span>
+          <span class="fixture-pill">Snoopy Table</span>
+        </div>
+        <a href="ShopByRoom.html?room=living" class="room-card-link">
+          <span>Shop Living Room Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="room-card reveal">
-      <div class="room-card-image-wrapper"><div class="room-card-image img-room-bedroom"></div></div>
-      <p class="room-card-label">Bedroom</p>
-      <p class="room-card-link">Discover the selection</p>
+
+    <!-- 2. Dining Room -->
+    <div class="room-card reveal" data-room="dining" onclick="window.location.href='ShopByRoom.html?room=dining'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-dining"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">Over-Table Focal Lighting</span>
+        <h3 class="room-card-label">Dining Room</h3>
+        <p class="room-card-desc">Low-hanging opaline glass pendants and architectural chandeliers that frame gatherings without causing direct glare across table lines.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">Glo-Ball Sphere</span>
+          <span class="fixture-pill">Coordinates Lattice</span>
+          <span class="fixture-pill">Taccia Reflector</span>
+        </div>
+        <a href="ShopByRoom.html?room=dining" class="room-card-link">
+          <span>Shop Dining Room Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="room-card reveal">
-      <div class="room-card-image-wrapper"><div class="room-card-image img-room-living"></div></div>
-      <p class="room-card-label">Living Room</p>
-      <p class="room-card-link">Discover the selection</p>
+
+    <!-- 3. Bedroom -->
+    <div class="room-card reveal" data-room="bedroom" onclick="window.location.href='ShopByRoom.html?room=bedroom'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-bedroom"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">Circadian Rest & Night Reading</span>
+        <h3 class="room-card-label">Bedroom</h3>
+        <p class="room-card-desc">Warm 2200K–2700K low-intensity lighting with touch dimmers and directional micro-beams to nurture rest and comfortable evening reading.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">IC Lights Wall</span>
+          <span class="fixture-pill">Bellhop Cordless</span>
+          <span class="fixture-pill">Gustave Battery</span>
+        </div>
+        <a href="ShopByRoom.html?room=bedroom" class="room-card-link">
+          <span>Shop Bedroom Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 4. Kitchen & Island -->
+    <div class="room-card reveal" data-room="kitchen" onclick="window.location.href='ShopByRoom.html?room=kitchen'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-kitchen"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">High-CRI Architectural Precision</span>
+        <h3 class="room-card-label">Kitchen & Island</h3>
+        <p class="room-card-desc">High-lumen culinary task lighting over countertops and islands, engineered with 95+ CRI true color rendering and modular linear tracks.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">Coordinates Track</span>
+          <span class="fixture-pill">Forma Pendant</span>
+          <span class="fixture-pill">IC Lights Sconce</span>
+        </div>
+        <a href="ShopByRoom.html?room=kitchen" class="room-card-link">
+          <span>Shop Kitchen Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 5. Workspace & Study -->
+    <div class="room-card reveal" data-room="office" onclick="window.location.href='ShopByRoom.html?room=office'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-office"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">Anti-Glare Ergonomic Task Light</span>
+        <h3 class="room-card-label">Workspace & Study</h3>
+        <p class="room-card-desc">Flicker-free desk lamps and adjustable table fixtures engineered to eliminate eye fatigue and shadows during prolonged creative focus.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">Snoopy Table</span>
+          <span class="fixture-pill">Gustave Battery</span>
+          <span class="fixture-pill">Taccia Reflector</span>
+        </div>
+        <a href="ShopByRoom.html?room=office" class="room-card-link">
+          <span>Shop Workspace Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 6. Outdoor & Terrace -->
+    <div class="room-card reveal" data-room="outdoor" onclick="window.location.href='ShopByRoom.html?room=outdoor'">
+      <div class="room-card-image-wrapper">
+        <div class="room-card-image img-room-outdoor"></div>
+      </div>
+      <div class="room-card-body">
+        <span class="room-card-tag">IP65 Weatherproof Atmosphere</span>
+        <h3 class="room-card-label">Outdoor & Terrace</h3>
+        <p class="room-card-desc">Extend indoor warmth outdoors with IP65-sealed stone bollards, weather-resistant path lights, and portable battery lanterns for twilight dining.</p>
+        <div class="room-card-fixtures">
+          <span class="fixture-pill">Captain Flint Outdoor</span>
+          <span class="fixture-pill">In Vitro Bollard</span>
+          <span class="fixture-pill">Bellhop Cordless</span>
+        </div>
+        <a href="ShopByRoom.html?room=outdoor" class="room-card-link">
+          <span>Shop Outdoor Lights</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1384,6 +3594,8 @@ input, textarea, select { font-family: inherit; }
     </div>
     <div class="footer-column">
       <h3 class="footer-column-title">Content</h3>
+      <a href="ShopByRoom.html" class="footer-link">Shop by Room (New Page)</a>
+      <a href="Navbar.html" class="footer-link">Shop Products (Catalog)</a>
       <a href="#" class="footer-link">Lighting Guide</a>
       <a href="#" class="footer-link">Accessibility</a>
       <a href="#" class="footer-link">Cookie Policy</a>
@@ -1494,12 +3706,25 @@ input, textarea, select { font-family: inherit; }
 
   /* ---- HEADER SCROLL BEHAVIOR ---- */
   var header = document.getElementById('header');
+  /* ---- HEADER SCROLL BEHAVIOR ---- */
+  var header = document.getElementById('header');
   var heroSection = document.getElementById('heroSection');
+  var shopFlyout = document.getElementById('shopProductsFlyout');
+  var shopNavItem = document.getElementById('shopProductsNavItem');
+  var shopLink = document.getElementById('shopProductsLink');
+  var roomFlyout = document.getElementById('shopByRoomFlyout');
+  var roomNavItem = document.getElementById('shopByRoomNavItem');
+  var roomLink = document.getElementById('shopByRoomLink');
+  var megaBackdrop = document.getElementById('megaBackdrop');
+  var mobileMenu = document.getElementById('mobileMenu');
 
   function updateHeader() {
     if (!heroSection) return;
     var heroBottom = heroSection.getBoundingClientRect().bottom;
-    if (heroBottom <= 60) {
+    var isFlyoutActive = header.classList.contains('is-flyout-open');
+    var isMobileActive = mobileMenu && mobileMenu.classList.contains('is-open');
+
+    if (heroBottom <= 60 || isFlyoutActive || isMobileActive) {
       header.classList.remove('is-hero');
     } else {
       header.classList.add('is-hero');
@@ -1508,9 +3733,161 @@ input, textarea, select { font-family: inherit; }
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
+  /* ---- MEGA MENU FLYOUTS (SHOP PRODUCTS & SHOP BY ROOM) ---- */
+  var flyoutCloseTimer = null;
+
+  window.closeAllFlyouts = function() {
+    clearTimeout(flyoutCloseTimer);
+    if (shopFlyout) shopFlyout.classList.remove('is-open');
+    if (roomFlyout) roomFlyout.classList.remove('is-open');
+    if (shopLink) shopLink.setAttribute('aria-expanded', 'false');
+    if (roomLink) roomLink.setAttribute('aria-expanded', 'false');
+    header.classList.remove('is-flyout-open');
+    if (megaBackdrop) megaBackdrop.classList.remove('is-visible');
+    updateHeader();
+  };
+
+  function openFlyoutMenu(flyoutToOpen, linkToExpand, otherFlyout, otherLink) {
+    clearTimeout(flyoutCloseTimer);
+    if (otherFlyout) otherFlyout.classList.remove('is-open');
+    if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
+    if (flyoutToOpen) flyoutToOpen.classList.add('is-open');
+    if (linkToExpand) linkToExpand.setAttribute('aria-expanded', 'true');
+    header.classList.add('is-flyout-open');
+    if (megaBackdrop) megaBackdrop.classList.add('is-visible');
+    updateHeader();
+  }
+
+  function scheduleFlyoutClose() {
+    clearTimeout(flyoutCloseTimer);
+    flyoutCloseTimer = setTimeout(function() {
+      closeAllFlyouts();
+    }, 180);
+  }
+
+  // Shop Products Dropdown
+  if (shopNavItem && shopFlyout) {
+    shopNavItem.addEventListener('mouseenter', function() {
+      openFlyoutMenu(shopFlyout, shopLink, roomFlyout, roomLink);
+    });
+    shopNavItem.addEventListener('mouseleave', scheduleFlyoutClose);
+    shopFlyout.addEventListener('mouseenter', function() { clearTimeout(flyoutCloseTimer); });
+    shopFlyout.addEventListener('mouseleave', scheduleFlyoutClose);
+
+    var shopArrow = shopNavItem.querySelector('.nav-arrow');
+    if (shopArrow) {
+      shopArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (shopFlyout.classList.contains('is-open')) {
+          closeAllFlyouts();
+        } else {
+          openFlyoutMenu(shopFlyout, shopLink, roomFlyout, roomLink);
+        }
+      });
+    }
+  }
+
+  // Shop by Room Dropdown
+  if (roomNavItem && roomFlyout) {
+    roomNavItem.addEventListener('mouseenter', function() {
+      openFlyoutMenu(roomFlyout, roomLink, shopFlyout, shopLink);
+    });
+    roomNavItem.addEventListener('mouseleave', scheduleFlyoutClose);
+    roomFlyout.addEventListener('mouseenter', function() { clearTimeout(flyoutCloseTimer); });
+    roomFlyout.addEventListener('mouseleave', scheduleFlyoutClose);
+
+    var roomArrow = roomNavItem.querySelector('.nav-arrow');
+    if (roomArrow) {
+      roomArrow.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (roomFlyout.classList.contains('is-open')) {
+          closeAllFlyouts();
+        } else {
+          openFlyoutMenu(roomFlyout, roomLink, shopFlyout, shopLink);
+        }
+      });
+    }
+  }
+
+  if (megaBackdrop) {
+    megaBackdrop.addEventListener('click', closeAllFlyouts);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeAllFlyouts();
+    }
+  });
+
+  /* ---- ON-PAGE ROOMS SECTION FILTERING ---- */
+  window.filterRoomSection = function(selectedRoom) {
+    closeAllFlyouts();
+    if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+      mobileMenu.classList.remove('is-open');
+      menuToggle.classList.remove('is-open');
+      document.body.style.overflow = '';
+      updateHeader();
+    }
+
+    var tabs = document.querySelectorAll('.room-tab-btn');
+    tabs.forEach(function(t) {
+      if (t.getAttribute('data-room') === selectedRoom) {
+        t.classList.add('is-active');
+      } else {
+        t.classList.remove('is-active');
+      }
+    });
+
+    var cards = document.querySelectorAll('#roomsGrid .room-card');
+    cards.forEach(function(card) {
+      var r = card.getAttribute('data-room');
+      if (selectedRoom === 'all' || r === selectedRoom) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    var roomsSection = document.getElementById('roomsSection');
+    if (roomsSection) {
+      roomsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  /* ---- MOBILE ACCORDIONS ---- */
+  var mobileShopToggle = document.getElementById('mobileShopToggle');
+  var mobileShopSubmenu = document.getElementById('mobileShopSubmenu');
+  if (mobileShopToggle && mobileShopSubmenu) {
+    mobileShopToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('is-open');
+      mobileShopSubmenu.classList.toggle('is-open');
+    });
+  }
+
+  var mobileRoomsToggle = document.getElementById('mobileRoomsToggle');
+  var mobileRoomsSubmenu = document.getElementById('mobileRoomsSubmenu');
+  if (mobileRoomsToggle && mobileRoomsSubmenu) {
+    mobileRoomsToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('is-open');
+      mobileRoomsSubmenu.classList.toggle('is-open');
+    });
+  }
+
+  window.closeMobileMenu = function() {
+    if (mobileMenu && mobileMenu.classList.contains('is-open')) {
+      mobileMenu.classList.remove('is-open');
+      if (menuToggle) menuToggle.classList.remove('is-open');
+      document.body.style.overflow = '';
+      updateHeader();
+    }
+  };
+
   /* ---- MOBILE MENU ---- */
   var menuToggle = document.getElementById('menuToggle');
-  var mobileMenu = document.getElementById('mobileMenu');
 
   menuToggle.addEventListener('click', function() {
     this.classList.toggle('is-open');
@@ -1524,30 +3901,612 @@ input, textarea, select { font-family: inherit; }
     }
   });
 
-  /* ---- SEARCH OVERLAY ---- */
-  var searchToggle = document.getElementById('searchToggle');
-  var searchOverlay = document.getElementById('searchOverlay');
-  var searchClose = document.getElementById('searchClose');
-
-  searchToggle.addEventListener('click', function() {
-    searchOverlay.classList.add('is-open');
-    setTimeout(function() {
-      searchOverlay.querySelector('input').focus();
-    }, 100);
-  });
-  searchClose.addEventListener('click', function() {
-    searchOverlay.classList.remove('is-open');
-  });
-  searchOverlay.addEventListener('click', function(e) {
-    if (e.target === searchOverlay) {
-      searchOverlay.classList.remove('is-open');
+  // ============================================================
+  // MASTER PRODUCT CATALOG (Single Source of Truth)
+  // ============================================================
+  var productCatalog = {
+    forma: {
+      id: 'forma',
+      name: 'Forma Sculptural Pendant',
+      designer: 'Elena Vassari',
+      category: 'Suspension',
+      catKey: 'suspension',
+      rooms: ['living', 'dining', 'kitchen'],
+      roomLabel: 'Living & Dining',
+      price: '$1,280',
+      numericPrice: 1280,
+      image: 'hero_main_1790619748476.jpg',
+      desc: 'Suspended sculpture featuring hand-finished brushed bronze armatures and opal glass spheres. Emits a balanced 360-degree ambient light, making it the centerpiece of dining rooms and grand foyers.',
+      defaultFinish: 'Brushed Bronze',
+      finishes: ['Brushed Bronze', 'Matte Black', 'Opal White']
+    },
+    arco: {
+      id: 'arco',
+      name: 'Arco Curva Floor Lamp',
+      designer: 'Achille Castiglioni',
+      category: 'Floor',
+      catKey: 'floor',
+      rooms: ['living', 'office'],
+      roomLabel: 'Living & Study',
+      price: '$2,450',
+      numericPrice: 2450,
+      image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80',
+      desc: 'Iconic 1962 floor luminaire providing overhead direct lighting from a distance without ceiling attachments. Base in solid Carrara marble with beveled edges and hole for easy transport.',
+      defaultFinish: 'Carrara Marble',
+      finishes: ['Carrara Marble', 'Marquina Black']
+    },
+    snoopy: {
+      id: 'snoopy',
+      name: 'Snoopy Table Lamp',
+      designer: 'Achille & Pier Giacomo Castiglioni',
+      category: 'Table',
+      catKey: 'table',
+      rooms: ['living', 'bedroom', 'office'],
+      roomLabel: 'Credenza & Bedside',
+      price: '$980',
+      numericPrice: 980,
+      image: 'https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=800&q=80',
+      desc: 'Playful direct light table lamp created in 1967. White Carrara marble base cut at a dynamic slant, supporting an enamelled spun metal reflector and thick frosted glass diffuser.',
+      defaultFinish: 'Gloss Black',
+      finishes: ['Gloss Black', 'Navy Green', 'Orange Enamel']
+    },
+    taccia: {
+      id: 'taccia',
+      name: 'Taccia Reflector Table Lamp',
+      designer: 'Castiglioni Archive',
+      category: 'Table',
+      catKey: 'table',
+      rooms: ['living', 'office'],
+      roomLabel: 'Console & Bookshelf',
+      price: '$1,650',
+      numericPrice: 1650,
+      image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80',
+      desc: 'Indirect and reflected light with mouth-blown transparent glass bowl and black painted extruded aluminum body. The heat-sink flutes act as both cooling and classic Roman pillar ornament.',
+      defaultFinish: 'Matte Black',
+      finishes: ['Matte Black', 'Anodized Bronze', 'Silver Aluminum']
+    },
+    bellhop: {
+      id: 'bellhop',
+      name: 'Bellhop Cordless Table Lamp',
+      designer: 'Edward Barber & Jay Osgerby',
+      category: 'Portable',
+      catKey: 'portable',
+      rooms: ['dining', 'bedroom', 'outdoor'],
+      roomLabel: 'Dining & Terrace',
+      price: '$340',
+      numericPrice: 340,
+      image: 'https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=800&q=80',
+      desc: 'Modern portable candlelight. Bellhop charges via standard USB-C and illuminates for up to 24 hours. Features 4-step touch push button under base.',
+      defaultFinish: 'Burnt Orange',
+      finishes: ['Burnt Orange', 'Cioccolato', 'White', 'Grey Blue']
+    },
+    globall: {
+      id: 'globall',
+      name: 'Glo-Ball Sphere Pendant',
+      designer: 'Jasper Morrison',
+      category: 'Suspension',
+      catKey: 'suspension',
+      rooms: ['dining', 'bedroom', 'kitchen'],
+      roomLabel: 'Dining Room',
+      price: '$820',
+      numericPrice: 820,
+      image: 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80',
+      desc: 'Flawless sphere of acid-etched opaline glass delivering an intensely warm glow reminiscent of the full moon. Steel suspension wire with transparent cord.',
+      defaultFinish: 'Opal Matte White',
+      finishes: ['Opal Matte White']
+    },
+    icfloor: {
+      id: 'icfloor',
+      name: 'IC Lights F1 Balanced Floor Lamp',
+      designer: 'Michael Anastassiades',
+      category: 'Floor',
+      catKey: 'floor',
+      rooms: ['living', 'bedroom', 'office'],
+      roomLabel: 'Bedroom Suite',
+      price: '$1,420',
+      numericPrice: 1420,
+      image: 'hero_promo1_1790619778622.jpg',
+      desc: 'Exploration of balance inspired by contact jugglers. Blown glass sphere rested poised on an inclined brass rod. In-line cord dimmer allows stepless luminance tuning.',
+      defaultFinish: 'Brushed Brass',
+      finishes: ['Brushed Brass', 'Chrome', 'Black']
+    },
+    icwall: {
+      id: 'icwall',
+      name: 'IC Lights Wall / Ceiling Sconce',
+      designer: 'Michael Anastassiades',
+      category: 'Wall',
+      catKey: 'wall',
+      rooms: ['living', 'bedroom', 'kitchen'],
+      roomLabel: 'Bedroom & Vanity',
+      price: '$710',
+      numericPrice: 710,
+      image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80',
+      desc: 'Refined wall or ceiling fixture featuring blown glass opaline diffuser mounted onto a solid brushed brass plate. Suitable for bathroom vanities and luxury corridors.',
+      defaultFinish: 'Brushed Brass',
+      finishes: ['Brushed Brass', 'Chrome', 'Deep Black']
+    },
+    flint: {
+      id: 'flint',
+      name: 'Captain Flint Outdoor Floor Lamp',
+      designer: 'Michael Anastassiades',
+      category: 'Outdoor',
+      catKey: 'outdoor',
+      rooms: ['outdoor'],
+      roomLabel: 'Terrace & Garden',
+      price: '$1,890',
+      numericPrice: 1890,
+      image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80',
+      desc: 'Dual-purpose outdoor luminaire providing uplight or direct reading light. Monolithic base in natural lava stone or travertine with waterproof IP65 rating.',
+      defaultFinish: 'Brushed Brass / Lavastone',
+      finishes: ['Brushed Brass / Lavastone', 'Anthracite', 'Deep Brown']
+    },
+    coordinates: {
+      id: 'coordinates',
+      name: 'Coordinates Modular Lattice',
+      designer: 'Michael Anastassiades',
+      category: 'Suspension',
+      catKey: 'suspension',
+      rooms: ['living', 'dining', 'kitchen'],
+      roomLabel: 'Kitchen Island',
+      price: '$3,200',
+      numericPrice: 3200,
+      image: 'https://images.unsplash.com/photo-1606170033648-5d55a3edf314?auto=format&fit=crop&w=800&q=80',
+      desc: 'Architectural lattice inspired by mathematical cartesian grids. Anodized champagne aluminum batons with optical-grade silicone diffusers.',
+      defaultFinish: 'Anodized Champagne',
+      finishes: ['Anodized Champagne', 'Moon Grey']
+    },
+    gustave: {
+      id: 'gustave',
+      name: 'Gustave Battery Atmosphere Lamp',
+      designer: 'Vincent Van Duysen',
+      category: 'Portable',
+      catKey: 'portable',
+      rooms: ['dining', 'office', 'outdoor'],
+      roomLabel: 'Desk & Bookshelf',
+      price: '$420',
+      numericPrice: 420,
+      image: 'hero_promo2_1790619817886.jpg',
+      desc: 'Compact cordless luminaire developed specifically for restaurant and home dining tables, engineered with diffuse lenses that avoid upward glare.',
+      defaultFinish: 'Brushed Copper',
+      finishes: ['Brushed Copper', 'Lacquered White', 'Matte Anthracite']
+    },
+    invitro: {
+      id: 'invitro',
+      name: 'In Vitro Exterior Bollard',
+      designer: 'Philippe Starck',
+      category: 'Outdoor',
+      catKey: 'outdoor',
+      rooms: ['outdoor'],
+      roomLabel: 'Pathway & Courtyard',
+      price: '$1,150',
+      numericPrice: 1150,
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      desc: 'Architectural outdoor light that conceals its LED light source inside an aluminum ring at the top, leaving the borosilicate glass cylinder transparent and empty.',
+      defaultFinish: 'Forest Green',
+      finishes: ['Forest Green', 'Anodized Black', 'Pale Terracotta']
     }
-  });
+  };
+
+  var ALL_PRODUCTS = Object.values(productCatalog);
+
+  function findProduct(ident) {
+    if (!ident) return null;
+    if (productCatalog[ident]) return productCatalog[ident];
+    var low = String(ident).toLowerCase().trim();
+    for (var key in productCatalog) {
+      var p = productCatalog[key];
+      if (p.id.toLowerCase() === low || p.name.toLowerCase() === low || p.name.toLowerCase().includes(low)) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  // ============================================================
+  // SHOPPING CART STATE & SLIDE-IN DRAWER
+  // ============================================================
+  var CART_STORAGE_KEY = 'OnOff_Luxury_Cart_Items';
+  var cartBadge = document.getElementById('cartBadge');
+  var cartDrawer = document.getElementById('cartDrawer');
+  var cartDrawerBackdrop = document.getElementById('cartDrawerBackdrop');
+  var cartItemsContainer = document.getElementById('cartItemsContainer');
+  var cartDrawerCount = document.getElementById('cartDrawerCount');
+  var cartSubtotalVal = document.getElementById('cartSubtotalVal');
+  var cartTotalVal = document.getElementById('cartTotalVal');
+  var shippingTrackerText = document.getElementById('shippingTrackerText');
+  var shippingProgressFill = document.getElementById('shippingProgressFill');
+  var checkoutModal = document.getElementById('checkoutModal');
+  var checkoutSummaryBox = document.getElementById('checkoutSummaryBox');
+
+  function getCart() {
+    try {
+      var stored = localStorage.getItem(CART_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    } catch(e) {}
+    updateCartUI();
+  }
+
+  function showToast(msg) {
+    var toast = document.getElementById('onoffToast');
+    var toastMsg = document.getElementById('toastMsg');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('is-show');
+    setTimeout(function() { toast.classList.remove('is-show'); }, 2600);
+  }
+
+  function updateCartUI() {
+    var cart = getCart();
+    var totalQty = 0;
+    var subtotal = 0;
+
+    cart.forEach(function(item) {
+      totalQty += item.qty;
+      subtotal += item.price * item.qty;
+    });
+
+    if (cartBadge) {
+      cartBadge.textContent = totalQty;
+      cartBadge.style.display = totalQty > 0 ? 'flex' : 'none';
+    }
+    if (cartDrawerCount) {
+      cartDrawerCount.textContent = '(' + totalQty + ')';
+    }
+
+    var threshold = 1500;
+    if (shippingTrackerText && shippingProgressFill) {
+      if (subtotal >= threshold) {
+        shippingTrackerText.innerHTML = '&#10003; <strong>Complimentary Insured White-Glove Delivery Unlocked!</strong>';
+        shippingTrackerText.style.color = '#2a7a2a';
+        shippingProgressFill.style.width = '100%';
+        shippingProgressFill.style.background = '#2a7a2a';
+      } else {
+        var diff = threshold - subtotal;
+        shippingTrackerText.textContent = 'Add $' + diff.toLocaleString() + ' more for Complimentary White-Glove Delivery';
+        shippingTrackerText.style.color = '#7a5a29';
+        var pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+        shippingProgressFill.style.width = pct + '%';
+        shippingProgressFill.style.background = '#a07842';
+      }
+    }
+
+    var formattedSubtotal = '$' + subtotal.toLocaleString();
+    if (cartSubtotalVal) cartSubtotalVal.textContent = formattedSubtotal;
+    if (cartTotalVal) cartTotalVal.textContent = formattedSubtotal;
+
+    if (cartItemsContainer) {
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="cart-empty-view">' +
+          '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2">' +
+          '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/>' +
+          '</svg>' +
+          '<h4>Your Shopping Bag is Empty</h4>' +
+          '<p>Explore our curated architectural luminaires and compose your space.</p>' +
+          '<button class="cart-empty-btn" onclick="closeCartDrawer()">Explore Collection</button>' +
+          '</div>';
+      } else {
+        var html = '';
+        cart.forEach(function(item) {
+          var itemTotal = '$' + (item.price * item.qty).toLocaleString();
+          html += '<div class="cart-item" data-id="' + item.id + '">' +
+            '<img src="' + item.image + '" alt="' + item.name + '" class="cart-item-img">' +
+            '<div class="cart-item-info">' +
+              '<div class="cart-item-title">' + item.name + '</div>' +
+              '<div class="cart-item-designer">' + item.designer + '</div>' +
+              (item.finish ? '<span class="cart-item-finish">' + item.finish + '</span>' : '') +
+              '<div class="cart-item-row">' +
+                '<div class="cart-qty-ctrl">' +
+                  '<button class="cart-qty-btn" onclick="updateCartItemQty(\'' + item.id + '\', -1)" aria-label="Decrease">&minus;</button>' +
+                  '<span class="cart-qty-val">' + item.qty + '</span>' +
+                  '<button class="cart-qty-btn" onclick="updateCartItemQty(\'' + item.id + '\', 1)" aria-label="Increase">&#43;</button>' +
+                '</div>' +
+                '<span class="cart-item-price">' + itemTotal + '</span>' +
+                '<button class="cart-item-remove" onclick="removeCartItem(\'' + item.id + '\')" aria-label="Remove item">&times;</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        });
+        cartItemsContainer.innerHTML = html;
+      }
+    }
+  }
+
+  window.openCartDrawer = function() {
+    closeLiveSearch();
+    closeAllFlyouts();
+    if (cartDrawer) cartDrawer.classList.add('is-open');
+    if (cartDrawerBackdrop) cartDrawerBackdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeCartDrawer = function() {
+    if (cartDrawer) cartDrawer.classList.remove('is-open');
+    if (cartDrawerBackdrop) cartDrawerBackdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  window.toggleCartDrawer = function() {
+    if (cartDrawer && cartDrawer.classList.contains('is-open')) {
+      closeCartDrawer();
+    } else {
+      openCartDrawer();
+    }
+  };
+
+  window.addToCart = function(ident, btn, customFinish) {
+    var p = findProduct(ident);
+    if (!p) {
+      p = {
+        id: String(ident).toLowerCase().replace(/\s+/g, '-'),
+        name: String(ident),
+        designer: 'OnOff Studio',
+        numericPrice: 980,
+        image: 'hero_main_1790619748476.jpg',
+        defaultFinish: 'Architectural Finish'
+      };
+    }
+
+    var cart = getCart();
+    var existing = cart.find(function(item) { return item.id === p.id; });
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({
+        id: p.id,
+        name: p.name,
+        designer: p.designer,
+        price: p.numericPrice,
+        image: p.image,
+        finish: customFinish || p.defaultFinish || 'Standard',
+        qty: 1
+      });
+    }
+
+    saveCart(cart);
+
+    if (cartBadge) {
+      cartBadge.style.transform = 'scale(1.4)';
+      setTimeout(function() { cartBadge.style.transform = 'scale(1)'; }, 250);
+    }
+
+    if (btn) {
+      var origHTML = btn.innerHTML;
+      btn.classList.add('added');
+      btn.innerHTML = '&#10003; Added to Bag';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = origHTML;
+      }, 1500);
+    }
+
+    showToast('Added ' + p.name + ' to your Shopping Bag');
+    openCartDrawer();
+  };
+
+  window.updateCartItemQty = function(id, delta) {
+    var cart = getCart();
+    var item = cart.find(function(i) { return i.id === id; });
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      cart = cart.filter(function(i) { return i.id !== id; });
+    }
+    saveCart(cart);
+  };
+
+  window.removeCartItem = function(id) {
+    var cart = getCart().filter(function(i) { return i.id !== id; });
+    saveCart(cart);
+    showToast('Item removed from your Shopping Bag');
+  };
+
+  window.openCheckoutModal = function() {
+    var cart = getCart();
+    if (cart.length === 0) {
+      alert('Your shopping bag is empty. Please select a luminaire to reserve.');
+      return;
+    }
+    var subtotal = cart.reduce(function(acc, i) { return acc + (i.price * i.qty); }, 0);
+    var box = document.getElementById('checkoutSummaryBox');
+    if (box) {
+      var itemsHtml = cart.map(function(i) {
+        return '<div class="checkout-summary-row"><span>' + i.qty + 'x ' + i.name + ' (' + i.finish + ')</span><strong>$' + (i.price * i.qty).toLocaleString() + '</strong></div>';
+      }).join('');
+      box.innerHTML = itemsHtml + '<div class="checkout-summary-row" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ccc; font-weight: 700;"><span>Total Atelier Reservation:</span><strong>$' + subtotal.toLocaleString() + '</strong></div>';
+    }
+    if (checkoutModal) checkoutModal.classList.add('is-open');
+  };
+
+  window.closeCheckoutModal = function() {
+    if (checkoutModal) checkoutModal.classList.remove('is-open');
+  };
+
+  window.confirmOrderSuccess = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var orderId = 'ONOFF-2026-' + Math.floor(1000 + Math.random() * 9000);
+    var box = document.getElementById('checkoutSummaryBox');
+    if (box) {
+      box.innerHTML = '<div style="text-align: center; padding: 20px 10px; color: #2a7a2a;">' +
+        '<div style="font-size: 32px; margin-bottom: 8px;">🎉</div>' +
+        '<h4 style="font-size: 16px; margin-bottom: 6px;">Reservation Confirmed: #' + orderId + '</h4>' +
+        '<p style="color: #555; font-size: 12px; line-height: 1.5;">Your lighting architect has received your project order. Atelier confirmation and logistics schedule sent to your email.</p>' +
+        '</div>';
+    }
+    var submitBtn = document.querySelector('.btn-confirm-order');
+    if (submitBtn) {
+      submitBtn.textContent = 'Order Reserved Successfully ✓';
+      submitBtn.style.background = '#2a7a2a';
+    }
+    saveCart([]);
+    setTimeout(function() {
+      closeCheckoutModal();
+      closeCartDrawer();
+      if (submitBtn) {
+        submitBtn.textContent = 'Confirm Atelier Reservation';
+        submitBtn.style.background = '';
+      }
+    }, 2800);
+  };
+
+  // ============================================================
+  // REAL-TIME LIVE SEARCH ENGINE (FLOS LUXURY)
+  // ============================================================
+  var searchModal = document.getElementById('realtimeSearchModal');
+  var liveSearchInput = document.getElementById('liveSearchInput');
+  var searchClearBtn = document.getElementById('searchClearBtn');
+  var searchResultsContainer = document.getElementById('searchResultsContainer');
+  var searchResultCountText = document.getElementById('searchResultCountText');
+
+  window.openLiveSearch = function() {
+    closeCartDrawer();
+    closeAllFlyouts();
+    if (searchModal) {
+      searchModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (liveSearchInput) {
+        liveSearchInput.value = '';
+        liveSearchInput.focus();
+        executeLiveSearch('');
+      }
+    }
+  };
+
+  window.closeLiveSearch = function() {
+    if (searchModal) {
+      searchModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  window.clearLiveSearch = function() {
+    if (liveSearchInput) {
+      liveSearchInput.value = '';
+      liveSearchInput.focus();
+      executeLiveSearch('');
+    }
+  };
+
+  window.applySearchQuery = function(tag) {
+    if (liveSearchInput) {
+      liveSearchInput.value = tag;
+      liveSearchInput.focus();
+      executeLiveSearch(tag);
+    }
+  };
+
+  window.executeLiveSearch = function(query) {
+    var q = (query || '').toLowerCase().trim();
+    if (searchClearBtn) {
+      searchClearBtn.classList.toggle('is-visible', q.length > 0);
+    }
+
+    var matches = ALL_PRODUCTS.filter(function(p) {
+      if (!q) return true;
+      if (p.name.toLowerCase().includes(q)) return true;
+      if (p.designer.toLowerCase().includes(q)) return true;
+      if (p.category.toLowerCase().includes(q)) return true;
+      if (p.catKey.toLowerCase().includes(q)) return true;
+      if (p.roomLabel.toLowerCase().includes(q)) return true;
+      if (p.rooms.some(function(r) { return r.includes(q); })) return true;
+      if (p.desc.toLowerCase().includes(q)) return true;
+      if (p.finishes.some(function(f) { return f.toLowerCase().includes(q); })) return true;
+      return false;
+    });
+
+    if (searchResultCountText) {
+      if (!q) {
+        searchResultCountText.textContent = 'Showing all ' + matches.length + ' luminaires in collection';
+      } else {
+        searchResultCountText.textContent = matches.length + ' ' + (matches.length === 1 ? 'luminaire' : 'luminaires') + ' found for "' + query + '"';
+      }
+    }
+
+    if (searchResultsContainer) {
+      if (matches.length === 0) {
+        searchResultsContainer.innerHTML = '<div class="search-empty-state">' +
+          '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2">' +
+          '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>' +
+          '</svg>' +
+          '<h4>No luminaires match "' + query + '"</h4>' +
+          '<p>Try searching for iconic models like <em>Arco</em>, <em>Snoopy</em>, categories like <em>Suspension</em>, or rooms like <em>Living Room</em>.</p>' +
+          '</div>';
+      } else {
+        var html = '';
+        matches.forEach(function(p) {
+          html += '<article class="search-result-card">' +
+            '<div class="search-card-thumb">' +
+              '<span class="search-badge-cat">' + p.category + '</span>' +
+              '<img src="' + p.image + '" alt="' + p.name + '">' +
+            '</div>' +
+            '<div class="search-card-body">' +
+              '<span class="search-card-designer">' + p.designer + '</span>' +
+              '<h4 class="search-card-title">' + p.name + '</h4>' +
+              '<span class="search-card-room">&#9679; ' + p.roomLabel + '</span>' +
+              '<div class="search-card-bottom">' +
+                '<span class="search-card-price">' + p.price + '</span>' +
+                '<div class="search-card-actions">' +
+                  '<a href="Navbar.html?category=' + p.catKey + '" class="search-btn-view">View</a>' +
+                  '<button class="search-btn-add" onclick="addToCart(\'' + p.id + '\', this)">Add</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+        });
+        searchResultsContainer.innerHTML = html;
+      }
+    }
+  };
+
+  // Wire up Search Input event
+  if (liveSearchInput) {
+    liveSearchInput.addEventListener('input', function() {
+      executeLiveSearch(this.value);
+    });
+  }
+
+  // Header Search Button & Cart Button
+  var searchToggle = document.getElementById('searchToggle');
+  var cartToggleBtn = document.getElementById('cartToggleBtn');
+
+  if (searchToggle) {
+    searchToggle.addEventListener('click', openLiveSearch);
+  }
+  if (cartToggleBtn) {
+    cartToggleBtn.addEventListener('click', toggleCartDrawer);
+  }
+
+  // Modal Backdrop click to close search
+  if (searchModal) {
+    searchModal.addEventListener('click', function(e) {
+      if (e.target === searchModal) closeLiveSearch();
+    });
+  }
+
+  // Global Keyboard shortcuts
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      searchOverlay.classList.remove('is-open');
+      closeLiveSearch();
+      closeCartDrawer();
+      closeCheckoutModal();
+      closeAllFlyouts();
+    }
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      openLiveSearch();
     }
   });
+
+  // Initialize Cart on page load
+  updateCartUI();
 
   /* ---- CATEGORY CAROUSEL ---- */
   var track = document.getElementById('categoryTrack');

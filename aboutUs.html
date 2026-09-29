@@ -1,0 +1,4936 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us ONOFF Lighting co.</title>
+<meta name="description" content="At the origin of Flos there is a bright thought: the idea of creating objects suitable for changing the way of living from a light bulb. Discover 60+ years of lighting revolutions from 1960 to today. Official Flos archive: flos.com/en/us/about-us-heritage.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS & CSS VARIABLES
+   ============================================================ */
+:root {
+  --color-black: #0d0d0d;
+  --color-charcoal: #171717;
+  --color-white: #ffffff;
+  --color-off-white: #f7f6f2;
+  --color-gallery-bg: #f3f2ee;
+  --color-light-gray: #e8e6e1;
+  --color-mid-gray: #888888;
+  --color-dark-gray: #2b2b2b;
+  --color-text: #1a1a1a;
+  --color-text-light: #666666;
+  --color-border: #dedbd4;
+  --color-gold: #c4a97d;
+  --color-gold-dark: #9f8352;
+  --color-gold-light: #f7f1e6;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+
+  --header-height: 60px;
+  --topbar-height: 32px;
+  --total-header: calc(var(--topbar-height) + var(--header-height));
+  --page-padding: 80px;
+  --container-max: 1380px;
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.35s ease;
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.09);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-gallery-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: inherit;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  height: var(--topbar-height);
+  background: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1002;
+}
+.topbar a { color: var(--color-white); transition: opacity var(--transition-fast); }
+.topbar a:hover { opacity: 0.7; }
+.topbar-left { display: flex; align-items: center; gap: 6px; }
+.topbar-left svg { width: 14px; height: 14px; }
+.topbar-right { display: flex; align-items: center; gap: 4px; }
+.topbar-right svg { width: 12px; height: 12px; }
+
+/* ============================================================
+   HEADER & NAVBAR
+   ============================================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-light-gray);
+  transition: background var(--transition-medium), border-color var(--transition-medium);
+}
+
+.header-inner {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+}
+
+.header-left { display: flex; align-items: center; gap: 40px; }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  white-space: nowrap;
+}
+.logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--color-white);
+  padding: 1px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+.logo:hover .logo-img { transform: scale(1.08); }
+
+.main-nav { display: flex; align-items: center; gap: 28px; }
+
+.nav-item-dropdown {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  transition: opacity var(--transition-fast), color var(--transition-medium);
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.nav-link:hover { opacity: 0.6; }
+
+.nav-link.active {
+  font-weight: 600;
+  color: var(--color-black);
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-black);
+}
+
+.nav-link .nav-arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  vertical-align: middle;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.header.is-flyout-open .nav-link.has-dropdown .nav-arrow,
+.nav-item-dropdown:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.header-right { display: flex; align-items: center; gap: 18px; }
+.header-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  position: relative;
+}
+.header-icon:hover { opacity: 0.6; }
+.header-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-black);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -3px;
+  right: -6px;
+  background: var(--color-black);
+  color: #fff;
+  font-size: 9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: transform var(--transition-fast);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transition: transform var(--transition-medium), opacity var(--transition-medium);
+}
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ============================================================
+   MEGA MENU FLYOUTS (SHOP PRODUCTS & SHOP BY ROOM)
+   ============================================================ */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-light-gray);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.12), 0 10px 25px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+  z-index: 1050;
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow-y: auto;
+}
+
+.header:has(#shopProductsNavItem:hover) #shopProductsFlyout,
+#shopProductsFlyout:hover,
+#shopProductsFlyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.header:has(#shopByRoomNavItem:hover) #shopByRoomFlyout,
+#shopByRoomFlyout:hover,
+#shopByRoomFlyout.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.header:has(#shopProductsFlyout.is-open) #shopProductsNavItem .nav-arrow,
+#shopProductsNavItem:hover .nav-arrow,
+.header:has(#shopByRoomFlyout.is-open) #shopByRoomNavItem .nav-arrow,
+#shopByRoomNavItem:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.mega-menu-inner {
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 34px var(--page-padding) 38px;
+}
+
+.mega-menu-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-light-gray);
+  margin-bottom: 22px;
+}
+
+.mega-menu-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mega-menu-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--color-black);
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mega-menu-subtitle {
+  font-size: 13px;
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+.mega-menu-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  padding: 4px 0;
+  position: relative;
+  transition: opacity var(--transition-fast);
+}
+
+.mega-menu-all-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--color-black);
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.mega-menu-all-link:hover::after {
+  transform: scaleX(0.5);
+}
+
+.mega-menu-all-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.mega-menu-all-link:hover svg {
+  transform: translateX(4px);
+}
+
+.mega-menu-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.mega-pill {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--color-off-white);
+  color: var(--color-text);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.mega-pill:hover,
+.mega-pill.active {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.mega-menu-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.mega-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.mega-cat-item {
+  display: flex;
+  flex-direction: column;
+  background: #faf9f7;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+}
+
+.mega-cat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.mega-cat-img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f0ede8;
+}
+
+.mega-cat-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-medium);
+}
+
+.mega-cat-item:hover .mega-cat-img-box img {
+  transform: scale(1.06);
+}
+
+.mega-cat-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-black);
+}
+
+.mega-cat-tag.is-new {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.mega-cat-details {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mega-cat-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mega-cat-title svg {
+  width: 10px;
+  height: 10px;
+  transition: transform var(--transition-fast);
+}
+
+.mega-cat-item:hover .mega-cat-title svg {
+  transform: translateX(3px);
+}
+
+.mega-cat-subtitle {
+  font-size: 11px;
+  color: var(--color-text-light);
+  line-height: 1.35;
+}
+
+.mega-spotlight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 3px;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 380px;
+  padding: 24px;
+  color: var(--color-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mega-spotlight-img-box {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.mega-spotlight-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.mega-spotlight:hover .mega-spotlight-img-box img {
+  transform: scale(1.05);
+}
+
+.mega-spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.88) 100%);
+  z-index: 2;
+}
+
+.mega-spotlight-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+.mega-spotlight-eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d8c29d;
+  margin-bottom: 6px;
+}
+
+.mega-spotlight-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.mega-spotlight-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mega-spotlight-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  align-self: flex-start;
+  transition: all var(--transition-fast);
+}
+
+.mega-spotlight:hover .mega-spotlight-btn {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.mega-menu-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.mega-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.mega-footer-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-footer-icon svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text);
+}
+
+.mega-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+  z-index: 998;
+}
+
+.mega-backdrop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* ============================================================
+   MOBILE MENU DRAWER
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0; right: 0; bottom: 0;
+  background: var(--color-white);
+  z-index: 999;
+  padding: 30px 24px;
+  transform: translateX(-100%);
+  transition: transform var(--transition-medium);
+  overflow-y: auto;
+}
+
+.mobile-menu.is-open { transform: translateX(0); }
+
+.mobile-nav-link {
+  display: block;
+  font-size: 20px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-light-gray);
+  color: var(--color-text);
+}
+
+.mobile-sub-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mobile-sub-toggle svg { width: 12px; height: 12px; transition: transform var(--transition-fast); }
+.mobile-sub-toggle.is-open svg { transform: rotate(180deg); }
+
+.mobile-submenu { display: none; padding: 6px 0 12px 14px; }
+.mobile-submenu.is-open { display: block; }
+.mobile-sublink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--color-text-light);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.sub-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: var(--color-off-white);
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  :root { --page-padding: 24px; }
+  .main-nav { display: none; }
+  .menu-toggle { display: flex; }
+}
+
+/* ============================================================
+   BREADCRUMBS
+   ============================================================ */
+.breadcrumbs-bar {
+  background: #edece8;
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-light);
+}
+
+.breadcrumbs-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbs-inner a {
+  color: var(--color-text-light);
+}
+.breadcrumbs-inner a:hover {
+  color: var(--color-black);
+}
+.breadcrumbs-inner .sep {
+  color: #bbb;
+}
+.breadcrumbs-inner .current {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FLOS CINEMATIC VIDEO HERO SECTION
+   ============================================================ */
+.flos-hero-section {
+  position: relative;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.flos-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+  min-height: 520px;
+  max-height: 820px;
+  display: flex;
+  align-items: flex-end;
+  background: #000;
+}
+
+.flos-hero-video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.82;
+  filter: contrast(1.05) brightness(0.9);
+  transition: transform 1.2s ease, opacity 0.5s ease;
+}
+
+.flos-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+}
+
+.flos-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 64px;
+}
+
+.flos-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.flos-hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.flos-hero-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(38px, 5.2vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  max-width: 960px;
+  margin-bottom: 20px;
+}
+
+.flos-hero-heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: #efe8dc;
+}
+
+.flos-hero-desc {
+  font-size: clamp(14px, 1.2vw, 17px);
+  color: #d1cfc7;
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.flos-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Prominent Circular Flos Play Button */
+.flos-play-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  color: var(--color-white);
+  padding: 10px 24px 10px 14px;
+  border-radius: 40px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.flos-play-button:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.flos-play-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.flos-play-button:hover .flos-play-circle {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.flos-play-circle svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+
+.flos-official-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #bebdb6;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-radius: 4px;
+  transition: color var(--transition-fast);
+}
+
+.flos-official-jump:hover {
+  color: var(--color-white);
+}
+
+.flos-official-jump svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ============================================================
+   AWARDS MARQUEE TICKER
+   ============================================================ */
+.awards-marquee-section {
+  background: #121212;
+  border-bottom: 1px solid #242424;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 36px;
+  animation: marqueeScroll 34s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d6d3cb;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.marquee-item strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.marquee-badge {
+  background: rgba(196, 169, 125, 0.18);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.marquee-sep {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #444;
+}
+
+/* ============================================================
+   STICKY DECADE NAVIGATION STRIP (11 ERAS)
+   ============================================================ */
+.sticky-era-nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 950;
+  background: rgba(243, 242, 238, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.sticky-era-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sticky-era-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky-era-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-mid-gray);
+  flex-shrink: 0;
+  padding-right: 12px;
+  border-right: 1px solid var(--color-border);
+}
+
+.era-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.era-pill {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #555;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.07);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  font-weight: 500;
+}
+
+.era-pill:hover {
+  color: var(--color-black);
+  background: var(--color-white);
+  border-color: rgba(0,0,0,0.2);
+}
+
+.era-pill.active {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+  font-weight: 600;
+}
+
+/* ============================================================
+   FLOS EDITORIAL ERA CHAPTERS (AUTHENTIC ARCHIVAL LAYOUT)
+   ============================================================ */
+.flos-era-chapter {
+  padding: 96px 0;
+  border-bottom: 1px solid #e5e2da;
+  position: relative;
+}
+
+.flos-era-chapter:nth-child(even) {
+  background: #edece7;
+}
+
+/* Two-column editorial intro */
+.flos-intro-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: 48px;
+  margin-bottom: 56px;
+  align-items: baseline;
+}
+
+.flos-era-header {
+  position: relative;
+}
+
+.flos-era-year-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.flos-era-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 3.8vw, 52px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+}
+
+.flos-era-title span {
+  display: block;
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 300;
+  font-style: italic;
+  color: #555;
+  margin-top: 6px;
+}
+
+.flos-era-body-wrapper {
+  max-width: 780px;
+}
+
+.flos-era-body {
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.82;
+  color: #2b2b2b;
+  font-weight: 300;
+}
+
+.flos-era-curators {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.flos-curator-tag {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  background: rgba(0,0,0,0.04);
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ============================================================
+   SIGNATURE FLOS ASYMMETRICAL 3-IMAGE GRID
+   ============================================================ */
+.flos-image-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.flos-grid-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flos-grid-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.flos-figure {
+  margin: 0;
+  position: relative;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 2px;
+  border: 1px solid #dedbd4;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.flos-figure:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.flos-figure-img-wrap {
+  overflow: hidden;
+  position: relative;
+  background: #eae8e3;
+}
+
+.flos-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flos-figure:hover img {
+  transform: scale(1.03);
+}
+
+.flos-figure.item-tall .flos-figure-img-wrap {
+  aspect-ratio: 3/4;
+}
+
+.flos-figure.item-wide .flos-figure-img-wrap {
+  aspect-ratio: 4/3;
+}
+
+.flos-figure.item-square .flos-figure-img-wrap {
+  aspect-ratio: 1/1;
+}
+
+.flos-figure.item-push-down {
+  margin-top: 54px;
+}
+
+.flos-caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #666;
+  margin-top: 10px;
+  padding: 4px 2px 2px;
+  border-top: 1px solid #f0ede6;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+.flos-caption strong {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+/* In-Era Product Spotlight Card */
+.flos-era-product-bar {
+  margin-top: 48px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 24px 32px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.flos-product-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.flos-product-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 2px;
+  background: var(--color-off-white);
+  border: 1px solid #e0e0e0;
+}
+
+.flos-product-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.flos-product-sub {
+  font-size: 12px;
+  color: #777;
+}
+
+.flos-product-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flos-product-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.flos-btn-add {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.flos-btn-add:hover {
+  background: var(--color-gold-dark);
+}
+
+/* ============================================================
+   FULL-BLEED PANORAMIC / ARCHIVAL FEATURE BANNERS
+   ============================================================ */
+.flos-panoramic-feature {
+  width: 100%;
+  position: relative;
+  background: var(--color-black);
+  color: var(--color-white);
+  margin: 60px 0 30px;
+  overflow: hidden;
+}
+
+.flos-panoramic-img-wrap {
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.flos-panoramic-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.flos-panoramic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+.flos-panoramic-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 36px;
+  right: 36px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flos-panoramic-caption-title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.flos-panoramic-credit {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d1cfc7;
+}
+
+/* Full-width Single Feature Figure (e.g. 1972 Tovaglia Poster) */
+.flos-solo-figure {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 16px;
+  border-radius: 2px;
+  margin: 36px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.flos-solo-figure img {
+  width: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================================
+   HERITAGE STATS / NUMBERS BANNER
+   ============================================================ */
+.flos-stats-section {
+  background: #111111;
+  color: var(--color-white);
+  padding: 90px 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.flos-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  text-align: center;
+}
+
+.flos-stat-card {
+  padding: 24px;
+  border-right: 1px solid #262626;
+}
+
+.flos-stat-card:last-child {
+  border-right: none;
+}
+
+.flos-stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 5vw, 72px);
+  color: var(--color-gold);
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.flos-stat-label {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e0deda;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.flos-stat-sub {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ============================================================
+   OUTBOUND MONOGRAPH / ACTIVE FLOS ARCHIVE CARD
+   ============================================================ */
+.flos-archive-banner-section {
+  padding: 90px 0;
+  background: #e9e7e2;
+}
+
+.flos-archive-card {
+  background: #ffffff;
+  border: 1px solid #d4d0c7;
+  border-radius: 4px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.flos-archive-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.flos-archive-tag::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ebd59;
+}
+
+.flos-archive-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-black);
+  margin-bottom: 16px;
+}
+
+.flos-archive-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.flos-archive-link-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.flos-archive-primary-btn {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 14px 28px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition-fast);
+}
+
+.flos-archive-primary-btn:hover {
+  background: var(--color-gold-dark);
+}
+
+.flos-archive-url-chip {
+  font-family: monospace;
+  font-size: 12px;
+  color: #777;
+  background: #f4f3ef;
+  padding: 10px 14px;
+  border-radius: 3px;
+  border: 1px solid #e2dfd7;
+}
+
+.flos-archive-thumb-box {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.flos-archive-thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   VIP DESIGN CIRCLE NEWSLETTER SECTION
+   ============================================================ */
+.flos-newsletter-section {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.flos-newsletter-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.flos-newsletter-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.flos-newsletter-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.flos-newsletter-sub {
+  font-size: 14px;
+  color: #a8a69f;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.flos-form-box {
+  display: flex;
+  gap: 10px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.flos-form-input {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-white);
+  padding: 14px 18px;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.flos-form-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.flos-form-btn {
+  background: var(--color-gold);
+  color: var(--color-black);
+  padding: 14px 26px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.flos-form-btn:hover {
+  background: var(--color-white);
+}
+
+/* ============================================================
+   GLOBAL FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--color-black);
+  color: #8c8a84;
+  padding: 80px 0 40px;
+  border-top: 1px solid #222;
+  font-size: 13px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 4fr 2fr 2fr 2fr 2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--color-white);
+  margin-bottom: 14px;
+}
+
+.footer-brand-desc {
+  line-height: 1.7;
+  color: #9c9a92;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+}
+
+.footer-bottom {
+  border-top: 1px solid #1c1c1c;
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ============================================================
+   VIDEO MODAL LIGHTBOX
+   ============================================================ */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.video-modal.is-open {
+  display: flex;
+}
+
+.video-modal-container {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.video-modal-close:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.video-modal-frame {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+}
+
+/* ============================================================
+   REAL-TIME SEARCH MODAL (LUXURY FLOS STYLE)
+   ============================================================ */
+.search-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 44px 20px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.search-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-modal-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 960px;
+  max-height: 86vh;
+  border-radius: 4px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(-20px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-modal-backdrop.is-open .search-modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.search-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+}
+
+.search-input-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  color: #888888;
+  pointer-events: none;
+}
+
+.search-input-wrap input {
+  width: 100%;
+  padding: 14px 44px 14px 46px;
+  font-size: 15px;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fbfbfb;
+}
+
+.search-input-wrap input:focus {
+  border-color: #111111;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: #ebebeb;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #555555;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.search-clear-btn.is-visible {
+  opacity: 1;
+}
+
+.search-clear-btn:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.search-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #777777;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.search-modal-close:hover {
+  color: #111111;
+}
+
+.search-suggestions-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.suggestions-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888888;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.search-tag-chip {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.search-tag-chip:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.search-results-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 4px;
+  font-size: 12px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.search-hint-key kbd {
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-results-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.search-result-card {
+  border: 1px solid #ececec;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-color: #d0d0d0;
+}
+
+.search-card-thumb {
+  position: relative;
+  height: 170px;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.search-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.search-result-card:hover .search-card-thumb img {
+  transform: scale(1.05);
+}
+
+.search-badge-cat {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(17, 17, 17, 0.85);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.search-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.search-card-designer {
+  font-size: 11px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.search-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.search-card-room {
+  font-size: 11px;
+  color: #a07842;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.search-card-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.search-card-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.search-card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.search-btn-view {
+  background: #f2f2f2;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #333333;
+  transition: background 0.2s ease;
+}
+
+.search-btn-view:hover { background: #e0e0e0; }
+
+.search-btn-add {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-btn-add:hover { background: #333333; }
+.search-btn-add.added { background: #2a7a2a !important; }
+
+.search-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.search-empty-state svg {
+  margin-bottom: 12px;
+  color: #aaa;
+}
+
+.search-empty-state h4 {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   ACTIVE CART DRAWER (SLIDE-IN LUXURY)
+   ============================================================ */
+.cart-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.cart-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+  max-width: 92vw;
+  background: #ffffff;
+  z-index: 99995;
+  box-shadow: -12px 0 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+.cart-drawer-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-header-title h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #111111;
+  margin: 0;
+}
+
+.cart-header-count {
+  font-weight: 500;
+  color: #888888;
+}
+
+.cart-drawer-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #777777;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.2s ease;
+}
+
+.cart-drawer-close:hover {
+  color: #111111;
+}
+
+.cart-shipping-tracker {
+  background: #faf8f5;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f0eae1;
+}
+
+.shipping-tracker-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a5a29;
+  margin-bottom: 6px;
+}
+
+.shipping-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #e9e0d4;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.shipping-progress-fill {
+  height: 100%;
+  background: #a07842;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.cart-items-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+.cart-item-img {
+  width: 76px;
+  height: 76px;
+  background: #f4f4f4;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 2px;
+}
+
+.cart-item-designer {
+  font-size: 11px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.cart-item-finish {
+  display: inline-block;
+  font-size: 10px;
+  background: #f2f2f2;
+  padding: 2px 6px;
+  border-radius: 2px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.cart-qty-btn {
+  background: #f8f8f8;
+  border: none;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s ease;
+}
+
+.cart-qty-btn:hover { background: #e5e5e5; }
+
+.cart-qty-val {
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cart-item-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.cart-item-remove:hover { color: #d00; }
+
+.cart-empty-view {
+  text-align: center;
+  padding: 80px 20px;
+  color: #777;
+}
+
+.cart-empty-view svg {
+  margin-bottom: 16px;
+  color: #bbb;
+}
+
+.cart-empty-view h4 {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.cart-empty-view p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cart-empty-btn {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.cart-drawer-footer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid #ebebeb;
+  background: #fafafa;
+}
+
+.cart-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.cart-total-row {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  padding-top: 10px;
+  border-top: 1px dashed #dddddd;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.cart-tax-notice {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.cart-checkout-btn {
+  width: 100%;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 8px;
+}
+
+.cart-checkout-btn:hover { background: #333333; }
+
+.cart-continue-btn {
+  width: 100%;
+  background: none;
+  border: 1px solid #dddddd;
+  color: #444444;
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cart-continue-btn:hover {
+  background: #ffffff;
+  border-color: #111111;
+  color: #111111;
+}
+
+/* ============================================================
+   CHECKOUT RESERVATION MODAL
+   ============================================================ */
+.checkout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 100005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.checkout-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.checkout-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 4px;
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+}
+
+.checkout-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0f7f0;
+  color: #2a7a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.checkout-modal-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.checkout-modal-header p {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+.checkout-summary-box {
+  background: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.checkout-form-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.chk-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  outline: none;
+  font-family: inherit;
+}
+
+.chk-input:focus { border-color: #111; }
+
+.btn-confirm-order {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 6px;
+}
+
+.btn-confirm-order:hover { background: #333333; }
+
+/* Toast Notification */
+.onoff-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  background: #111111;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 100010;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.onoff-toast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 992px) {
+  .flos-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .flos-image-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .flos-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .flos-archive-card {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .flos-grid-right {
+    grid-template-columns: 1fr;
+  }
+  .flos-figure.item-push-down {
+    margin-top: 0;
+  }
+  .flos-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body class="flos-heritage-page">
+
+<!-- ============================================================
+     TOPBAR
+     ============================================================ -->
+<div class="topbar">
+  <a href="ONOFF.html" class="topbar-left">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM6 8l2-2 2 2M6 10l2 2 2-2"/>
+    </svg>
+    <span style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+  </a>
+  <a href="ONOFF.html#footer" class="topbar-right">
+    <span>Professional Space</span>
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M1 11L11 1M11 1H4M11 1v7"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ============================================================
+     HEADER & NAVBAR
+     ============================================================ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="ONOFF.html" class="logo" aria-label="OnOff Lighting & co.">
+        <img src="onoff-logo.png" alt="OnOff Lighting & co. Logo" class="logo-img">
+        <span class="logo-text">OnOff Lighting co.</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <div class="nav-item-dropdown" id="shopProductsNavItem">
+          <a href="Navbar.html" class="nav-link has-dropdown" id="shopProductsLink" aria-expanded="false" aria-haspopup="true" aria-controls="shopProductsFlyout">
+            <span>Shop Products</span>
+            <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M1 3l3 3 3-3"/>
+            </svg>
+          </a>
+        </div>
+        <a href="ONOFF.html#categoryTrack" class="nav-link">Last Call</a>
+        <a href="ONOFF.html#heroSection" class="nav-link">Iconic Pieces</a>
+        <div class="nav-item-dropdown" id="shopByRoomNavItem">
+          <a href="ShopByRoom.html" class="nav-link has-dropdown" id="shopByRoomLink" aria-expanded="false" aria-haspopup="true" aria-controls="shopByRoomFlyout">
+            <span>Shop by Room</span>
+            <svg class="nav-arrow" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M1 3l3 3 3-3"/>
+            </svg>
+          </a>
+        </div>
+        <a href="ONOFF.html#designerSection" class="nav-link">Designers</a>
+        <a href="ONOFF.html#cultureSection" class="nav-link">Stories</a>
+        <a href="aboutUs.html" class="nav-link active">About Us</a>
+        <a href="ONOFF.html#footer" class="nav-link">Trade Program</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="header-icon" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+      <button class="header-icon" aria-label="Store Locator">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </button>
+      <button class="header-icon" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </button>
+      <button class="header-icon" id="cartToggleBtn" aria-label="Cart" style="position: relative;">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count-badge" id="cartBadge" style="position: absolute; top: -3px; right: -6px; background: var(--color-black); color: #fff; font-size: 9px; width: 15px; height: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOS-STYLE SHOP PRODUCTS MEGA MENU FLYOUT
+       ============================================================ -->
+  <div class="mega-menu" id="shopProductsFlyout" role="region" aria-label="Shop Products Mega Menu">
+    <div class="mega-menu-inner">
+      <!-- Mega Menu Header -->
+      <div class="mega-menu-header">
+        <div class="mega-menu-heading">
+          <h2 class="mega-menu-title">Shop Products</h2>
+          <span class="mega-menu-subtitle">Architectural & decorative illumination designed by master creators</span>
+        </div>
+        <a href="Navbar.html" class="mega-menu-all-link">
+          <span>View All Lighting (148 Designs)</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="mega-menu-pills">
+        <a href="Navbar.html" class="mega-pill active">All Lighting</a>
+        <a href="Navbar.html?category=table" class="mega-pill">Table Lamps</a>
+        <a href="Navbar.html?category=floor" class="mega-pill">Floor Lamps</a>
+        <a href="Navbar.html?category=suspension" class="mega-pill">Suspension & Pendants</a>
+        <a href="Navbar.html?category=wall" class="mega-pill">Wall & Ceiling</a>
+        <a href="Navbar.html?category=portable" class="mega-pill">Portable & Cordless</a>
+        <a href="Navbar.html?category=outdoor" class="mega-pill">Outdoor</a>
+        <a href="Navbar.html?category=new" class="mega-pill">New Arrivals 2026</a>
+        <a href="Navbar.html?category=iconic" class="mega-pill">Iconic Families</a>
+      </div>
+
+      <!-- Mega Menu Main Body: Categories Grid + Editorial Spotlight -->
+      <div class="mega-menu-body">
+        <!-- 8 Category Cards Grid -->
+        <div class="mega-categories-grid">
+          <!-- 1. Table Lamps -->
+          <a href="Navbar.html?category=table" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=600&q=80" alt="Table Lamps" loading="lazy">
+              <span class="mega-cat-tag">36 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Table Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Desk, bedside & ambient reading</span>
+            </div>
+          </a>
+
+          <!-- 2. Floor Lamps -->
+          <a href="Navbar.html?category=floor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&q=80" alt="Floor Lamps" loading="lazy">
+              <span class="mega-cat-tag">24 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Floor Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Sculptural arches & direct uplights</span>
+            </div>
+          </a>
+
+          <!-- 3. Suspension & Pendants -->
+          <a href="Navbar.html?category=suspension" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80" alt="Suspension Lamps" loading="lazy">
+              <span class="mega-cat-tag">42 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Suspension Lamps
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Architectural chandeliers & pendants</span>
+            </div>
+          </a>
+
+          <!-- 4. Wall & Ceiling -->
+          <a href="Navbar.html?category=wall" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80" alt="Wall and Ceiling Lamps" loading="lazy">
+              <span class="mega-cat-tag">28 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Wall & Ceiling
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Minimalist sconces & flush mounts</span>
+            </div>
+          </a>
+
+          <!-- 5. Portable & Cordless -->
+          <a href="Navbar.html?category=portable" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=600&q=80" alt="Portable Lamps" loading="lazy">
+              <span class="mega-cat-tag">14 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Portable & Cordless
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Rechargeable indoor & outdoor light</span>
+            </div>
+          </a>
+
+          <!-- 6. Outdoor Architectural -->
+          <a href="Navbar.html?category=outdoor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80" alt="Outdoor Lighting" loading="lazy">
+              <span class="mega-cat-tag">18 Models</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Outdoor Lighting
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">IP65 bollards, sconces & garden posts</span>
+            </div>
+          </a>
+
+          <!-- 7. New Arrivals -->
+          <a href="Navbar.html?category=new" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1606170033648-5d55a3edf314?auto=format&fit=crop&w=600&q=80" alt="New Arrivals 2026" loading="lazy">
+              <span class="mega-cat-tag is-new">NEW 2026</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                New Arrivals
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Latest silhouettes & metallic editions</span>
+            </div>
+          </a>
+
+          <!-- 8. Iconic Families -->
+          <a href="Navbar.html?category=iconic" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="hero_promo1_1790619778622.jpg" alt="Iconic Design Families" loading="lazy">
+              <span class="mega-cat-tag">Masterpieces</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Iconic Families
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Forma, Arco, Snoopy & Coordinates</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Editorial Spotlight Feature Card -->
+        <a href="Navbar.html?category=suspension&highlight=forma" class="mega-spotlight">
+          <div class="mega-spotlight-img-box">
+            <img src="hero_main_1790619748476.jpg" alt="Forma Sculptural Pendant">
+            <div class="mega-spotlight-overlay"></div>
+          </div>
+          <div class="mega-spotlight-content">
+            <div>
+              <span class="mega-spotlight-eyebrow">SPOTLIGHT EDITORIAL</span>
+              <h3 class="mega-spotlight-title">Forma: A Sculpture of Pure Light</h3>
+              <p class="mega-spotlight-desc">Designed by Elena Vassari. A continuous interplay of hand-spun brass and diffuse opaline spheres for contemporary living.</p>
+            </div>
+            <div class="mega-spotlight-btn">
+              <span>Explore Collection</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mega Menu Footer Service Strip -->
+      <div class="mega-menu-footer">
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <strong>Complimentary Delivery & Returns</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">On all residential & commercial fixture orders</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>5-Year Precision Warranty</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Original factory warranty on all LED architectural modules</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <strong>Trade Concierge & BIM Support</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Photometric IES, Revit 3D files & architect support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOS-STYLE SHOP BY ROOM MEGA MENU FLYOUT
+       ============================================================ -->
+  <div class="mega-menu" id="shopByRoomFlyout" role="region" aria-label="Shop by Room Mega Menu">
+    <div class="mega-menu-inner">
+      <!-- Mega Menu Header -->
+      <div class="mega-menu-header">
+        <div class="mega-menu-heading">
+          <h2 class="mega-menu-title">Shop by Room</h2>
+          <span class="mega-menu-subtitle">Curated lighting compositions engineered for distinct spatial atmospheres</span>
+        </div>
+        <a href="ShopByRoom.html" class="mega-menu-all-link">
+          <span>Explore All 6 Spaces & Guides</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Quick Room Filter Pills -->
+      <div class="mega-menu-pills">
+        <a href="ShopByRoom.html" class="mega-pill active">All Environments</a>
+        <a href="ShopByRoom.html?room=living" class="mega-pill">Living Room</a>
+        <a href="ShopByRoom.html?room=dining" class="mega-pill">Dining Room</a>
+        <a href="ShopByRoom.html?room=bedroom" class="mega-pill">Bedroom</a>
+        <a href="ShopByRoom.html?room=kitchen" class="mega-pill">Kitchen & Island</a>
+        <a href="ShopByRoom.html?room=office" class="mega-pill">Home Office</a>
+        <a href="ShopByRoom.html?room=outdoor" class="mega-pill">Outdoor Terrace</a>
+      </div>
+
+      <!-- Main Body: 6 Room Cards Grid + Spatial Architecture Spotlight -->
+      <div class="mega-menu-body">
+        <div class="mega-categories-grid">
+          <!-- 1. Living Room -->
+          <a href="ShopByRoom.html?room=living" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living Room Lighting" loading="lazy">
+              <span class="mega-cat-tag">Ambient & Accent</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Living Room
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Arches, floor lamps & warm chandeliers</span>
+            </div>
+          </a>
+
+          <!-- 2. Dining Room -->
+          <a href="ShopByRoom.html?room=dining" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Dining Room Lighting" loading="lazy">
+              <span class="mega-cat-tag">Over-Table Focus</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Dining Room
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Suspension spheres, lattices & dimmers</span>
+            </div>
+          </a>
+
+          <!-- 3. Bedroom -->
+          <a href="ShopByRoom.html?room=bedroom" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&q=80" alt="Bedroom Lighting" loading="lazy">
+              <span class="mega-cat-tag">Rest & Reading</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Bedroom
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Bedside reading sconces & cozy low-Kelvin</span>
+            </div>
+          </a>
+
+          <!-- 4. Kitchen & Island -->
+          <a href="ShopByRoom.html?room=kitchen" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen & Island Lighting" loading="lazy">
+              <span class="mega-cat-tag">Functional & Crisp</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Kitchen & Island
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Linear pendants, track & high-CRI food prep</span>
+            </div>
+          </a>
+
+          <!-- 5. Workspace & Study -->
+          <a href="ShopByRoom.html?room=office" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80" alt="Home Office Lighting" loading="lazy">
+              <span class="mega-cat-tag">Anti-Glare Task</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Workspace & Study
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Precision desk lamps & balanced eye comfort</span>
+            </div>
+          </a>
+
+          <!-- 6. Outdoor Terrace -->
+          <a href="ShopByRoom.html?room=outdoor" class="mega-cat-item">
+            <div class="mega-cat-img-box">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Outdoor Terrace Lighting" loading="lazy">
+              <span class="mega-cat-tag">IP65 Exterior</span>
+            </div>
+            <div class="mega-cat-details">
+              <span class="mega-cat-title">
+                Outdoor & Patio
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+              <span class="mega-cat-subtitle">Architectural bollards & portable lanterns</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right: Editorial Spotlight Feature Card -->
+        <a href="ShopByRoom.html?room=living" class="mega-spotlight">
+          <div class="mega-spotlight-img-box">
+            <img src="hero_promo2_1790619817886.jpg" alt="Layered Lighting Masterclass">
+            <div class="mega-spotlight-overlay"></div>
+          </div>
+          <div class="mega-spotlight-content">
+            <div>
+              <span class="mega-spotlight-eyebrow">SPATIAL ARCHITECTURE</span>
+              <h3 class="mega-spotlight-title">The Art of Layered Lighting</h3>
+              <p class="mega-spotlight-desc">Discover how top interior architects combine ambient diffuse ceiling light, directional task lamps, and sculptural accent pieces to transform living spaces.</p>
+            </div>
+            <div class="mega-spotlight-btn">
+              <span>Explore Room Guides</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mega Menu Footer Service Strip -->
+      <div class="mega-menu-footer">
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <strong>Spatial Lighting Layouts</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Tailored room-by-room lumen & placement guides</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div>
+            <strong>Smart Scene Dimming</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Casambi, DALI & TRIAC circadian warmth setups</p>
+          </div>
+        </div>
+
+        <div class="mega-footer-item">
+          <div class="mega-footer-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <strong>Complimentary Lighting Concierge</strong>
+            <p style="font-size: 11px; color: var(--color-text-light); margin-top: 1px;">Send your floor plans for fixture recommendations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Backdrop overlay for mega menu -->
+<div class="mega-backdrop" id="megaBackdrop"></div>
+
+<!-- ============================================================
+     BREADCRUMBS
+     ============================================================ -->
+<div class="breadcrumbs-bar">
+  <div class="container">
+    <div class="breadcrumbs-inner">
+      <a href="ONOFF.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Flos Heritage (1960–Today)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CINEMATIC VIDEO HERO SECTION (EXACT FLOS STYLE)
+     ============================================================ -->
+<section class="flos-hero-section">
+  <div class="flos-hero-banner">
+    <img 
+      src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwce2fc3ca/about%20us/heritage/FLOS_Corporate%20video.png?sw=1600&bgcolor=FFFFFF00" 
+      alt="Flos Corporate Heritage Video Poster" 
+      class="flos-hero-video-poster"
+      id="heroPosterImg"
+    >
+    <div class="flos-hero-overlay"></div>
+
+    <div class="container flos-hero-content">
+      <div class="flos-hero-eyebrow">FLOS HERITAGE · ATELIER BRESCIA</div>
+      <h1 class="flos-hero-heading">
+        At the origin of Flos there is <em>a bright thought</em>
+      </h1>
+      <p class="flos-hero-desc">
+        The idea of giving birth to objects suitable to change the way of living, not only of Italians.
+        Sixty years of lighting revolutions where industrial discipline and artistic intuition combine into eternal form.
+      </p>
+
+      <div class="flos-hero-actions">
+        <button class="flos-play-button" onclick="openHeritageVideoModal()" aria-label="Play Corporate Video">
+          <span class="flos-play-circle">
+            <svg viewBox="0 0 18 22" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 11L1 20.5V1.5L17 11z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span>Watch Heritage Film (03:10)</span>
+        </button>
+
+        <a href="https://flos.com/en/us/about-us-heritage.html" target="_blank" rel="noopener noreferrer" class="flos-official-jump">
+          <span>Official Flos Archive ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AWARDS MARQUEE TICKER
+     ============================================================ -->
+<div class="awards-marquee-section" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-badge">MoMA</span> Permanent Design Collection, New York</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Arco (1962), Achille &amp; Pier Giacomo Castiglioni</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Parentesi (1979), Pio Manzù &amp; Achille Castiglioni</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Mayday (2001), Konstantin Grcic</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Coordinates (2020), Michael Anastassiades</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Red Dot</span> Best of the Best · Bellhop &amp; Arrangements</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">iF Gold Award</span> Glo-Ball Collection, Jasper Morrison</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">ADI Index</span> IC Lights S2, Michael Anastassiades</div>
+    <div class="marquee-sep"></div>
+    <!-- Duplicate track for seamless infinite scroll -->
+    <div class="marquee-item"><span class="marquee-badge">MoMA</span> Permanent Design Collection, New York</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Arco (1962), Achille &amp; Pier Giacomo Castiglioni</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Parentesi (1979), Pio Manzù &amp; Achille Castiglioni</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Mayday (2001), Konstantin Grcic</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Compasso d'Oro</span> Coordinates (2020), Michael Anastassiades</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">Red Dot</span> Best of the Best · Bellhop &amp; Arrangements</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">iF Gold Award</span> Glo-Ball Collection, Jasper Morrison</div>
+    <div class="marquee-sep"></div>
+    <div class="marquee-item"><span class="marquee-badge">ADI Index</span> IC Lights S2, Michael Anastassiades</div>
+    <div class="marquee-sep"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     STICKY DECADE JUMP NAVIGATION (ALL 11 FLOS ERAS)
+     ============================================================ -->
+<nav class="sticky-era-nav" id="stickyEraNav" aria-label="Decade Timeline Navigation">
+  <div class="container">
+    <div class="sticky-era-inner">
+      <span class="sticky-era-label">Eras</span>
+      <div class="era-pills" id="eraPillsContainer">
+        <a href="#era1960" class="era-pill active">1960 A Bright Idea</a>
+        <a href="#era1962" class="era-pill">1962 Becoming Flos</a>
+        <a href="#era1972" class="era-pill">1972 MoMA &amp; The World</a>
+        <a href="#era1985" class="era-pill">1985 Miss Sissi</a>
+        <a href="#era2000" class="era-pill">2000 New Millennium</a>
+        <a href="#era2005" class="era-pill">2005 Avant-Garde LED</a>
+        <a href="#era2010" class="era-pill">2010 Lighting Culture</a>
+        <a href="#era2018" class="era-pill">2018 Design Holding</a>
+        <a href="#era2020" class="era-pill">2020 Resilience</a>
+        <a href="#era2022" class="era-pill">2022 Digital &amp; Real</a>
+        <a href="#era2023" class="era-pill">2023 Research &amp; Future</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     THE 11 AUTHENTIC FLOS HERITAGE CHAPTERS
+     ============================================================ -->
+<main id="heritageMain">
+
+  <!-- ==================== ERA 1: 1960 ==================== -->
+  <section class="flos-era-chapter" id="era1960">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">Genesis &amp; Cocoon Era</span>
+          <h2 class="flos-era-title">1960 <br><span>A bright idea</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Achille Castiglioni</span>
+            <span class="flos-curator-tag">Pier Giacomo Castiglioni</span>
+            <span class="flos-curator-tag">Tobia Scarpa</span>
+            <span class="flos-curator-tag">Dino Gavina</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            At the origin of Flos there is a bright thought: the idea of giving birth to objects suitable to change the way of living, not only of Italians. So at the beginning of the 60s a certain Mr Gavina, with the small producer of Merano Eisenkeil, gets in the lead &mdash; after having created many new furniture (with the brothers Achille and Pier Giacomo Castiglioni, Afra and Tobia Scarpa and other masters of design) &mdash; that it is also time to create new lamps.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            So the Castiglioni and the Scarpa, with the cocoon technique, conceived in the USA and experimented by Eisenkeil, begin to make lamps such as the <em>Taraxacum</em> or the <em>Fantasma</em>. Many other lamps, beautiful and surprising, follow these first ones: so already from its prehistory Flos (<em>Fiore</em>, in Latin, name that Pier Giacomo Castiglioni chooses for her) finds himself reinventing the idea of artificial lighting.
+          </p>
+        </div>
+      </div>
+
+      <!-- Asymmetrical 3-Image Grid -->
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw5019bef8/about%20us/heritage/FLOS_About-us_Heritage_Pre-history_2.jpg?sw=800&bgcolor=FFFFFF" alt="Gianfranco Frattini and Dino Gavina" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1962</strong> Gianfranco Frattini and Dino Gavina
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dweb8d71aa/about%20us/heritage/Sergio%20Gandini%20with%20Afra%20and%20Tobia%20Scarpa.jpg?sw=800&bgcolor=FFFFFF" alt="Sergio Gandini with Afra and Tobia Scarpa" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Sergio Gandini</strong> with Afra and Tobia Scarpa
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-tall item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwfc791a1c/about%20us/heritage/FLOS_About-us_Heritage_Pre-history_1.jpg?sw=800&bgcolor=FFFFFF" alt="A. & P.G. Castiglioni with M. Breuer" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1962</strong> A. &amp; P.G. Castiglioni with Marcel Breuer
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 2: 1962 ==================== -->
+  <section class="flos-era-chapter" id="era1962">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Brescia Think Tank</span>
+          <h2 class="flos-era-title">1962 <br><span>Becoming Flos</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Sergio Gandini</span>
+            <span class="flos-curator-tag">Arco Luminaire</span>
+            <span class="flos-curator-tag">Taccia</span>
+            <span class="flos-curator-tag">Carrara Marble</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            How does an industry become a laboratory where the idea of "lamp" is revolutionized? For Sergio Gandini, who began to manage Flos in 1963, there is no contradiction between the business project and creative imagination: combined they will lead his company to success. The industrial infrastructure of Brescia is perfect for giving designers maximum freedom of action, be it the <em>Jucker</em> lamp by Tobia Scarpa &mdash; inspired by the Bauhaus &mdash; or the revolutionary <em>Arco dei Castiglioni</em>.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            First and for a long time unique among the Italian design industries, Flos bases its strategies on what today would be called a Think Tank. Gandini and his exclusive designers (Castiglioni, Scarpa) decide together products, communication, image... Together they trace the lines of their desires, the design lines that will lead to the creation of the most iconic lamps in the history of lighting.
+          </p>
+        </div>
+      </div>
+
+      <!-- Asymmetrical 3-Image Grid -->
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw34797ef7/about%20us/heritage/FLOS_About-us_Heritage_1962-65_6.jpg?sw=800&bgcolor=FFFFFF" alt="A. Castiglioni original drawing for Arco" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Achille Castiglioni</strong> original conceptual drawing for Arco (1962)
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw263aa18f/about%20us/heritage/Original%20shot%20for%20Taccia_Flos%20catalogue_%201962.jpg?sw=800&bgcolor=FFFFFF" alt="Original shot for Taccia Flos catalogue 1962" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1962</strong> Taccia by A. &amp; P.G. Castiglioni &mdash; original catalogue shot
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-wide item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw007653e4/about%20us/heritage/FLOS_About-us_Heritage_1962-65_4.jpg?sw=800&bgcolor=FFFFFF" alt="Flos 1962 Production Archive" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Brescia Archives</strong> 1962&ndash;1965 First production prototypes
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Era Product Spotlight -->
+      <div class="flos-era-product-bar">
+        <div class="flos-product-meta">
+          <img src="hero_main_1790619748476.jpg" alt="Arco Floor Lamp" class="flos-product-thumb">
+          <div>
+            <div class="flos-product-title">Arco Floor Lamp (1962)</div>
+            <div class="flos-product-sub">Achille &amp; Pier Giacomo Castiglioni · Carrara Marble &amp; Telescopic Stainless Steel</div>
+          </div>
+        </div>
+        <div class="flos-product-actions">
+          <div class="flos-product-price">$3,695.00</div>
+          <button class="flos-btn-add" onclick="addToCart('p1', this)">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 3: 1972 ==================== -->
+  <section class="flos-era-chapter" id="era1972">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">Global Consecration</span>
+          <h2 class="flos-era-title">1972 <br><span>From MoMA to the world</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">MoMA New York</span>
+            <span class="flos-curator-tag">Pio Manzù</span>
+            <span class="flos-curator-tag">Parentesi</span>
+            <span class="flos-curator-tag">Gino Sarfatti Arteluce</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            The 1972 exhibition &ldquo;Italy: The New Domestic Landscape&rdquo; at MoMA (Museum of Modern Art) in New York, the most important contemporary art museum in America, reveals to the world an unprecedented popular Italian phenomenon in industrial and artistic culture. Flos appears in the exhibition with many lamps, especially by the Castiglioni brothers: this is its international consecration as an avant-garde enterprise and since then the popularity and development of the company go hand in hand.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            Production (with new factories), the market (with the first foreign subsidiaries) and the catalogue of products, also with the acquisition of Gino Sarfatti’s Arteluce, grew between the 1970s and the 1980s. And it is yet another exhibition, the great solo exhibition of Achille Castiglioni that since 1984 has been held in museums of eight European capitals, from Vienna to Madrid, to confirm that the Flos experience is unique, unrepeatable and unpredictable in its continuous evolution.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Solo Figure: 1972 Tovaglia Poster -->
+      <figure class="flos-solo-figure">
+        <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw829e8dc0/about%20us/heritage/FLOS_About-us_Heritage_1971-75_5.jpg?sw=1600&bgcolor=FFFFFF" alt="1972 advertising page graphic design by Pino Tovaglia" loading="lazy">
+        <figcaption class="flos-caption">
+          <strong>1972</strong> Advertising campaign &mdash; Graphic design by Pino Tovaglia
+        </figcaption>
+      </figure>
+
+      <!-- Asymmetrical Grid -->
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwfe0085ba/about%20us/heritage/FLOS_About-us_Heritage_1971-75_2.jpg?sw=800&bgcolor=FFFFFF" alt="Opening of Flos store in Turin 1972" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1972</strong> Opening of the Flos store in Turin
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwf66a343e/about%20us/heritage/FLOS_About-us_Heritage_1971-75_1.jpg?sw=800&bgcolor=FFFFFF" alt="New Flos factory in Bovezzo Brescia" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>The new Flos factory</strong> in Bovezzo (Brescia)
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-tall item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwc26b23ce/about%20us/heritage/A.Castiglioni,-installation-at-the-MAK-museum_Vienna_1984.jpg?sw=800&bgcolor=FFFFFF" alt="Achille Castiglioni installation at MAK Vienna 1984" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1984</strong> Achille Castiglioni installation at the MAK museum in Vienna
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Era Product Spotlight -->
+      <div class="flos-era-product-bar">
+        <div class="flos-product-meta">
+          <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=200&auto=format&fit=crop&q=80" alt="Parentesi Suspension" class="flos-product-thumb">
+          <div>
+            <div class="flos-product-title">Parentesi Suspension Lamp (1971)</div>
+            <div class="flos-product-sub">Achille Castiglioni &amp; Pio Manzù · Compasso d'Oro 1979</div>
+          </div>
+        </div>
+        <div class="flos-product-actions">
+          <div class="flos-product-price">$595.00</div>
+          <button class="flos-btn-add" onclick="addToCart('p7', this)">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 4: 1985 ==================== -->
+  <section class="flos-era-chapter" id="era1985">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Postmodern Spark</span>
+          <h2 class="flos-era-title">1985 <br><span>Miss Sissi &amp; Mister Gandini</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Philippe Starck</span>
+            <span class="flos-curator-tag">Piero Gandini</span>
+            <span class="flos-curator-tag">Jean-Baptiste Mondino</span>
+            <span class="flos-curator-tag">Miss Sissi</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            Every great success comes from the courage of a bet. Already in the mid-80s Sergio Gandini meets the still young Philippe Starck and starts the production of his fairy-tale lamp <em>Ar&agrave;</em>. His son Piero develops it industrially: he sensed the genius of the most postmodern of the new designers and decided to mass-produce a plastic object for a hotel in New York: a sort of icon of the lamp, the lamp <em>Miss Sissi</em>.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            &ldquo;What everyone unconsciously thinks is a lamp,&rdquo; Starck will say, when it turns out to be a resounding success (8,000 pieces sold in the first 10 days, 100,000 in a year). It is the first of a long series of iconic best-sellers generated with Starck or Castiglioni, which with new technologies and materials update the Flos image and open up other avenues of research and development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwae27688c/about%20us/heritage/P.-Starck-with-Miss-Sissi_Ph-J.B.-Mondino.jpg?sw=800&bgcolor=FFFFFF" alt="Philippe Starck with Miss Sissi Photo by Jean-Baptiste Mondino" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Philippe Starck</strong> with Miss Sissi &mdash; Photography by Jean-Baptiste Mondino
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-tall item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw49488410/about%20us/heritage/A.%20Castiglioni%20with%20Brera_Ph%20J.B.%20Mondino.jpg?sw=800&bgcolor=FFFFFF" alt="Achille Castiglioni with Brera by J.B. Mondino" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Achille Castiglioni</strong> with Brera &mdash; Campaign by J.B. Mondino
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="hero_promo1_1790619778622.jpg" alt="Snoopy Desk Lamp Design Heritage" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Castiglioni Iconography</strong> The enduring playful spirit of Brescia design
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 5: 2000 ==================== -->
+  <section class="flos-era-chapter" id="era2000">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Global Talents</span>
+          <h2 class="flos-era-title">2000 <br><span>From one millennium to the next</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Marc Newson</span>
+            <span class="flos-curator-tag">Jasper Morrison</span>
+            <span class="flos-curator-tag">Konstantin Grcic</span>
+            <span class="flos-curator-tag">Bruno Le Moult</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            Even with Piero Gandini, Flos focuses on the harmony between iconic shapes, craftsmanship and technology for the series: but the decisive step for change is to accept that there are so many languages of the contemporary object, at least as the languages of the World.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            Thus Flos enlisted the most promising talents of international design: from the Australian &ldquo;futuribile&rdquo; Marc Newson, with the <em>Helice Lamp</em> (1993), the English prophet of minimalist design Jasper Morrison, up to Konstantin Grcic, the most refined and eclectic of German designers. International talents such as the advertising superstar Bruno Le Moult and the famous photographer Jean-Baptiste Mondino are also present in the communication. When founder Sergio Gandini passed away at the turn of the millennium, Flos was already well-equipped to face the challenges of globalization.
+          </p>
+        </div>
+      </div>
+
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw48ae45a5/about%20us/heritage/Bruno-Le-Moult_sketch-for-Flos-storefront2.jpg?sw=800&bgcolor=FFFFFF" alt="Sketch for Milan Flos Flagship store by Bruno Le Moult" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Bruno Le Moult</strong> Sketch for the Milan Flos Flagship Storefront
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dweb4d092b/about%20us/heritage/1994-Milano-Monforte-Window_Bruno-Le-Moult.jpg?sw=800&bgcolor=FFFFFF" alt="1994 Milano Monforte Flos store window setup by Bruno Le Moult" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>1994</strong> Milano Corso Monforte Flos flagship window setup
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-square">
+            <div class="flos-figure-img-wrap">
+              <img src="hero_promo2_1790619817886.jpg" alt="Jasper Morrison Glo-Ball Minimalist Luminaire" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Jasper Morrison</strong> Super-normal minimalism &mdash; Glo-Ball (1998)
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 6: 2005 ==================== -->
+  <section class="flos-era-chapter" id="era2005">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The LED &amp; Architecture Vanguard</span>
+          <h2 class="flos-era-title">2005 <br><span>Avant-garde &amp; the contemporary</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Antares Lighting</span>
+            <span class="flos-curator-tag">Jenny Holzer</span>
+            <span class="flos-curator-tag">Flos Architectural</span>
+            <span class="flos-curator-tag">Baccarat Crystals</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            Developing a new reality and identity for Flos also means the courage of radical choices. Facing the challenge of the invasion of LEDs on the planet Light is the first act of a second revolution in production, which begins early, in the early 2000s, when Flos acquires from Federico Martinez the Spanish company Antares, to become <strong>Flos Architectural</strong>, dedicated to professional lighting for large areas, public spaces and environments.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            Piero Gandini discovers and hires new designers, who imagine openings, additions, autonomous lighting elements. These new designs become architecture of light, with the use of the most advanced technology. But the same technology can generate real works of art, like the sculpture lamps <em>Ohhh!!!</em> and <em>Ahhh!!!</em> by Starck in crystal Baccarat, animated by phrases (Truisms) of the American artist Jenny Holzer that flow on LED: critical statements on the values of consumerism.
+          </p>
+        </div>
+      </div>
+
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwfb533c58/about%20us/heritage/Antares_Valencia_showroom_78.jpg?sw=800&bgcolor=FFFFFF" alt="Antares showroom in Valencia Spain" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Antares Showroom</strong> in Valencia (Spain) &mdash; Foundation of Flos Architectural
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-tall item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwa8fbfde4/about%20us/heritage/Antares_Valencia_assembling.jpg?sw=800&bgcolor=FFFFFF" alt="Product assembling in Antares factory" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Precision LED Assembly</strong> inside the Antares architectural laboratory
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 7: 2010 ==================== -->
+  <section class="flos-era-chapter" id="era2010">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Holistic Light Culture</span>
+          <h2 class="flos-era-title">2010 <br><span>For a new lighting culture</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Michael Anastassiades</span>
+            <span class="flos-curator-tag">Antonio Citterio</span>
+            <span class="flos-curator-tag">Paul Cocksedge</span>
+            <span class="flos-curator-tag">Euroluce Stand</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            If the future is already today, what is the artificial light of tomorrow? Flos advances in these years with the full awareness that there are and will be more and more types of lighting, radically new. They must be studied, developed and produced with an attitude of rupture towards the existing state of the art and, at the same time, following the rigorous design culture on which the company was founded.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            All artificial environments must be redefined: from the domestic realm (Decorative), to workplaces and museums (Architectural), and the spaces of nature &mdash; gardens, parks, landscapes &mdash; with <strong>Flos Outdoor</strong>. As Philippe Starck remarks: <em>&ldquo;There is no difference between artificial and natural light. It’s just a matter of transmission, ions and photons are always the same.&rdquo;</em> Here begins the luminous collaboration with Michael Anastassiades, whose IC Lights achieve instant cultural immortality.
+          </p>
+        </div>
+      </div>
+
+      <!-- Signature Panoramic Feature: All Designers at Euroluce 2011 by Fabio Lovino -->
+      <div class="flos-panoramic-feature">
+        <div class="flos-panoramic-img-wrap">
+          <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dweeb34efa/about%20us/heritage/Designers%20at%20Work_Euroluce%202011%C2%A9Fabio%20Lovino.jpg?sw=1600&bgcolor=FFFFFF" alt="Designers at Work Euroluce 2011 stand photo by Fabio Lovino" loading="lazy">
+        </div>
+        <div class="flos-panoramic-overlay"></div>
+        <div class="flos-panoramic-caption">
+          <div class="flos-panoramic-caption-title">Designers at Work · The Flos Family</div>
+          <div class="flos-panoramic-credit">Photo by Fabio Lovino for Euroluce 2011 Stand</div>
+        </div>
+      </div>
+
+      <!-- Asymmetrical 3-Image Grid -->
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw28c09ad9/about%20us/heritage/2009_Belvedere_design%20Antonio%20Citteri_ph.%20credits%20Germano%20Borrelli%20(2).jpg?sw=800&bgcolor=FFFFFF" alt="Belvedere design by Antonio Citterio photo Germano Borrelli" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Belvedere</strong> by Antonio Citterio &mdash; Outdoor architectural landscape
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-square">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw5bc4b8d7/about%20us/heritage/MicrosoftTeams-image.png?sw=800&bgcolor=FFFFFF00" alt="Life01 by Paul Cocksedge" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Life01</strong> by Paul Cocksedge
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-wide item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw3b4ca3a6/about%20us/heritage/2012_Light%20Photon%20(8)_design%20Philippe%20Starck.jpg?sw=800&bgcolor=FFFFFF" alt="2012 Light Photon design Philippe Starck" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Light Photon (2012)</strong> design by Philippe Starck
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Era Product Spotlight -->
+      <div class="flos-era-product-bar">
+        <div class="flos-product-meta">
+          <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=200&auto=format&fit=crop&q=80" alt="IC Lights Suspension" class="flos-product-thumb">
+          <div>
+            <div class="flos-product-title">IC Lights S2 Suspension (2014)</div>
+            <div class="flos-product-sub">Michael Anastassiades · Poised blown-glass sphere &amp; brushed brass</div>
+          </div>
+        </div>
+        <div class="flos-product-actions">
+          <div class="flos-product-price">$945.00</div>
+          <button class="flos-btn-add" onclick="addToCart('p3', this)">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 8: 2018 ==================== -->
+  <section class="flos-era-chapter" id="era2018">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">Design Holding &amp; Planet</span>
+          <h2 class="flos-era-title">2018 <br><span>Design &amp; sustainability</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Design Holding</span>
+            <span class="flos-curator-tag">B&amp;B Italia</span>
+            <span class="flos-curator-tag">Louis Poulsen</span>
+            <span class="flos-curator-tag">Flos for Planet</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            It is in the universal nature of Flos products the design DNA that leads it to assume a leadership function in the global lighting market. To support a catalogue of so many iconic products, even a historic industry must equip itself with more powerful tools, starting with financial ones.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            From the first alliance with Investindustrial in 2014, the global identity of Flos matures since 2018 with the foundation of <strong>Design Holding</strong>, where Investindustrial joins the Carlyle Group, creating a preeminent luxury hub that unites furniture (B&amp;B Italia, Maxalto, Azucena, Arclinea) with lighting (Flos, Louis Poulsen). Under the &ldquo;Flos for Planet&rdquo; commitment, circular sustainability, eco-materials and modular repairability become core industrial mandates.
+          </p>
+        </div>
+      </div>
+
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw248a3b82/about%20us/heritage/B&amp;B%20Italia_22.jpg?sw=800&bgcolor=FFFFFF" alt="Flos & B&B Italia Design Holding" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Flos &amp; B&amp;B Italia</strong> Synergy under the Design Holding global umbrella
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Flos for Planet Sustainable Manufacturing" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Flos for Planet</strong> Circular disassembly, zero-glue components &amp; recyclability
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 9: 2020 ==================== -->
+  <section class="flos-era-chapter" id="era2020">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Unbroken Thread</span>
+          <h2 class="flos-era-title">2020 <br><span>Resistance &amp; innovation</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Local Connections</span>
+            <span class="flos-curator-tag">Digital Conversations</span>
+            <span class="flos-curator-tag">Coordinates</span>
+            <span class="flos-curator-tag">Compasso d'Oro 2020</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            The global pandemic was not only a major blow to the world economy but also a test bed for Industry 4.0 on how to survive a substantial blockage of planetary physical communications, which until then could only seem science fiction.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            Even in this very difficult circumstance, Flos reacted with a strong push to the development of digital dialogue with its audience and partners, through original projects and contents for e-commerce as in the creation of tools and events that a wider audience &mdash; from professional architects to private collectors &mdash; could experience. Notable initiatives include <em>Local Connections</em> (decentralized product unveilings in global capitals) and <em>Digital Conversations</em> connecting design masters with international enthusiasts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Era Product Spotlight -->
+      <div class="flos-era-product-bar">
+        <div class="flos-product-meta">
+          <img src="hero_promo2_1790619817886.jpg" alt="Coordinates Suspension" class="flos-product-thumb">
+          <div>
+            <div class="flos-product-title">Coordinates Suspension System (2020)</div>
+            <div class="flos-product-sub">Michael Anastassiades · Intersecting anodized champagne light lattices · Compasso d'Oro 2020</div>
+          </div>
+        </div>
+        <div class="flos-product-actions">
+          <div class="flos-product-price">$2,850.00</div>
+          <button class="flos-btn-add" onclick="addToCart('p2', this)">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 10: 2022 ==================== -->
+  <section class="flos-era-chapter" id="era2022">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">60th Anniversary Retrospective</span>
+          <h2 class="flos-era-title">2022 <br><span>Digital experience, analogic reality</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">See the Stars Again</span>
+            <span class="flos-curator-tag">Fabbrica Orobia</span>
+            <span class="flos-curator-tag">Patricia Urquiola</span>
+            <span class="flos-curator-tag">Arco K Crystal</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            The mechanisms of mass communication which have become increasingly complex with the break-in of social media on the market make it strategic to focus strongly on their integration in digital customer experience strategies, marketing and e-commerce, in these years strongly strengthened by Flos.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            This process developed without sacrificing physical spaces calibrated instead to give maximum visibility to products: from monumental exhibitions such as <em>&ldquo;See the Stars Again&rdquo;</em> set up at the historic Orobia industrial plant in Milan for the 60th anniversary of the company, to Flos Design Spaces worldwide. From the limited edition <strong>Arco K</strong> with lead-free pure crystal base, to the <em>Almendra</em> organic suspension by Patricia Urquiola crafted from plant-derived sustainable polycarbonate, Flos products speak the language of deeply felt ecological responsibility.
+          </p>
+        </div>
+      </div>
+
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="hero_main_1790619748476.jpg" alt="See the Stars Again 60th Anniversary Exhibition" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>See the Stars Again</strong> Fabbrica Orobia, Milan &mdash; Flos 60th Anniversary installation
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80" alt="Arco K Limited Edition Crystal Base" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Arco K (2022)</strong> Limited 60th anniversary edition in lead-free optical crystal
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-tall item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="hero_promo1_1790619778622.jpg" alt="Almendra by Patricia Urquiola" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Almendra</strong> by Patricia Urquiola &mdash; Bioplastic organic lighting branches
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ERA 11: 2023 ==================== -->
+  <section class="flos-era-chapter" id="era2023">
+    <div class="container">
+      <div class="flos-intro-grid">
+        <div class="flos-era-header">
+          <span class="flos-era-year-badge">The Continuing Horizon</span>
+          <h2 class="flos-era-title">2023 <br><span>Research, design &amp; mass creativity</span></h2>
+          <div class="flos-era-curators">
+            <span class="flos-curator-tag">Barbara Corti CCO</span>
+            <span class="flos-curator-tag">Flos Stories</span>
+            <span class="flos-curator-tag">Flos Experiences</span>
+            <span class="flos-curator-tag">Euroluce 2023</span>
+          </div>
+        </div>
+        <div class="flos-era-body-wrapper">
+          <p class="flos-era-body">
+            For Flos, design research continues, transforms and is increasingly integrated with industrial programming and the creation of cultural values, both through products and media, from the press to social: then the decision to replace classic printed catalogues with the magazine <em>Flos Stories</em> and, for architectural contract clients, to publish the annual book <em>Flos Experiences</em>.
+          </p>
+          <p class="flos-era-body" style="margin-top: 14px;">
+            In line with this program is also the appointment of Barbara Corti as Chief Creative Officer, leading design strategy across all Flos divisions. The Creative &amp; Design Team provides full technical backing to realize ever more audacious, human-centric lighting solutions. Thus artificial light and its equipment become the great environment of a well-lived daily human life, preserved and renewed under the enduring guidance of the spirit of Flos design.
+          </p>
+        </div>
+      </div>
+
+      <div class="flos-image-grid">
+        <div class="flos-grid-left">
+          <figure class="flos-figure item-tall">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw1f241980/about%20us/heritage/EmptyName%2012.jpg?sw=800&bgcolor=FFFFFF" alt="Euroluce 2023 Architectural Light Lab" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Euroluce 2023</strong> Spatial installation by Flos Creative Team
+            </figcaption>
+          </figure>
+        </div>
+        <div class="flos-grid-right">
+          <figure class="flos-figure item-wide">
+            <div class="flos-figure-img-wrap">
+              <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwa0841d5a/about%20us/heritage/EmptyName%203.jpg?sw=800&bgcolor=FFFFFF" alt="Flos Stories Magazine & Editorial Direction" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>Flos Stories</strong> Culture, research, and contemporary living monograph
+            </figcaption>
+          </figure>
+          <figure class="flos-figure item-square item-push-down">
+            <div class="flos-figure-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80" alt="Future Luminaires Laboratory" loading="lazy">
+            </div>
+            <figcaption class="flos-caption">
+              <strong>ONOFF × Flos</strong> Tomorrow’s light is already here
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     HERITAGE STATS / NUMBERS BANNER
+     ============================================================ -->
+<section class="flos-stats-section">
+  <div class="container">
+    <div class="flos-stats-grid">
+      <div class="flos-stat-card">
+        <div class="flos-stat-number">60+</div>
+        <div class="flos-stat-label">Years of Innovation</div>
+        <div class="flos-stat-sub">From 1960 Merano cocoon to present</div>
+      </div>
+      <div class="flos-stat-card">
+        <div class="flos-stat-number">12</div>
+        <div class="flos-stat-label">Compasso d'Oro</div>
+        <div class="flos-stat-sub">Italy's highest industrial design honor</div>
+      </div>
+      <div class="flos-stat-card">
+        <div class="flos-stat-number">148+</div>
+        <div class="flos-stat-label">Museum Collections</div>
+        <div class="flos-stat-sub">MoMA, Triennale, Centre Pompidou</div>
+      </div>
+      <div class="flos-stat-card">
+        <div class="flos-stat-number">35+</div>
+        <div class="flos-stat-label">Master Designers</div>
+        <div class="flos-stat-sub">Castiglioni, Scarpa, Starck, Morrison</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACTIVE FLOS OFFICIAL ARCHIVE JUMP CARD
+     ============================================================ -->
+<section class="flos-archive-banner-section">
+  <div class="container">
+    <div class="flos-archive-card">
+      <div>
+        <div class="flos-archive-tag">Official Monograph Link</div>
+        <h3 class="flos-archive-title">Explore the Full Flos Global Archive</h3>
+        <p class="flos-archive-desc">
+          Delve into high-resolution historical documents, technical patents, and the complete corporate retrospective directly on the official Flos international monograph.
+        </p>
+        <div class="flos-archive-link-box">
+          <a href="https://flos.com/en/us/about-us-heritage.html" target="_blank" rel="noopener noreferrer" class="flos-archive-primary-btn">
+            <span>Open Flos.com Archive</span>
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="12" height="12">
+              <path d="M1 11L11 1M11 1H4M11 1v7"/>
+            </svg>
+          </a>
+          <span class="flos-archive-url-chip">flos.com/en/us/about-us-heritage.html</span>
+        </div>
+      </div>
+      <div class="flos-archive-thumb-box">
+        <img src="https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dwce2fc3ca/about%20us/heritage/FLOS_Corporate%20video.png?sw=800&bgcolor=FFFFFF00" alt="Flos Archive Monograph">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIP DESIGN CIRCLE NEWSLETTER
+     ============================================================ -->
+<section class="flos-newsletter-section">
+  <div class="container">
+    <div class="flos-newsletter-inner">
+      <div class="flos-newsletter-eyebrow">Atelier Society</div>
+      <h3 class="flos-newsletter-title">Join the ONOFF &amp; Flos Circle</h3>
+      <p class="flos-newsletter-sub">
+        Receive private invitations to Euroluce previews, limited Castiglioni editions, and monograph articles on contemporary spatial illumination.
+      </p>
+      <form class="flos-form-box" onsubmit="event.preventDefault(); alert('Thank you for joining the ONOFF × Flos Design Circle. Your invitation has been dispatched.');">
+        <input type="email" placeholder="Enter your architectural email" class="flos-form-input" required>
+        <button type="submit" class="flos-form-btn">Join Circle</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GLOBAL FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-title">ONOFF × FLOS</div>
+        <p class="footer-brand-desc">
+          Official architectural lighting partner. Preserving the heritage of Italian masters since 1962 while advancing the frontiers of circadian design.
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Collection</div>
+        <ul class="footer-links">
+          <li><a href="Navbar.html?category=floor">Floor Luminaires</a></li>
+          <li><a href="Navbar.html?category=table">Table &amp; Desk</a></li>
+          <li><a href="Navbar.html?category=suspension">Suspension &amp; Pendants</a></li>
+          <li><a href="Navbar.html?category=wall">Wall Sconces</a></li>
+          <li><a href="Navbar.html">Full Catalog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Heritage</div>
+        <ul class="footer-links">
+          <li><a href="#era1960">1960 Genesis</a></li>
+          <li><a href="#era1962">1962 Becoming Flos</a></li>
+          <li><a href="#era1972">1972 MoMA Exhibition</a></li>
+          <li><a href="#era1985">1985 Starck &amp; Miss Sissi</a></li>
+          <li><a href="https://flos.com/en/us/about-us-heritage.html" target="_blank" rel="noopener noreferrer">Flos Monograph ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Environments</div>
+        <ul class="footer-links">
+          <li><a href="ShopByRoom.html#living">Living Room</a></li>
+          <li><a href="ShopByRoom.html#dining">Dining Room</a></li>
+          <li><a href="ShopByRoom.html#bedroom">Master Suite</a></li>
+          <li><a href="ShopByRoom.html#office">Design Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Atelier Client Care</div>
+        <ul class="footer-links">
+          <li><a href="javascript:void(0)">Architectural Consultations</a></li>
+          <li><a href="javascript:void(0)">White-Glove Delivery</a></li>
+          <li><a href="javascript:void(0)">Warranty &amp; Restoration</a></li>
+          <li><a href="javascript:void(0)">Authenticity Certificates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 ONOFF × Flos Lighting. All rights reserved. Historical assets courtesy of Flos S.p.A. Archives.</div>
+      <div>Official Reference: <a href="https://flos.com/en/us/about-us-heritage.html" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">flos.com/en/us/about-us-heritage.html</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     CINEMATIC VIDEO MODAL
+     ============================================================ -->
+<div class="video-modal" id="heritageVideoModal" onclick="if(event.target === this) closeHeritageVideoModal()">
+  <div class="video-modal-container">
+    <button class="video-modal-close" onclick="closeHeritageVideoModal()" aria-label="Close Video">✕</button>
+    <iframe 
+      id="heritageVideoIframe"
+      class="video-modal-frame" 
+      src="" 
+      title="Flos Heritage Documentary" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<!-- ============================================================
+     REAL-TIME LIVE SEARCH MODAL (FLOS-STYLE)
+     ============================================================ -->
+<div class="search-modal-backdrop" id="realtimeSearchModal" role="dialog" aria-modal="true" aria-label="Real-time Luminaire Search">
+  <div class="search-modal-container">
+    <div class="search-modal-header">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="liveSearchInput" placeholder="Search luminaires, designers, finishes, rooms (e.g. Arco, Snoopy, Living Room, Flos)..." autocomplete="off" spellcheck="false">
+        <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search" onclick="clearLiveSearch()">&times;</button>
+      </div>
+      <button class="search-modal-close" id="searchModalCloseBtn" onclick="closeLiveSearch()" aria-label="Close Search">&times;</button>
+    </div>
+
+    <!-- Quick Query Suggestions / Trending Chips -->
+    <div class="search-suggestions-bar">
+      <span class="suggestions-label">Trending:</span>
+      <button class="search-tag-chip" onclick="applySearchQuery('Arco')">Arco Floor</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Pendant')">Suspension</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Living Room')">Living Room</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Table')">Table Lamps</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Cordless')">Portable</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Outdoor')">Outdoor</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Castiglioni')">Castiglioni</button>
+      <button class="search-tag-chip" onclick="applySearchQuery('Brass')">Brass</button>
+    </div>
+
+    <!-- Live Search Meta / Status -->
+    <div class="search-results-meta">
+      <span id="searchResultCountText">Showing all luminaires in collection</span>
+      <span class="search-hint-key">Press <kbd>ESC</kbd> to close</span>
+    </div>
+
+    <!-- Live Results Container -->
+    <div class="search-results-scrollable" id="searchResultsContainer">
+      <!-- Injected by JavaScript in real time -->
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ACTIVE SLIDE-OUT SHOPPING BAG DRAWER
+     ============================================================ -->
+<div class="cart-drawer-backdrop" id="cartDrawerBackdrop" onclick="closeCartDrawer()"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Your Shopping Bag">
+  <div class="cart-drawer-header">
+    <div class="cart-header-title">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <h3>Shopping Bag <span class="cart-header-count" id="cartDrawerCount">(0)</span></h3>
+    </div>
+    <button class="cart-drawer-close" id="cartDrawerCloseBtn" onclick="closeCartDrawer()" aria-label="Close Bag">&times;</button>
+  </div>
+
+  <!-- Free White-Glove Delivery Tier Tracker -->
+  <div class="cart-shipping-tracker">
+    <div class="shipping-tracker-text" id="shippingTrackerText">Add $1,500 for Complimentary White-Glove Delivery</div>
+    <div class="shipping-progress-bar">
+      <div class="shipping-progress-fill" id="shippingProgressFill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Cart Item List -->
+  <div class="cart-items-container" id="cartItemsContainer">
+    <!-- Injected dynamically by JavaScript -->
+  </div>
+
+  <!-- Cart Drawer Footer -->
+  <div class="cart-drawer-footer" id="cartDrawerFooter">
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <span class="cart-subtotal-val" id="cartSubtotalVal">$0</span>
+    </div>
+    <div class="cart-summary-row shipping-row">
+      <span>Insured White-Glove Delivery</span>
+      <span id="cartShippingVal">Complimentary over $1,500</span>
+    </div>
+    <div class="cart-summary-row cart-total-row">
+      <span>Total</span>
+      <span class="cart-total-val" id="cartTotalVal">$0</span>
+    </div>
+    <p class="cart-tax-notice">State sales tax & architectural white-glove installation calculated at final reservation.</p>
+
+    <button class="cart-checkout-btn" onclick="openCheckoutModal()">
+      Proceed to Reservation Checkout &rarr;
+    </button>
+    <button class="cart-continue-btn" onclick="closeCartDrawer()">
+      Continue Exploring Heritage
+    </button>
+  </div>
+</aside>
+
+<!-- ============================================================
+     CHECKOUT RESERVATION MODAL
+     ============================================================ -->
+<div class="checkout-modal-overlay" id="checkoutModal">
+  <div class="checkout-modal-card">
+    <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
+    <div class="checkout-badge-icon">✓</div>
+    <div class="checkout-modal-header">
+      <h3>Architectural Reservation</h3>
+      <p>Reserve this configuration directly with our Milan atelier. An OnOff lighting specialist will confirm serials & lead times.</p>
+    </div>
+    <div class="checkout-summary-box" id="checkoutSummaryBox"></div>
+    <form class="checkout-form-compact" onsubmit="confirmOrderSuccess(event)">
+      <div class="form-row-2">
+        <input type="text" placeholder="Your Full Name" class="chk-input" id="chkName" required value="Arch. Matteo Rossi">
+        <input type="email" placeholder="Email Address" class="chk-input" id="chkEmail" required value="m.rossi@studio-arch.it">
+      </div>
+      <input type="text" placeholder="Delivery Address / Project Site" class="chk-input" id="chkAddress" required value="Via Montenapoleone 18, Milan, Italy">
+      <button type="submit" class="btn-confirm-order">Confirm Atelier Reservation</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     NOTIFICATION TOAST
+     ============================================================ -->
+<div class="onoff-toast" id="onoffToast">
+  <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="#a07842" stroke-width="2"><polyline points="3 8 7 12 13 4"/></svg>
+  <span id="toastMsg">Added to your shopping bag</span>
+</div>
+
+<!-- ============================================================
+     MOBILE MENU DRAWER
+     ============================================================ -->
+<div class="mobile-menu" id="mobileMenu">
+  <!-- Shop Products Accordion -->
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-link mobile-sub-toggle" id="mobileShopToggle">
+      <span>Shop Products</span>
+      <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
+    </div>
+    <div class="mobile-submenu" id="mobileShopSubmenu">
+      <a href="Navbar.html" class="mobile-sublink" style="font-weight: 600; color: #000;">
+        <span>All Products Catalog</span>
+      </a>
+      <a href="Navbar.html?category=table" class="mobile-sublink"><span>Table Lamps</span></a>
+      <a href="Navbar.html?category=floor" class="mobile-sublink"><span>Floor Lamps</span></a>
+      <a href="Navbar.html?category=suspension" class="mobile-sublink"><span>Suspension</span></a>
+      <a href="Navbar.html?category=wall" class="mobile-sublink"><span>Wall & Ceiling</span></a>
+      <a href="Navbar.html?category=portable" class="mobile-sublink"><span>Portable</span></a>
+      <a href="Navbar.html?category=outdoor" class="mobile-sublink"><span>Outdoor</span></a>
+    </div>
+  </div>
+
+  <!-- Shop by Room Accordion -->
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-link mobile-sub-toggle" id="mobileRoomsToggle">
+      <span>Shop by Room</span>
+      <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
+    </div>
+    <div class="mobile-submenu" id="mobileRoomsSubmenu">
+      <a href="ShopByRoom.html" class="mobile-sublink" style="font-weight: 600; color: #000;">
+        <span>All Environments</span>
+      </a>
+      <a href="ShopByRoom.html?room=living" class="mobile-sublink"><span>Living Room</span></a>
+      <a href="ShopByRoom.html?room=dining" class="mobile-sublink"><span>Dining Room</span></a>
+      <a href="ShopByRoom.html?room=bedroom" class="mobile-sublink"><span>Bedroom Suite</span></a>
+      <a href="ShopByRoom.html?room=kitchen" class="mobile-sublink"><span>Kitchen & Island</span></a>
+      <a href="ShopByRoom.html?room=office" class="mobile-sublink"><span>Workspace & Studio</span></a>
+      <a href="ShopByRoom.html?room=outdoor" class="mobile-sublink"><span>Outdoor Terrace</span></a>
+    </div>
+  </div>
+
+  <a href="ONOFF.html#categoryTrack" class="mobile-nav-link">Last Call</a>
+  <a href="ONOFF.html#heroSection" class="mobile-nav-link">Iconic Pieces</a>
+  <a href="ONOFF.html#designerSection" class="mobile-nav-link">Designers</a>
+  <a href="ONOFF.html#cultureSection" class="mobile-nav-link">Stories</a>
+  <a href="aboutUs.html" class="mobile-nav-link active" style="color: var(--color-gold);">About Us</a>
+  <a href="ONOFF.html#footer" class="mobile-nav-link">Trade Program</a>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT APPLICATION ENGINE
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // Master Catalog Data
+  var productCatalog = {
+    forma: {
+      id: 'forma',
+      name: 'Forma Sculptural Pendant',
+      designer: 'Elena Vassari',
+      category: 'Suspension',
+      catKey: 'suspension',
+      price: '$1,280',
+      numericPrice: 1280,
+      image: 'hero_main_1790619748476.jpg',
+      defaultFinish: 'Brushed Bronze'
+    },
+    arco: {
+      id: 'arco',
+      name: 'Arco Floor Lamp',
+      designer: 'Achille & Pier Giacomo Castiglioni (1962)',
+      category: 'Floor',
+      catKey: 'floor',
+      price: '$3,695.00',
+      numericPrice: 3695,
+      image: 'hero_main_1790619748476.jpg',
+      defaultFinish: 'Carrara Marble'
+    },
+    coordinates: {
+      id: 'coordinates',
+      name: 'Coordinates Modular Lattice',
+      designer: 'Michael Anastassiades (2020)',
+      category: 'Suspension',
+      catKey: 'suspension',
+      price: '$2,850.00',
+      numericPrice: 2850,
+      image: 'hero_promo2_1790619817886.jpg',
+      defaultFinish: 'Anodized Champagne'
+    },
+    icfloor: {
+      id: 'icfloor',
+      name: 'IC Lights F1 Balanced Floor Lamp',
+      designer: 'Michael Anastassiades (2014)',
+      category: 'Floor',
+      catKey: 'floor',
+      price: '$1,420.00',
+      numericPrice: 1420,
+      image: 'hero_promo1_1790619778622.jpg',
+      defaultFinish: 'Brushed Brass'
+    },
+    icwall: {
+      id: 'icwall',
+      name: 'IC Lights Wall / Ceiling Sconce',
+      designer: 'Michael Anastassiades (2014)',
+      category: 'Wall',
+      catKey: 'wall',
+      price: '$945.00',
+      numericPrice: 945,
+      image: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&auto=format&fit=crop&q=80',
+      defaultFinish: 'Brushed Brass'
+    },
+    snoopy: {
+      id: 'snoopy',
+      name: 'Snoopy Desk Lamp',
+      designer: 'Achille & Pier Giacomo Castiglioni (1967)',
+      category: 'Table',
+      catKey: 'table',
+      price: '$1,495.00',
+      numericPrice: 1495,
+      image: 'hero_promo1_1790619778622.jpg',
+      defaultFinish: 'Gloss Black'
+    },
+    taccia: {
+      id: 'taccia',
+      name: 'Taccia Table Lamp',
+      designer: 'Achille & Pier Giacomo Castiglioni (1962)',
+      category: 'Table',
+      catKey: 'table',
+      price: '$1,895.00',
+      numericPrice: 1895,
+      image: 'https://flos.com/dw/image/v2/BFXX_PRD/on/demandware.static/-/Library-Sites-FLOS-contentlib-US/default/dw263aa18f/about%20us/heritage/Original%20shot%20for%20Taccia_Flos%20catalogue_%201962.jpg?sw=500&bgcolor=FFFFFF',
+      defaultFinish: 'Matte Black'
+    },
+    bellhop: {
+      id: 'bellhop',
+      name: 'Bellhop Portable',
+      designer: 'Edward Barber & Jay Osgerby (2018)',
+      category: 'Portable',
+      catKey: 'portable',
+      price: '$395.00',
+      numericPrice: 395,
+      image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop&q=80',
+      defaultFinish: 'Burnt Orange'
+    },
+    parentesi: {
+      id: 'parentesi',
+      name: 'Parentesi Suspension Lamp',
+      designer: 'Achille Castiglioni & Pio Manzù (1971)',
+      category: 'Suspension',
+      catKey: 'suspension',
+      price: '$595.00',
+      numericPrice: 595,
+      image: 'https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=500&auto=format&fit=crop&q=80',
+      defaultFinish: 'Nickel / Black'
+    },
+    globall: {
+      id: 'globall',
+      name: 'Glo-Ball Basic / Pendant',
+      designer: 'Jasper Morrison (1998)',
+      category: 'Table',
+      catKey: 'table',
+      price: '$795.00',
+      numericPrice: 795,
+      image: 'hero_promo2_1790619817886.jpg',
+      defaultFinish: 'Opal Matte White'
+    },
+    flint: {
+      id: 'flint',
+      name: 'Captain Flint Outdoor Floor Lamp',
+      designer: 'Michael Anastassiades',
+      category: 'Outdoor',
+      catKey: 'outdoor',
+      price: '$1,890.00',
+      numericPrice: 1890,
+      image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80',
+      defaultFinish: 'Brushed Brass / Lavastone'
+    },
+    gustave: {
+      id: 'gustave',
+      name: 'Gustave Battery Atmosphere Lamp',
+      designer: 'Vincent Van Duysen',
+      category: 'Portable',
+      catKey: 'portable',
+      price: '$420.00',
+      numericPrice: 420,
+      image: 'hero_promo2_1790619817886.jpg',
+      defaultFinish: 'Brushed Copper'
+    },
+    invitro: {
+      id: 'invitro',
+      name: 'In Vitro Exterior Bollard',
+      designer: 'Philippe Starck',
+      category: 'Outdoor',
+      catKey: 'outdoor',
+      price: '$1,150.00',
+      numericPrice: 1150,
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      defaultFinish: 'Forest Green'
+    }
+  };
+
+  var aliasMap = {
+    p1: 'arco',
+    p2: 'coordinates',
+    p3: 'icfloor',
+    p4: 'snoopy',
+    p5: 'taccia',
+    p6: 'bellhop',
+    p7: 'parentesi',
+    p8: 'globall'
+  };
+
+  var ALL_PRODUCTS = Object.values(productCatalog);
+
+  function findProduct(ident) {
+    if (!ident) return null;
+    if (aliasMap[ident]) ident = aliasMap[ident];
+    if (productCatalog[ident]) return productCatalog[ident];
+    var low = String(ident).toLowerCase().trim();
+    for (var key in productCatalog) {
+      var p = productCatalog[key];
+      if (p.id.toLowerCase() === low || p.name.toLowerCase() === low || p.name.toLowerCase().includes(low)) {
+        return p;
+      }
+    }
+    return null;
+  }
+
+  // ============================================================
+  // SHOPPING CART STATE & SLIDE-IN DRAWER
+  // ============================================================
+  var CART_STORAGE_KEY = 'OnOff_Luxury_Cart_Items';
+  var cartBadge = document.getElementById('cartBadge');
+  var cartDrawer = document.getElementById('cartDrawer');
+  var cartDrawerBackdrop = document.getElementById('cartDrawerBackdrop');
+  var cartItemsContainer = document.getElementById('cartItemsContainer');
+  var cartDrawerCount = document.getElementById('cartDrawerCount');
+  var cartSubtotalVal = document.getElementById('cartSubtotalVal');
+  var cartTotalVal = document.getElementById('cartTotalVal');
+  var shippingTrackerText = document.getElementById('shippingTrackerText');
+  var shippingProgressFill = document.getElementById('shippingProgressFill');
+  var checkoutModal = document.getElementById('checkoutModal');
+  var checkoutSummaryBox = document.getElementById('checkoutSummaryBox');
+
+  function getCart() {
+    try {
+      var stored = localStorage.getItem(CART_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    } catch(e) {}
+    updateCartUI();
+  }
+
+  function showToast(msg) {
+    var toast = document.getElementById('onoffToast');
+    var toastMsg = document.getElementById('toastMsg');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('is-show');
+    setTimeout(function() { toast.classList.remove('is-show'); }, 2600);
+  }
+
+  function updateCartUI() {
+    var cart = getCart();
+    var totalQty = 0;
+    var subtotal = 0;
+
+    cart.forEach(function(item) {
+      totalQty += item.qty;
+      subtotal += item.price * item.qty;
+    });
+
+    if (cartBadge) {
+      cartBadge.textContent = totalQty;
+      cartBadge.style.display = totalQty > 0 ? 'flex' : 'none';
+    }
+    if (cartDrawerCount) {
+      cartDrawerCount.textContent = '(' + totalQty + ')';
+    }
+
+    var threshold = 1500;
+    if (shippingTrackerText && shippingProgressFill) {
+      if (subtotal >= threshold) {
+        shippingTrackerText.innerHTML = '&#10003; <strong>Complimentary Insured White-Glove Delivery Unlocked!</strong>';
+        shippingTrackerText.style.color = '#2a7a2a';
+        shippingProgressFill.style.width = '100%';
+        shippingProgressFill.style.background = '#2a7a2a';
+      } else {
+        var diff = threshold - subtotal;
+        shippingTrackerText.textContent = 'Add $' + diff.toLocaleString() + ' more for Complimentary White-Glove Delivery';
+        shippingTrackerText.style.color = '#7a5a29';
+        var pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+        shippingProgressFill.style.width = pct + '%';
+        shippingProgressFill.style.background = '#a07842';
+      }
+    }
+
+    var formattedSubtotal = '$' + subtotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    if (cartSubtotalVal) cartSubtotalVal.textContent = formattedSubtotal;
+    if (cartTotalVal) cartTotalVal.textContent = formattedSubtotal;
+
+    if (cartItemsContainer) {
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<div class="cart-empty-view">' +
+          '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2">' +
+          '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/>' +
+          '</svg>' +
+          '<h4>Your Shopping Bag is Empty</h4>' +
+          '<p>Explore our heritage archives and select iconic luminaires.</p>' +
+          '<button class="cart-empty-btn" onclick="closeCartDrawer()">Explore Heritage</button>' +
+          '</div>';
+      } else {
+        var html = '';
+        cart.forEach(function(item) {
+          var itemTotal = '$' + (item.price * item.qty).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+          html += '<div class="cart-item" data-id="' + item.id + '">' +
+            '<img src="' + item.image + '" alt="' + item.name + '" class="cart-item-img">' +
+            '<div class="cart-item-info">' +
+              '<div class="cart-item-title">' + item.name + '</div>' +
+              '<div class="cart-item-designer">' + item.designer + '</div>' +
+              (item.finish ? '<span class="cart-item-finish">' + item.finish + '</span>' : '') +
+              '<div class="cart-item-row">' +
+                '<div class="cart-qty-ctrl">' +
+                  '<button class="cart-qty-btn" onclick="updateCartItemQty(\'' + item.id + '\', -1)" aria-label="Decrease">&minus;</button>' +
+                  '<span class="cart-qty-val">' + item.qty + '</span>' +
+                  '<button class="cart-qty-btn" onclick="updateCartItemQty(\'' + item.id + '\', 1)" aria-label="Increase">&#43;</button>' +
+                '</div>' +
+                '<span class="cart-item-price">' + itemTotal + '</span>' +
+                '<button class="cart-item-remove" onclick="removeCartItem(\'' + item.id + '\')" aria-label="Remove item">&times;</button>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        });
+        cartItemsContainer.innerHTML = html;
+      }
+    }
+  }
+
+  window.openCartDrawer = function() {
+    closeLiveSearch();
+    closeAllFlyouts();
+    if (cartDrawer) cartDrawer.classList.add('is-open');
+    if (cartDrawerBackdrop) cartDrawerBackdrop.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeCartDrawer = function() {
+    if (cartDrawer) cartDrawer.classList.remove('is-open');
+    if (cartDrawerBackdrop) cartDrawerBackdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  window.toggleCartDrawer = function() {
+    if (cartDrawer && cartDrawer.classList.contains('is-open')) {
+      closeCartDrawer();
+    } else {
+      openCartDrawer();
+    }
+  };
+
+  window.addToCart = function(ident, btn, customFinish) {
+    var p = findProduct(ident);
+    if (!p) {
+      p = {
+        id: String(ident).toLowerCase().replace(/\s+/g, '-'),
+        name: String(ident),
+        designer: 'OnOff Heritage Archive',
+        numericPrice: 980,
+        image: 'hero_main_1790619748476.jpg',
+        defaultFinish: 'Masterpiece Finish'
+      };
+    }
+
+    var cart = getCart();
+    var existing = cart.find(function(item) { return item.id === p.id; });
+
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({
+        id: p.id,
+        name: p.name,
+        designer: p.designer,
+        price: p.numericPrice,
+        image: p.image,
+        finish: customFinish || p.defaultFinish || 'Standard',
+        qty: 1
+      });
+    }
+
+    saveCart(cart);
+
+    if (cartBadge) {
+      cartBadge.style.transform = 'scale(1.4)';
+      setTimeout(function() { cartBadge.style.transform = 'scale(1)'; }, 250);
+    }
+
+    if (btn) {
+      var origHTML = btn.innerHTML;
+      btn.classList.add('added');
+      btn.innerHTML = '&#10003; Added to Bag';
+      setTimeout(function() {
+        btn.classList.remove('added');
+        btn.innerHTML = origHTML;
+      }, 1500);
+    }
+
+    showToast('Added ' + p.name + ' to your Shopping Bag');
+    openCartDrawer();
+  };
+
+  window.updateCartItemQty = function(id, delta) {
+    var cart = getCart();
+    var item = cart.find(function(i) { return i.id === id; });
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      cart = cart.filter(function(i) { return i.id !== id; });
+    }
+    saveCart(cart);
+  };
+
+  window.removeCartItem = function(id) {
+    var cart = getCart().filter(function(i) { return i.id !== id; });
+    saveCart(cart);
+    showToast('Item removed from your Shopping Bag');
+  };
+
+  window.openCheckoutModal = function() {
+    var cart = getCart();
+    if (cart.length === 0) {
+      alert('Your shopping bag is empty. Please select a luminaire to reserve.');
+      return;
+    }
+    var subtotal = cart.reduce(function(acc, i) { return acc + (i.price * i.qty); }, 0);
+    var box = document.getElementById('checkoutSummaryBox');
+    if (box) {
+      var itemsHtml = cart.map(function(i) {
+        return '<div class="checkout-summary-row"><span>' + i.qty + 'x ' + i.name + ' (' + i.finish + ')</span><strong>$' + (i.price * i.qty).toLocaleString() + '</strong></div>';
+      }).join('');
+      box.innerHTML = itemsHtml + '<div class="checkout-summary-row" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ccc; font-weight: 700;"><span>Total Atelier Reservation:</span><strong>$' + subtotal.toLocaleString() + '</strong></div>';
+    }
+    if (checkoutModal) checkoutModal.classList.add('is-open');
+  };
+
+  window.closeCheckoutModal = function() {
+    if (checkoutModal) checkoutModal.classList.remove('is-open');
+  };
+
+  window.confirmOrderSuccess = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var orderId = 'ONOFF-HERITAGE-' + Math.floor(1000 + Math.random() * 9000);
+    var box = document.getElementById('checkoutSummaryBox');
+    if (box) {
+      box.innerHTML = '<div style="text-align: center; padding: 20px 10px; color: #2a7a2a;">' +
+        '<div style="font-size: 32px; margin-bottom: 8px;">🎉</div>' +
+        '<h4 style="font-size: 16px; margin-bottom: 6px;">Reservation Confirmed: #' + orderId + '</h4>' +
+        '<p style="color: #555; font-size: 12px; line-height: 1.5;">Our architectural logistics atelier in Brescia has received your order. White-glove schedule sent to your email.</p>' +
+        '</div>';
+    }
+    var submitBtn = document.querySelector('.btn-confirm-order');
+    if (submitBtn) {
+      submitBtn.textContent = 'Order Reserved Successfully ✓';
+      submitBtn.style.background = '#2a7a2a';
+    }
+    saveCart([]); // Clear cart
+    setTimeout(function() {
+      closeCheckoutModal();
+      closeCartDrawer();
+      if (submitBtn) {
+        submitBtn.textContent = 'Confirm Atelier Reservation';
+        submitBtn.style.background = '';
+      }
+    }, 2800);
+  };
+
+  // ============================================================
+  // REAL-TIME LIVE SEARCH ENGINE (FLOS LUXURY)
+  // ============================================================
+  var searchModal = document.getElementById('realtimeSearchModal');
+  var liveSearchInput = document.getElementById('liveSearchInput');
+  var searchClearBtn = document.getElementById('searchClearBtn');
+  var searchResultsContainer = document.getElementById('searchResultsContainer');
+  var searchResultCountText = document.getElementById('searchResultCountText');
+
+  window.openLiveSearch = function() {
+    closeCartDrawer();
+    closeAllFlyouts();
+    if (searchModal) {
+      searchModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (liveSearchInput) {
+        liveSearchInput.value = '';
+        liveSearchInput.focus();
+        executeLiveSearch('');
+      }
+    }
+  };
+
+  window.closeLiveSearch = function() {
+    if (searchModal) {
+      searchModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  window.clearLiveSearch = function() {
+    if (liveSearchInput) {
+      liveSearchInput.value = '';
+      liveSearchInput.focus();
+      executeLiveSearch('');
+    }
+  };
+
+  window.applySearchQuery = function(tag) {
+    if (liveSearchInput) {
+      liveSearchInput.value = tag;
+      liveSearchInput.focus();
+      executeLiveSearch(tag);
+    }
+  };
+
+  window.executeLiveSearch = function(query) {
+    var q = (query || '').toLowerCase().trim();
+    if (searchClearBtn) {
+      searchClearBtn.classList.toggle('is-visible', q.length > 0);
+    }
+
+    var matches = ALL_PRODUCTS.filter(function(p) {
+      if (!q) return true;
+      if (p.name.toLowerCase().includes(q)) return true;
+      if (p.designer.toLowerCase().includes(q)) return true;
+      if (p.category.toLowerCase().includes(q)) return true;
+      if (p.catKey && p.catKey.toLowerCase().includes(q)) return true;
+      return false;
+    });
+
+    if (searchResultCountText) {
+      if (!q) {
+        searchResultCountText.textContent = 'Showing all ' + matches.length + ' luminaires in collection';
+      } else {
+        searchResultCountText.textContent = matches.length + ' ' + (matches.length === 1 ? 'luminaire' : 'luminaires') + ' found for "' + query + '"';
+      }
+    }
+
+    if (searchResultsContainer) {
+      if (matches.length === 0) {
+        searchResultsContainer.innerHTML = '<div class="search-empty-state">' +
+          '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2">' +
+          '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>' +
+          '</svg>' +
+          '<h4>No luminaires match "' + query + '"</h4>' +
+          '<p>Try searching for iconic models like <em>Arco</em>, <em>Snoopy</em>, or categories like <em>Suspension</em>.</p>' +
+          '</div>';
+      } else {
+        var html = '';
+        matches.forEach(function(p) {
+          html += '<article class="search-result-card">' +
+            '<div class="search-card-thumb">' +
+              '<span class="search-badge-cat">' + p.category + '</span>' +
+              '<img src="' + p.image + '" alt="' + p.name + '">' +
+            '</div>' +
+            '<div class="search-card-body">' +
+              '<span class="search-card-designer">' + p.designer + '</span>' +
+              '<h4 class="search-card-title">' + p.name + '</h4>' +
+              '<div class="search-card-bottom">' +
+                '<span class="search-card-price">' + p.price + '</span>' +
+                '<div class="search-card-actions">' +
+                  '<button class="search-btn-add" onclick="addToCart(\'' + p.id + '\', this)">Add to Bag</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+        });
+        searchResultsContainer.innerHTML = html;
+      }
+    }
+  };
+
+  // Wire up Search Input event
+  if (liveSearchInput) {
+    liveSearchInput.addEventListener('input', function() {
+      executeLiveSearch(this.value);
+    });
+  }
+
+  // Header Search Button & Cart Button
+  var searchToggle = document.getElementById('searchToggle') || document.getElementById('searchBtn');
+  var cartToggleBtn = document.getElementById('cartToggleBtn');
+
+  if (searchToggle) {
+    searchToggle.addEventListener('click', openLiveSearch);
+  }
+  if (cartToggleBtn) {
+    cartToggleBtn.addEventListener('click', toggleCartDrawer);
+  }
+
+  if (searchModal) {
+    searchModal.addEventListener('click', function(e) {
+      if (e.target === searchModal) closeLiveSearch();
+    });
+  }
+
+  // Header Mega Menu Flyouts
+  var header = document.getElementById('header');
+  var shopNavItem = document.getElementById('shopProductsNavItem');
+  var shopFlyout = document.getElementById('shopProductsFlyout');
+  var shopLink = document.getElementById('shopProductsLink');
+
+  var roomNavItem = document.getElementById('shopByRoomNavItem');
+  var roomFlyout = document.getElementById('shopByRoomFlyout');
+  var roomLink = document.getElementById('shopByRoomLink');
+
+  var megaBackdrop = document.getElementById('megaBackdrop');
+  var flyoutCloseTimer = null;
+
+  window.closeAllFlyouts = function() {
+    clearTimeout(flyoutCloseTimer);
+    if (shopFlyout) shopFlyout.classList.remove('is-open');
+    if (roomFlyout) roomFlyout.classList.remove('is-open');
+    if (shopLink) shopLink.setAttribute('aria-expanded', 'false');
+    if (roomLink) roomLink.setAttribute('aria-expanded', 'false');
+    if (header) header.classList.remove('is-flyout-open');
+    if (megaBackdrop) megaBackdrop.classList.remove('is-visible');
+  };
+
+  function openFlyoutMenu(flyoutToOpen, linkToExpand, otherFlyout, otherLink) {
+    clearTimeout(flyoutCloseTimer);
+    if (otherFlyout) otherFlyout.classList.remove('is-open');
+    if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
+    if (flyoutToOpen) flyoutToOpen.classList.add('is-open');
+    if (linkToExpand) linkToExpand.setAttribute('aria-expanded', 'true');
+    if (header) header.classList.add('is-flyout-open');
+    if (megaBackdrop) megaBackdrop.classList.add('is-visible');
+  }
+
+  function scheduleFlyoutClose() {
+    clearTimeout(flyoutCloseTimer);
+    flyoutCloseTimer = setTimeout(function() {
+      closeAllFlyouts();
+    }, 180);
+  }
+
+  if (shopNavItem && shopFlyout) {
+    shopNavItem.addEventListener('mouseenter', function() {
+      openFlyoutMenu(shopFlyout, shopLink, roomFlyout, roomLink);
+    });
+    shopNavItem.addEventListener('mouseleave', scheduleFlyoutClose);
+    shopFlyout.addEventListener('mouseenter', function() { clearTimeout(flyoutCloseTimer); });
+    shopFlyout.addEventListener('mouseleave', scheduleFlyoutClose);
+  }
+
+  if (roomNavItem && roomFlyout) {
+    roomNavItem.addEventListener('mouseenter', function() {
+      openFlyoutMenu(roomFlyout, roomLink, shopFlyout, shopLink);
+    });
+    roomNavItem.addEventListener('mouseleave', scheduleFlyoutClose);
+    roomFlyout.addEventListener('mouseenter', function() { clearTimeout(flyoutCloseTimer); });
+    roomFlyout.addEventListener('mouseleave', scheduleFlyoutClose);
+  }
+
+  if (megaBackdrop) {
+    megaBackdrop.addEventListener('click', closeAllFlyouts);
+  }
+
+  // Mobile menu toggle & accordions
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileShopToggle = document.getElementById('mobileShopToggle');
+  var mobileShopSubmenu = document.getElementById('mobileShopSubmenu');
+  var mobileRoomsToggle = document.getElementById('mobileRoomsToggle');
+  var mobileRoomsSubmenu = document.getElementById('mobileRoomsSubmenu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function() {
+      this.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+  }
+
+  window.closeMobileMenu = function() {
+    if (menuToggle && mobileMenu) {
+      menuToggle.classList.remove('is-open');
+      mobileMenu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  if (mobileShopToggle && mobileShopSubmenu) {
+    mobileShopToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('is-open');
+      mobileShopSubmenu.classList.toggle('is-open');
+    });
+  }
+
+  if (mobileRoomsToggle && mobileRoomsSubmenu) {
+    mobileRoomsToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('is-open');
+      mobileRoomsSubmenu.classList.toggle('is-open');
+    });
+  }
+
+  // Video Modal
+  window.openHeritageVideoModal = function() {
+    var modal = document.getElementById('heritageVideoModal');
+    var iframe = document.getElementById('heritageVideoIframe');
+    if (modal && iframe) {
+      iframe.src = 'https://player.vimeo.com/video/481605130?autoplay=1&title=0&byline=0&portrait=0';
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeHeritageVideoModal = function() {
+    var modal = document.getElementById('heritageVideoModal');
+    var iframe = document.getElementById('heritageVideoIframe');
+    if (modal) {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    if (iframe) {
+      iframe.src = '';
+    }
+  };
+
+  // Sticky Decade Timeline Scrollspy
+  window.initDecadeTimeline = function() {
+    var pills = document.querySelectorAll('.era-pill');
+    var sections = document.querySelectorAll('.flos-era-chapter');
+
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = pill.getAttribute('href');
+        var targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          var offset = 140; // Nav + pill bar offset
+          var top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          pills.forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+        }
+      });
+    });
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = '#' + entry.target.id;
+          pills.forEach(function(p) {
+            if (p.getAttribute('href') === id) {
+              p.classList.add('active');
+              p.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+              p.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-25% 0px -55% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function(s) { observer.observe(s); });
+  };
+
+  // Global Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeAllFlyouts();
+      closeLiveSearch();
+      closeHeritageVideoModal();
+      closeCheckoutModal();
+      closeCartDrawer();
+      closeMobileMenu();
+    }
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      openLiveSearch();
+    }
+  });
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    updateCartUI();
+    initDecadeTimeline();
+  });
+
+})();
+</script>
+
+</body>
+</html>
