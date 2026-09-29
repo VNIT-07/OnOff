@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page Not Found | OnOff Lighting & co.</title>
+<meta name="description" content="The page or lighting fixture you are seeking cannot be found. Return to OnOff Lighting & co. home or catalog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+// Smart client-side routing fallback for GitHub Pages
+(function() {
+  var path = window.location.pathname;
+  var segments = path.split('/').filter(Boolean);
+  var lastSegment = segments.length ? segments[segments.length - 1].toLowerCase() : '';
+  
+  // Route aliases mapping
+  var routes = {
+    'shop': 'Navbar.html',
+    'products': 'Navbar.html',
+    'catalog': 'Navbar.html',
+    'navbar': 'Navbar.html',
+    'navbar.html': 'Navbar.html',
+    'room': 'ShopByRoom.html',
+    'rooms': 'ShopByRoom.html',
+    'spaces': 'ShopByRoom.html',
+    'shopbyroom': 'ShopByRoom.html',
+    'shopbyroom.html': 'ShopByRoom.html',
+    'about': 'aboutUs.html',
+    'about-us': 'aboutUs.html',
+    'aboutus': 'aboutUs.html',
+    'heritage': 'aboutUs.html',
+    'aboutus.html': 'aboutUs.html',
+    'home': 'index.html',
+    'onoff': 'index.html',
+    'onoff.html': 'index.html'
+  };
+
+  if (routes[lastSegment]) {
+    var search = window.location.search || '';
+    var hash = window.location.hash || '';
+    // Redirect to the correct relative target
+    window.location.replace(routes[lastSegment] + search + hash);
+  }
+})();
+</script>
+
+<style>
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-off-white: #f5f3f0;
+  --color-light-gray: #e8e6e3;
+  --color-mid-gray: #999;
+  --color-dark-gray: #333;
+  --color-text: #1a1a1a;
+  --color-text-light: #666;
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --page-padding: 80px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 32px;
+  background: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  font-size: 11px;
+}
+.topbar a { color: #fff; text-decoration: none; }
+.topbar-left { display: flex; align-items: center; gap: 6px; }
+
+/* HEADER */
+.header {
+  height: 60px;
+  border-bottom: 1px solid var(--color-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+}
+.header-left { display: flex; align-items: center; gap: 40px; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+.main-nav { display: flex; align-items: center; gap: 24px; }
+.nav-link {
+  font-size: 13px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-link:hover { opacity: 0.6; }
+
+/* 404 CONTENT */
+.error-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 20%, #faf8f5 0%, #ffffff 70%);
+}
+.error-card {
+  max-width: 640px;
+  width: 100%;
+}
+.error-badge {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-mid-gray);
+  margin-bottom: 16px;
+}
+.error-code {
+  font-family: var(--font-serif);
+  font-size: clamp(72px, 12vw, 120px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin-bottom: 12px;
+}
+.error-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: var(--color-black);
+}
+.error-desc {
+  font-size: 15px;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.error-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-secondary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.quick-links {
+  border-top: 1px solid var(--color-light-gray);
+  padding-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.quick-link {
+  font-size: 13px;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.quick-link:hover {
+  color: var(--color-mid-gray);
+}
+
+/* FOOTER */
+.footer-simple {
+  border-top: 1px solid var(--color-light-gray);
+  padding: 24px var(--page-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  :root { --page-padding: 20px; }
+  .main-nav { display: none; }
+  .footer-simple { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="index.html" class="topbar-left">
+    <span>OnOff Lighting & co. Official Store</span>
+  </a>
+  <a href="index.html#footer">
+    <span>Contact Concierge &rarr;</span>
+  </a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <a href="index.html" class="logo" aria-label="OnOff Lighting & co.">
+      <img src="onoff-logo.png" alt="OnOff Lighting & co. Logo" class="logo-img">
+      <span>OnOff Lighting co.</span>
+    </a>
+    <nav class="main-nav">
+      <a href="Navbar.html" class="nav-link">Shop Products</a>
+      <a href="ShopByRoom.html" class="nav-link">Shop by Room</a>
+      <a href="index.html#designerSection" class="nav-link">Designers</a>
+      <a href="index.html#cultureSection" class="nav-link">Stories</a>
+      <a href="aboutUs.html" class="nav-link">About Us</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 404 CONTENT -->
+<main class="error-container">
+  <div class="error-card">
+    <span class="error-badge">Spatial Reference Error</span>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Illumination Not Found</h2>
+    <p class="error-desc">
+      The architectural design, room composition, or editorial page you are searching for does not exist or may have been relocated in our archive.
+    </p>
+    <div class="error-actions">
+      <a href="index.html" class="btn-primary">Return to Home</a>
+      <a href="Navbar.html" class="btn-secondary">Browse All Lighting</a>
+      <a href="ShopByRoom.html" class="btn-secondary">Explore Rooms</a>
+    </div>
+    <div class="quick-links">
+      <a href="Navbar.html?category=table" class="quick-link">Table Lamps</a>
+      <a href="Navbar.html?category=floor" class="quick-link">Floor Lamps</a>
+      <a href="Navbar.html?category=suspension" class="quick-link">Suspension</a>
+      <a href="aboutUs.html" class="quick-link">About Us Heritage</a>
+    </div>
+  </div>
+</main>
+
+<!-- SIMPLE FOOTER -->
+<footer class="footer-simple">
+  <span>&copy; 2026 OnOff Lighting & co. S.p.A. All rights reserved.</span>
+  <span>Italian Architectural & Decorative Lighting</span>
+</footer>
+
+</body>
+</html>
