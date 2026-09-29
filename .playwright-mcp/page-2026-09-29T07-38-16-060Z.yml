@@ -1,0 +1,324 @@
+- generic [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - link "OnOff Official Store" [ref=f5e3] [cursor=pointer]:
+      - /url: index.html
+    - link [ref=f5e7] [cursor=pointer]:
+      - /url: "#footer"
+  - banner [ref=f5e10]:
+    - generic [ref=f5e11]:
+      - link "OnOff Lighting & co." [ref=f5e13] [cursor=pointer]:
+        - /url: index.html
+        - img "OnOff Lighting & co. Logo" [ref=f5e14]
+        - generic [ref=f5e15]: OnOff Lighting co.
+      - generic [ref=f5e16]:
+        - button "Search" [ref=f5e17] [cursor=pointer]
+        - button "Cart" [ref=f5e21] [cursor=pointer]
+        - button "Menu" [ref=f5e25] [cursor=pointer]
+  - dialog "Your Shopping Bag" [ref=f5e29]:
+    - generic [ref=f5e30]:
+      - heading "Shopping Bag (0)" [level=3] [ref=f5e35]
+      - button "Close Bag" [ref=f5e36] [cursor=pointer]: ×
+    - generic [ref=f5e37]: Add $1,500 more for Complimentary White-Glove Delivery
+    - generic [ref=f5e41]:
+      - heading "Your Shopping Bag is Empty" [level=4] [ref=f5e45]
+      - paragraph [ref=f5e46]: Explore our curated architectural luminaires and compose your space.
+      - button "Explore Collection" [ref=f5e47] [cursor=pointer]
+    - generic [ref=f5e48]:
+      - generic [ref=f5e49]:
+        - generic [ref=f5e50]: Subtotal
+        - generic [ref=f5e51]: $0
+      - generic [ref=f5e52]:
+        - generic [ref=f5e53]: Insured White-Glove Delivery
+        - generic [ref=f5e54]: Complimentary over $1,500
+      - generic [ref=f5e55]:
+        - generic [ref=f5e56]: Total
+        - generic [ref=f5e57]: $0
+      - paragraph [ref=f5e58]: State sales tax & architectural white-glove installation calculated at final reservation.
+      - button "Proceed to Reservation Checkout →" [ref=f5e59] [cursor=pointer]
+      - button "Continue Exploring OnOff" [ref=f5e60] [cursor=pointer]
+  - generic:
+    - generic:
+      - button "×"
+      - generic: ✓
+      - generic:
+        - heading "Architectural Reservation" [level=3]
+        - paragraph: Reserve this configuration directly with our Milan atelier. An OnOff lighting specialist will confirm serials & lead times.
+      - generic:
+        - generic:
+          - textbox "Your Full Name": Arch. Matteo Rossi
+          - textbox "Email Address": m.rossi@studio-arch.it
+        - textbox "Delivery Address / Project Site": Via Montenapoleone 18, Milan, Italy
+        - button "Confirm Atelier Reservation"
+  - generic: Added to your shopping bag
+  - generic [ref=f5e61]:
+    - generic [ref=f5e62]: Shop Products
+    - link "Last Call" [ref=f5e66] [cursor=pointer]:
+      - /url: "#categoryTrack"
+    - generic [ref=f5e67]: Shop by Room
+    - link "Designers" [active] [ref=f5e71] [cursor=pointer]:
+      - /url: "#designerSection"
+    - link "Stories" [ref=f5e72] [cursor=pointer]:
+      - /url: "#cultureSection"
+    - link "About Us" [ref=f5e73] [cursor=pointer]:
+      - /url: aboutUs.html
+    - link "Trade Program" [ref=f5e74] [cursor=pointer]:
+      - /url: "#footer"
+    - generic [ref=f5e75]:
+      - link "Client Sign In & Account" [ref=f5e76] [cursor=pointer]:
+        - /url: "#footer"
+      - link "Find a Showroom & Retailers" [ref=f5e81] [cursor=pointer]:
+        - /url: "#footer"
+      - generic [ref=f5e86]: United States (USD $) • Complimentary Global Delivery
+  - generic [ref=f5e87]:
+    - img "Sculptural pendant light in an architectural interior" [ref=f5e88]
+    - generic [ref=f5e89]:
+      - paragraph [ref=f5e90]: By Elena Vassari
+      - 'heading "Forma: a sculpture of light" [level=1] [ref=f5e91]'
+      - link "Discover Now" [ref=f5e92] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f5e93]:
+    - generic [ref=f5e94]:
+      - heading "Light by category" [level=2] [ref=f5e95]
+      - paragraph [ref=f5e96]: "Table, floor, suspension, wall, outdoor: every design has its role to play. Each category is an invitation to explore timeless forms and new creations, all crafted to shape the way we live."
+    - generic [ref=f5e97]:
+      - generic [ref=f5e98]: 1 - 1 of 6
+      - button "Previous" [ref=f5e99] [cursor=pointer]
+      - button "Next" [ref=f5e102] [cursor=pointer]
+    - generic [ref=f5e106]:
+      - generic [ref=f5e107] [cursor=pointer]:
+        - paragraph [ref=f5e110]: Table
+        - paragraph [ref=f5e111]: Discover the collection
+      - generic [ref=f5e112] [cursor=pointer]:
+        - paragraph [ref=f5e115]: Pendant
+        - paragraph [ref=f5e116]: Discover the collection
+      - generic [ref=f5e117] [cursor=pointer]:
+        - paragraph [ref=f5e120]: Wall
+        - paragraph [ref=f5e121]: Discover the collection
+      - generic [ref=f5e122] [cursor=pointer]:
+        - paragraph [ref=f5e125]: Floor
+        - paragraph [ref=f5e126]: Discover the collection
+      - generic [ref=f5e127] [cursor=pointer]:
+        - paragraph [ref=f5e130]: Portable
+        - paragraph [ref=f5e131]: Discover the collection
+      - generic [ref=f5e132] [cursor=pointer]:
+        - paragraph [ref=f5e135]: Ceiling
+        - paragraph [ref=f5e136]: Discover the collection
+  - generic [ref=f5e137]:
+    - paragraph [ref=f5e138]: The World of OnOff Lighting & co.
+    - paragraph [ref=f5e139]: Light is not simply illumination — it is atmosphere, emotion, the warmth that draws people together, the halo that gathers life around the table, the quiet joy of a design you love to live with. Every lamp has a story. Find the one that feels like yours.
+  - generic [ref=f5e140]:
+    - img "Portable table lamp glowing warmly" [ref=f5e141]
+    - generic [ref=f5e142]:
+      - paragraph [ref=f5e143]: 2026 Edition
+      - 'heading "Solara Unplugged: light in motion" [level=2] [ref=f5e144]'
+      - link "Discover Now" [ref=f5e145] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f5e146]:
+    - img "Minimalist floor lamp in a serene bedroom" [ref=f5e147]
+    - generic [ref=f5e148]:
+      - paragraph [ref=f5e149]: A Masterpiece Reimagined
+      - heading "Kenzo by Marco Bellini" [level=2] [ref=f5e150]
+      - link "Discover More" [ref=f5e151] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f5e152]:
+    - generic [ref=f5e153]:
+      - paragraph [ref=f5e154]: CURATED SPATIAL COLLECTIONS
+      - 'heading "Shop by Room: Explore the OnOff Home" [level=2] [ref=f5e155]'
+      - paragraph [ref=f5e156]: The right light sculpts architecture, creates visual hierarchy, and sets emotional tone. Browse lighting compositions engineered for each distinct interior and exterior environment.
+    - generic [ref=f5e157]:
+      - button "All Spaces (6)" [ref=f5e158] [cursor=pointer]
+      - button "Living Room" [ref=f5e159] [cursor=pointer]
+      - button "Dining Room" [ref=f5e160] [cursor=pointer]
+      - button "Bedroom" [ref=f5e161] [cursor=pointer]
+      - button "Kitchen & Island" [ref=f5e162] [cursor=pointer]
+      - button "Workspace" [ref=f5e163] [cursor=pointer]
+      - button "Outdoor Terrace" [ref=f5e164] [cursor=pointer]
+    - generic [ref=f5e165]:
+      - generic [ref=f5e169] [cursor=pointer]:
+        - generic [ref=f5e170]: Ambient & Accent Focal Points
+        - heading "Living Room" [level=3] [ref=f5e171]
+        - paragraph [ref=f5e172]: Layered illumination combining dramatic sweeping arches, dimmable suspensions, and soft indirect perimeter wash for conversational comfort.
+        - generic [ref=f5e173]:
+          - generic [ref=f5e174]: Arco Floor
+          - generic [ref=f5e175]: Forma Pendant
+          - generic [ref=f5e176]: Snoopy Table
+        - link "Shop Living Room Lights" [ref=f5e177]:
+          - /url: ShopByRoom.html?room=living
+      - generic [ref=f5e184] [cursor=pointer]:
+        - generic [ref=f5e185]: Over-Table Focal Lighting
+        - heading "Dining Room" [level=3] [ref=f5e186]
+        - paragraph [ref=f5e187]: Low-hanging opaline glass pendants and architectural chandeliers that frame gatherings without causing direct glare across table lines.
+        - generic [ref=f5e188]:
+          - generic [ref=f5e189]: Glo-Ball Sphere
+          - generic [ref=f5e190]: Coordinates Lattice
+          - generic [ref=f5e191]: Taccia Reflector
+        - link "Shop Dining Room Lights" [ref=f5e192]:
+          - /url: ShopByRoom.html?room=dining
+      - generic [ref=f5e199] [cursor=pointer]:
+        - generic [ref=f5e200]: Circadian Rest & Night Reading
+        - heading "Bedroom" [level=3] [ref=f5e201]
+        - paragraph [ref=f5e202]: Warm 2200K–2700K low-intensity lighting with touch dimmers and directional micro-beams to nurture rest and comfortable evening reading.
+        - generic [ref=f5e203]:
+          - generic [ref=f5e204]: IC Lights Wall
+          - generic [ref=f5e205]: Bellhop Cordless
+          - generic [ref=f5e206]: Gustave Battery
+        - link "Shop Bedroom Lights" [ref=f5e207]:
+          - /url: ShopByRoom.html?room=bedroom
+      - generic [ref=f5e214] [cursor=pointer]:
+        - generic [ref=f5e215]: High-CRI Architectural Precision
+        - heading "Kitchen & Island" [level=3] [ref=f5e216]
+        - paragraph [ref=f5e217]: High-lumen culinary task lighting over countertops and islands, engineered with 95+ CRI true color rendering and modular linear tracks.
+        - generic [ref=f5e218]:
+          - generic [ref=f5e219]: Coordinates Track
+          - generic [ref=f5e220]: Forma Pendant
+          - generic [ref=f5e221]: IC Lights Sconce
+        - link "Shop Kitchen Lights" [ref=f5e222]:
+          - /url: ShopByRoom.html?room=kitchen
+      - generic [ref=f5e229] [cursor=pointer]:
+        - generic [ref=f5e230]: Anti-Glare Ergonomic Task Light
+        - heading "Workspace & Study" [level=3] [ref=f5e231]
+        - paragraph [ref=f5e232]: Flicker-free desk lamps and adjustable table fixtures engineered to eliminate eye fatigue and shadows during prolonged creative focus.
+        - generic [ref=f5e233]:
+          - generic [ref=f5e234]: Snoopy Table
+          - generic [ref=f5e235]: Gustave Battery
+          - generic [ref=f5e236]: Taccia Reflector
+        - link "Shop Workspace Lights" [ref=f5e237]:
+          - /url: ShopByRoom.html?room=office
+      - generic [ref=f5e244] [cursor=pointer]:
+        - generic [ref=f5e245]: IP65 Weatherproof Atmosphere
+        - heading "Outdoor & Terrace" [level=3] [ref=f5e246]
+        - paragraph [ref=f5e247]: Extend indoor warmth outdoors with IP65-sealed stone bollards, weather-resistant path lights, and portable battery lanterns for twilight dining.
+        - generic [ref=f5e248]:
+          - generic [ref=f5e249]: Captain Flint Outdoor
+          - generic [ref=f5e250]: In Vitro Bollard
+          - generic [ref=f5e251]: Bellhop Cordless
+        - link "Shop Outdoor Lights" [ref=f5e252]:
+          - /url: ShopByRoom.html?room=outdoor
+  - generic [ref=f5e256]:
+    - paragraph [ref=f5e257]: A Culture of Light
+    - paragraph [ref=f5e258]: Since 1991, OnOff Lighting & co. has partnered with the most innovative architects and designers to create lighting that transcends function. Our lamps are not mere objects — they are expressions of a philosophy where technology meets poetry, where engineering becomes art, and where light becomes the defining element of how we experience space.
+  - img "Designer working with glass and light" [ref=f5e260]:
+    - generic [ref=f5e262]:
+      - paragraph [ref=f5e263]: "Behind the Design: The Bright Idea"
+      - heading "Where vision meets craft" [level=2] [ref=f5e264]
+      - paragraph [ref=f5e265]: Discover the creative minds behind OnOff Lighting & co.'s most iconic pieces. From sketch to sculpture, every design begins with a singular vision of light.
+      - link "Discover Our Designers" [ref=f5e266] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=f5e267]:
+    - paragraph [ref=f5e268]: OnOff Collections
+    - paragraph [ref=f5e269]:
+      - link "Orbit" [ref=f5e270] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Linea" [ref=f5e271] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Arc" [ref=f5e272] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Forma" [ref=f5e273] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Nova" [ref=f5e274] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Luna" [ref=f5e275] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Studio" [ref=f5e276] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "Solara" [ref=f5e277] [cursor=pointer]:
+        - /url: "#"
+      - text: ","
+      - link "and more" [ref=f5e278] [cursor=pointer]:
+        - /url: "#"
+      - text: .
+    - link "Discover All Collections" [ref=f5e279] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=f5e281]:
+    - heading "Join our Newsletter and stay up to date." [level=2] [ref=f5e282]
+    - paragraph [ref=f5e283]: Only the best inspiration, news, and content from the world of OnOff Lighting & co.
+    - generic [ref=f5e284]:
+      - generic [ref=f5e285]:
+        - generic [ref=f5e286]: First Name
+        - textbox "First Name" [ref=f5e287]:
+          - /placeholder: First name
+      - generic [ref=f5e288]:
+        - generic [ref=f5e289]: Last Name
+        - textbox "Last Name" [ref=f5e290]:
+          - /placeholder: Last name
+      - generic [ref=f5e291]:
+        - generic [ref=f5e292]: Email
+        - textbox "Email" [ref=f5e293]:
+          - /placeholder: Email address
+      - button "Subscribe" [ref=f5e294] [cursor=pointer]
+    - generic [ref=f5e295] [cursor=pointer]:
+      - checkbox "I consent to receiving marketing communications from OnOff Lighting & co. I can unsubscribe at any time. See our Privacy Policy for details." [ref=f5e296]
+      - text: I consent to receiving marketing communications from OnOff Lighting & co. I can unsubscribe at any time. See our Privacy Policy for details.
+  - contentinfo [ref=f5e297]:
+    - generic [ref=f5e298]:
+      - generic [ref=f5e299]:
+        - heading "Contact" [level=3] [ref=f5e300]
+        - link "Support and Contacts" [ref=f5e301] [cursor=pointer]:
+          - /url: "#"
+        - link "Notice to Customers" [ref=f5e302] [cursor=pointer]:
+          - /url: "#"
+        - link "FAQ's" [ref=f5e303] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell My Personal Information" [ref=f5e304] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f5e305]:
+        - heading "Service" [level=3] [ref=f5e306]
+        - link "Store Locator" [ref=f5e307] [cursor=pointer]:
+          - /url: "#"
+        - link "Spare Parts" [ref=f5e308] [cursor=pointer]:
+          - /url: "#"
+        - link "Shipping" [ref=f5e309] [cursor=pointer]:
+          - /url: "#"
+        - link "Returns" [ref=f5e310] [cursor=pointer]:
+          - /url: "#"
+        - link "Payment" [ref=f5e311] [cursor=pointer]:
+          - /url: "#"
+        - link "Warranty" [ref=f5e312] [cursor=pointer]:
+          - /url: "#"
+        - link "Corporate Gifting" [ref=f5e313] [cursor=pointer]:
+          - /url: "#"
+        - link "Book an Appointment" [ref=f5e314] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f5e315]:
+        - heading "Content" [level=3] [ref=f5e316]
+        - link "Shop by Room (New Page)" [ref=f5e317] [cursor=pointer]:
+          - /url: ShopByRoom.html
+        - link "Shop Products (Catalog)" [ref=f5e318] [cursor=pointer]:
+          - /url: Navbar.html
+        - link "Lighting Guide" [ref=f5e319] [cursor=pointer]:
+          - /url: "#"
+        - link "Accessibility" [ref=f5e320] [cursor=pointer]:
+          - /url: "#"
+        - link "Cookie Policy" [ref=f5e321] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms & Conditions" [ref=f5e322] [cursor=pointer]:
+          - /url: "#"
+        - link "Privacy" [ref=f5e323] [cursor=pointer]:
+          - /url: "#"
+        - link "Compliance" [ref=f5e324] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f5e326]:
+        - generic [ref=f5e327]: Free shipping on orders over $50
+        - generic [ref=f5e331]: 1-2 Year Warranty
+        - generic [ref=f5e336]: 10% off the first purchase for new registered users
+    - generic [ref=f5e340]:
+      - generic [ref=f5e341]:
+        - link "LinkedIn" [ref=f5e342] [cursor=pointer]:
+          - /url: "#"
+        - link "Facebook" [ref=f5e345] [cursor=pointer]:
+          - /url: "#"
+        - link "Instagram" [ref=f5e348] [cursor=pointer]:
+          - /url: "#"
+        - link "Pinterest" [ref=f5e353] [cursor=pointer]:
+          - /url: "#"
+      - button "United States" [ref=f5e356] [cursor=pointer]
+      - generic [ref=f5e360]:
+        - img "OnOff Lighting & co. Logo" [ref=f5e361]
+        - generic [ref=f5e362]: OnOff Lighting & co.

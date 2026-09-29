@@ -1,0 +1,566 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - link "OnOff Lighting & co. Official Store" [ref=f10e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Professional Space" [ref=f10e7] [cursor=pointer]:
+      - /url: index.html#footer
+  - banner [ref=f10e11]:
+    - generic [ref=f10e12]:
+      - link "OnOff Lighting & co." [ref=f10e14] [cursor=pointer]:
+        - /url: index.html
+        - img "OnOff Lighting & co. Logo" [ref=f10e15]
+        - generic [ref=f10e16]: OnOff Lighting co.
+      - generic [ref=f10e17]:
+        - button "Search" [ref=f10e18] [cursor=pointer]
+        - button "Cart" [ref=f10e22] [cursor=pointer]
+        - button "Menu" [ref=f10e26] [cursor=pointer]
+  - generic [ref=f10e30]:
+    - generic [ref=f10e31]:
+      - link "Home" [ref=f10e32] [cursor=pointer]:
+        - /url: index.html
+      - generic [ref=f10e33]: /
+      - link "Shop by Room" [ref=f10e34] [cursor=pointer]:
+        - /url: ShopByRoom.html
+      - generic [ref=f10e35]: /
+      - generic [ref=f10e36]: All Spaces
+    - generic [ref=f10e37]:
+      - generic [ref=f10e38]:
+        - generic [ref=f10e39]: CURATED SPATIAL ARCHITECTURE
+        - 'heading "Shop by Room: Architectural Illumination" [level=1] [ref=f10e40]'
+        - paragraph [ref=f10e41]: Light is not merely decorative; it organizes spatial depth, frames human communion, and anchors circadian rhythm. Explore comprehensive compositions calculated for each unique living domain.
+      - generic [ref=f10e42]: 6 Tailored Spatial Blueprints
+  - generic [ref=f10e47]:
+    - generic [ref=f10e48]:
+      - button "All Spaces (12)" [ref=f10e49] [cursor=pointer]:
+        - text: All Spaces
+        - generic [ref=f10e50]: (12)
+      - button "Living Room (6)" [ref=f10e51] [cursor=pointer]:
+        - text: Living Room
+        - generic [ref=f10e52]: (6)
+      - button "Dining Room (5)" [ref=f10e53] [cursor=pointer]:
+        - text: Dining Room
+        - generic [ref=f10e54]: (5)
+      - button "Bedroom (4)" [ref=f10e55] [cursor=pointer]:
+        - text: Bedroom
+        - generic [ref=f10e56]: (4)
+      - button "Kitchen & Island (3)" [ref=f10e57] [cursor=pointer]:
+        - text: Kitchen & Island
+        - generic [ref=f10e58]: (3)
+      - button "Workspace (4)" [ref=f10e59] [cursor=pointer]:
+        - text: Workspace
+        - generic [ref=f10e60]: (4)
+      - button "Outdoor Terrace (4)" [ref=f10e61] [cursor=pointer]:
+        - text: Outdoor Terrace
+        - generic [ref=f10e62]: (4)
+    - combobox [ref=f10e64] [cursor=pointer]:
+      - 'option "Sort by: Curated Composition" [selected]'
+      - 'option "Price: Low to High"'
+      - 'option "Price: High to Low"'
+      - 'option "Name: A to Z"'
+  - generic [ref=f10e66]:
+    - generic [ref=f10e67]:
+      - img "Living Room Architectural Lighting" [ref=f10e68]
+      - generic [ref=f10e69] [cursor=pointer]:
+        - text: "1"
+        - generic: Forma Pendant (Ambient Centerpiece)
+      - generic [ref=f10e70] [cursor=pointer]:
+        - text: "2"
+        - generic: Arco Curva Floor (Directional Arch)
+      - generic [ref=f10e71] [cursor=pointer]:
+        - text: "3"
+        - generic: Snoopy Table Lamp (Accent Glow)
+    - generic [ref=f10e72]:
+      - generic [ref=f10e73]:
+        - generic [ref=f10e74]: COMPREHENSIVE SPATIAL BLUEPRINT
+        - 'heading "Shop by Room: Architectural Illumination" [level=2] [ref=f10e75]'
+        - paragraph [ref=f10e76]: Light is not merely decorative; it organizes spatial depth, frames human communion, and anchors circadian rhythm. Explore comprehensive compositions calculated for each unique living domain.
+      - generic [ref=f10e77]:
+        - generic [ref=f10e78]:
+          - generic [ref=f10e79]: 1. Ambient Layer
+          - generic [ref=f10e80]: Multi-circuit ceiling suspensions and wall washers delivering flexible general lighting.
+        - generic [ref=f10e81]:
+          - generic [ref=f10e82]: 2. Task Layer
+          - generic [ref=f10e83]: Ergonomic task luminaires positioned for cooking, reading, and digital workspaces.
+        - generic [ref=f10e84]:
+          - generic [ref=f10e85]: 3. Accent Layer
+          - generic [ref=f10e86]: Sculptural collector pieces that establish focal luxury in key architectural zones.
+      - generic [ref=f10e87]:
+        - generic [ref=f10e88]:
+          - generic [ref=f10e89]: Target Illuminance
+          - strong [ref=f10e90]: 100–500 Lux (Room Dependent)
+        - generic [ref=f10e91]:
+          - generic [ref=f10e92]: Color Temperature
+          - strong [ref=f10e93]: 2200K–3500K Variable
+        - generic [ref=f10e94]:
+          - generic [ref=f10e95]: Dimming Protocols
+          - strong [ref=f10e96]: Casambi / DALI / TRIAC
+  - main [ref=f10e97]:
+    - generic [ref=f10e98]:
+      - generic [ref=f10e99]:
+        - heading "Curated All Spaces Fixtures" [level=3] [ref=f10e100]
+        - text: Showing 12 architectural and decorative luminaires
+      - link "View All Categories in Navbar.html →" [ref=f10e101] [cursor=pointer]:
+        - /url: Navbar.html
+    - generic [ref=f10e102]:
+      - article [ref=f10e103]:
+        - generic [ref=f10e104]:
+          - generic [ref=f10e105]: ICONIC 2026
+          - generic [ref=f10e106]: Living & Dining
+          - img "Forma Sculptural Pendant" [ref=f10e107]
+          - button "Quick View" [ref=f10e108] [cursor=pointer]
+        - generic [ref=f10e109]:
+          - generic [ref=f10e110]:
+            - generic [ref=f10e111]: Elena Vassari
+            - generic [ref=f10e112]: Suspension
+          - heading "Forma Pendant" [level=4] [ref=f10e113]
+          - paragraph [ref=f10e114]: Suspended bronze armature with blown opal spheres providing shadowless 360-degree ambient luminescence.
+          - generic [ref=f10e115]:
+            - generic "Brushed Bronze" [ref=f10e116] [cursor=pointer]
+            - generic "Matte Black" [ref=f10e117] [cursor=pointer]
+            - generic "Opal White" [ref=f10e118] [cursor=pointer]
+          - generic [ref=f10e119]:
+            - generic [ref=f10e120]: $1,280
+            - button "Add" [ref=f10e121] [cursor=pointer]
+      - article [ref=f10e124]:
+        - generic [ref=f10e125]:
+          - generic [ref=f10e126]: MASTERPIECE
+          - generic [ref=f10e127]: Living & Study
+          - img "Arco Curva Floor Lamp" [ref=f10e128]
+          - button "Quick View" [ref=f10e129] [cursor=pointer]
+        - generic [ref=f10e130]:
+          - generic [ref=f10e131]:
+            - generic [ref=f10e132]: Achille Castiglioni
+            - generic [ref=f10e133]: Floor
+          - heading "Arco Curva Floor" [level=4] [ref=f10e134]
+          - paragraph [ref=f10e135]: Carrara marble base with 8-foot telescopic stainless arch projecting directional light without ceiling fixtures.
+          - generic [ref=f10e136]:
+            - generic "Carrara Marble" [ref=f10e137] [cursor=pointer]
+            - generic "Marquina Black" [ref=f10e138] [cursor=pointer]
+          - generic [ref=f10e139]:
+            - generic [ref=f10e140]: $2,450
+            - button "Add" [ref=f10e141] [cursor=pointer]
+      - article [ref=f10e144]:
+        - generic [ref=f10e145]:
+          - generic [ref=f10e146]: ICONIC
+          - generic [ref=f10e147]: Credenza & Bedside
+          - img "Snoopy Minimal Table" [ref=f10e148]
+          - button "Quick View" [ref=f10e149] [cursor=pointer]
+        - generic [ref=f10e150]:
+          - generic [ref=f10e151]:
+            - generic [ref=f10e152]: A. & P.G. Castiglioni
+            - generic [ref=f10e153]: Table
+          - heading "Snoopy Table Lamp" [level=4] [ref=f10e154]
+          - paragraph [ref=f10e155]: Slanted Carrara marble base supporting an enamelled metal reflector with frosted glass disc touch sensor.
+          - generic [ref=f10e156]:
+            - generic "Gloss Black" [ref=f10e157] [cursor=pointer]
+            - generic "Navy Green" [ref=f10e158] [cursor=pointer]
+            - generic "Orange Enamel" [ref=f10e159] [cursor=pointer]
+          - generic [ref=f10e160]:
+            - generic [ref=f10e161]: $980
+            - button "Add" [ref=f10e162] [cursor=pointer]
+      - article [ref=f10e165]:
+        - generic [ref=f10e166]:
+          - generic [ref=f10e167]: Console & Bookshelf
+          - img "Taccia Spun Glass Table Lamp" [ref=f10e168]
+          - button "Quick View" [ref=f10e169] [cursor=pointer]
+        - generic [ref=f10e170]:
+          - generic [ref=f10e171]:
+            - generic [ref=f10e172]: Castiglioni Archive
+            - generic [ref=f10e173]: Table
+          - heading "Taccia Reflector" [level=4] [ref=f10e174]
+          - paragraph [ref=f10e175]: Reflected luminaire with blown glass bowl and fluted column heat sink providing indirect glare-free radiance.
+          - generic [ref=f10e176]:
+            - generic "Matte Black" [ref=f10e177] [cursor=pointer]
+            - generic "Anodized Bronze" [ref=f10e178] [cursor=pointer]
+            - generic "Silver Aluminum" [ref=f10e179] [cursor=pointer]
+          - generic [ref=f10e180]:
+            - generic [ref=f10e181]: $1,650
+            - button "Add" [ref=f10e182] [cursor=pointer]
+      - article [ref=f10e185]:
+        - generic [ref=f10e186]:
+          - generic [ref=f10e187]: PORTABLE
+          - generic [ref=f10e188]: Table & Terrace
+          - img "Bellhop Cordless Lamp" [ref=f10e189]
+          - button "Quick View" [ref=f10e190] [cursor=pointer]
+        - generic [ref=f10e191]:
+          - generic [ref=f10e192]:
+            - generic [ref=f10e193]: Barber & Osgerby
+            - generic [ref=f10e194]: Portable
+          - heading "Bellhop Cordless" [level=4] [ref=f10e195]
+          - paragraph [ref=f10e196]: Modern wireless candle providing 24 hours of warm low-intensity light for intimate dining and nightstands.
+          - generic [ref=f10e197]:
+            - generic "Brick Red" [ref=f10e198] [cursor=pointer]
+            - generic "Matte Black" [ref=f10e199] [cursor=pointer]
+            - generic "White" [ref=f10e200] [cursor=pointer]
+            - generic "Grey Blue" [ref=f10e201] [cursor=pointer]
+          - generic [ref=f10e202]:
+            - generic [ref=f10e203]: $340
+            - button "Add" [ref=f10e204] [cursor=pointer]
+      - article [ref=f10e207]:
+        - generic [ref=f10e208]:
+          - generic [ref=f10e209]: Dining & Island
+          - img "Glo-Ball Suspension" [ref=f10e210]
+          - button "Quick View" [ref=f10e211] [cursor=pointer]
+        - generic [ref=f10e212]:
+          - generic [ref=f10e213]:
+            - generic [ref=f10e214]: Jasper Morrison
+            - generic [ref=f10e215]: Suspension
+          - heading "Glo-Ball Sphere" [level=4] [ref=f10e216]
+          - paragraph [ref=f10e217]: Acid-etched blown opaline glass orb that distributes soft, diffuse moon-like luminance across tables.
+          - generic "Opaline Glass" [ref=f10e219] [cursor=pointer]
+          - generic [ref=f10e220]:
+            - generic [ref=f10e221]: $820
+            - button "Add" [ref=f10e222] [cursor=pointer]
+      - article [ref=f10e225]:
+        - generic [ref=f10e226]:
+          - generic [ref=f10e227]: ICONIC
+          - generic [ref=f10e228]: Reading Nook & Suite
+          - img "IC Lights Balance Floor Lamp" [ref=f10e229]
+          - button "Quick View" [ref=f10e230] [cursor=pointer]
+        - generic [ref=f10e231]:
+          - generic [ref=f10e232]:
+            - generic [ref=f10e233]: Michael Anastassiades
+            - generic [ref=f10e234]: Floor
+          - heading "IC Lights F1 Floor" [level=4] [ref=f10e235]
+          - paragraph [ref=f10e236]: A luminous sphere perched in poetic balance upon a slender brushed brass rod, featuring an in-line cord dimmer.
+          - generic [ref=f10e237]:
+            - generic "Brushed Brass" [ref=f10e238] [cursor=pointer]
+            - generic "Matte Black" [ref=f10e239] [cursor=pointer]
+            - generic "Chrome" [ref=f10e240] [cursor=pointer]
+          - generic [ref=f10e241]:
+            - generic [ref=f10e242]: $1,420
+            - button "Add" [ref=f10e243] [cursor=pointer]
+      - article [ref=f10e246]:
+        - generic [ref=f10e247]:
+          - generic [ref=f10e248]: Bedside & Vanity
+          - img "IC Lights Wall Sconce" [ref=f10e249]
+          - button "Quick View" [ref=f10e250] [cursor=pointer]
+        - generic [ref=f10e251]:
+          - generic [ref=f10e252]:
+            - generic [ref=f10e253]: Michael Anastassiades
+            - generic [ref=f10e254]: Wall
+          - heading "IC Wall & Ceiling" [level=4] [ref=f10e255]
+          - paragraph [ref=f10e256]: Dual surface-mounted luminaire projecting diffused warm ambiance without glare for corridors and suites.
+          - generic [ref=f10e257]:
+            - generic "Brushed Brass" [ref=f10e258] [cursor=pointer]
+            - generic "Matte Black" [ref=f10e259] [cursor=pointer]
+            - generic "Burgundy Red" [ref=f10e260] [cursor=pointer]
+          - generic [ref=f10e261]:
+            - generic [ref=f10e262]: $710
+            - button "Add" [ref=f10e263] [cursor=pointer]
+      - article [ref=f10e266]:
+        - generic [ref=f10e267]:
+          - generic [ref=f10e268]: IP65 OUTDOOR
+          - generic [ref=f10e269]: Patio & Veranda
+          - img "Captain Flint Outdoor" [ref=f10e270]
+          - button "Quick View" [ref=f10e271] [cursor=pointer]
+        - generic [ref=f10e272]:
+          - generic [ref=f10e273]:
+            - generic [ref=f10e274]: Michael Anastassiades
+            - generic [ref=f10e275]: Outdoor
+          - heading "Captain Flint Exterior" [level=4] [ref=f10e276]
+          - paragraph [ref=f10e277]: Solid Italian stone base with dual-function adjustable head for architectural patio reading or ambient uplight.
+          - generic [ref=f10e278]:
+            - generic "Occhio Di Pernice" [ref=f10e279] [cursor=pointer]
+            - generic "Black Lava" [ref=f10e280] [cursor=pointer]
+            - generic "Travertine" [ref=f10e281] [cursor=pointer]
+          - generic [ref=f10e282]:
+            - generic [ref=f10e283]: $1,890
+            - button "Add" [ref=f10e284] [cursor=pointer]
+      - article [ref=f10e287]:
+        - generic [ref=f10e288]:
+          - generic [ref=f10e289]: NEW 2026
+          - generic [ref=f10e290]: Dining & Island
+          - img "Coordinates Suspension Lattice" [ref=f10e291]
+          - button "Quick View" [ref=f10e292] [cursor=pointer]
+        - generic [ref=f10e293]:
+          - generic [ref=f10e294]:
+            - generic [ref=f10e295]: Michael Anastassiades
+            - generic [ref=f10e296]: Suspension
+          - heading "Coordinates Lattice" [level=4] [ref=f10e297]
+          - paragraph [ref=f10e298]: Cartesian grid composed of precision extruded aluminum batons and high-CRI 95+ strip LEDs.
+          - generic [ref=f10e299]:
+            - generic "Champagne Anodized" [ref=f10e300] [cursor=pointer]
+            - generic "Anthracite" [ref=f10e301] [cursor=pointer]
+          - generic [ref=f10e302]:
+            - generic [ref=f10e303]: $3,200
+            - button "Add" [ref=f10e304] [cursor=pointer]
+      - article [ref=f10e307]:
+        - generic [ref=f10e308]:
+          - generic [ref=f10e309]: Table & Study
+          - img "Gustave Battery Portable Lamp" [ref=f10e310]
+          - button "Quick View" [ref=f10e311] [cursor=pointer]
+        - generic [ref=f10e312]:
+          - generic [ref=f10e313]:
+            - generic [ref=f10e314]: Vincent Van Duysen
+            - generic [ref=f10e315]: Portable
+          - heading "Gustave Battery" [level=4] [ref=f10e316]
+          - paragraph [ref=f10e317]: Wireless luminaire designed specifically for dining tables, engineered with diffuse downward optic that avoids eye glare.
+          - generic [ref=f10e318]:
+            - generic "Lacquer Green" [ref=f10e319] [cursor=pointer]
+            - generic "Polished Copper" [ref=f10e320] [cursor=pointer]
+            - generic "Raw White" [ref=f10e321] [cursor=pointer]
+          - generic [ref=f10e322]:
+            - generic [ref=f10e323]: $420
+            - button "Add" [ref=f10e324] [cursor=pointer]
+      - article [ref=f10e327]:
+        - generic [ref=f10e328]:
+          - generic [ref=f10e329]: IP65 OUTDOOR
+          - generic [ref=f10e330]: Terrace & Garden
+          - img "In Vitro Exterior Bollard" [ref=f10e331]
+          - button "Quick View" [ref=f10e332] [cursor=pointer]
+        - generic [ref=f10e333]:
+          - generic [ref=f10e334]:
+            - generic [ref=f10e335]: Philippe Starck
+            - generic [ref=f10e336]: Outdoor
+          - heading "In Vitro Bollard" [level=4] [ref=f10e337]
+          - paragraph [ref=f10e338]: Concealed LED ring casting light down through an ethereal transparent borosilicate glass enclosure.
+          - generic [ref=f10e339]:
+            - generic "Anthracite" [ref=f10e340] [cursor=pointer]
+            - generic "Deep Bronze" [ref=f10e341] [cursor=pointer]
+            - generic "Forest Pale" [ref=f10e342] [cursor=pointer]
+          - generic [ref=f10e343]:
+            - generic [ref=f10e344]: $1,150
+            - button "Add" [ref=f10e345] [cursor=pointer]
+  - generic [ref=f10e348]:
+    - generic [ref=f10e349]:
+      - generic [ref=f10e350]: LIGHTING ARCHITECTURE STANDARDS
+      - heading "Room Illuminance & Kelvin Guide" [level=2] [ref=f10e351]
+      - paragraph [ref=f10e352]: Every domestic interior fulfills different human requirements. Here are the recommended photometric lux levels, circadian kelvin ranges, and dimming strategies formulated by our Milan lighting engineers.
+    - table [ref=f10e354]:
+      - rowgroup [ref=f10e355]:
+        - row [ref=f10e356]:
+          - columnheader "Environment" [ref=f10e357]
+          - columnheader "Illuminance (Lux)" [ref=f10e358]
+          - columnheader "Color Temp (Kelvin)" [ref=f10e359]
+          - columnheader "Primary Strategy" [ref=f10e360]
+          - columnheader "Curated Fixture Types" [ref=f10e361]
+      - rowgroup [ref=f10e362]:
+        - row [ref=f10e363]:
+          - cell "Living Room" [ref=f10e364]
+          - cell "150–250 Lux" [ref=f10e366]
+          - cell "2700K (Warm Dim 2200K)" [ref=f10e368]
+          - cell "Multi-tiered balance of diffuse ceiling bounce and low floor arches." [ref=f10e369]
+          - cell "Arco Floor, Forma Pendant, Snoopy Table" [ref=f10e370]
+        - row [ref=f10e371]:
+          - cell "Dining Room" [ref=f10e372]
+          - cell "200–300 Lux" [ref=f10e374]
+          - cell "2400K–2700K" [ref=f10e376]
+          - cell "Over-table focal illumination without high-angle glare across seated sightlines." [ref=f10e377]
+          - cell "Glo-Ball Suspension, Coordinates Lattice, Gustave" [ref=f10e378]
+        - row [ref=f10e379]:
+          - cell "Bedroom Suite" [ref=f10e380]
+          - cell "100–150 Lux" [ref=f10e382]
+          - cell "2200K–2700K" [ref=f10e384]
+          - cell "Circadian melatonin preservation with tactile low-level bedside sconces." [ref=f10e385]
+          - cell "IC Wall Sconce, Bellhop Cordless" [ref=f10e386]
+        - row [ref=f10e387]:
+          - cell "Kitchen & Island" [ref=f10e388]
+          - cell "300–450 Lux" [ref=f10e390]
+          - cell "3000K–3500K (CRI 95+)" [ref=f10e392]
+          - cell "Culinary task clarity and accurate color rendering across prep surfaces." [ref=f10e393]
+          - cell "Coordinates Track, IC Sconce, Linear Pendants" [ref=f10e394]
+        - row [ref=f10e395]:
+          - cell "Workspace / Studio" [ref=f10e396]
+          - cell "400–500 Lux" [ref=f10e398]
+          - cell "3000K–4000K" [ref=f10e400]
+          - cell "Anti-glare UGR < 16 task luminaires for prolonged creative concentration." [ref=f10e401]
+          - cell "Taccia Reflector, Snoopy Table, Gustave" [ref=f10e402]
+        - row [ref=f10e403]:
+          - cell "Outdoor & Patio" [ref=f10e404]
+          - cell "50–100 Lux" [ref=f10e406]
+          - cell "2700K (Dark Sky Compliant)" [ref=f10e408]
+          - cell "Atmospheric low-level guidance that respects evening starlight and nature." [ref=f10e409]
+          - cell "In Vitro Bollard, Captain Flint IP65" [ref=f10e410]
+  - generic [ref=f10e412]:
+    - generic [ref=f10e413]:
+      - generic [ref=f10e414]: COMPLIMENTARY LIGHTING CONCIERGE
+      - heading "Send Your Floor Plan to Our Architects" [level=2] [ref=f10e415]
+      - paragraph [ref=f10e416]: Whether undertaking a full residence restoration or curating a single reception salon, our lighting design team prepares tailored photometric schedules, 3D render previews, and fixture specifications.
+      - generic [ref=f10e417]:
+        - generic [ref=f10e418]: Complete CAD, PDF & Revit BIM project review
+        - generic [ref=f10e422]: Lumen output calculations & DALI/Casambi smart scene planning
+        - generic [ref=f10e426]: Trade pricing & white-glove residential freight support
+    - generic [ref=f10e430]:
+      - generic [ref=f10e431]:
+        - generic [ref=f10e432]: Full Name
+        - textbox "e.g. Alessandro Rossi" [ref=f10e433]
+      - generic [ref=f10e434]:
+        - generic [ref=f10e435]: Email Address
+        - textbox "name@domain.com" [ref=f10e436]
+      - generic [ref=f10e437]:
+        - generic [ref=f10e438]: Primary Spatial Environment
+        - combobox [ref=f10e439]:
+          - option "Full Residence / Multi-Room" [selected]
+          - option "Living Room & Reception"
+          - option "Dining Room & Kitchen"
+          - option "Master Bedroom Suite"
+          - option "Outdoor Terrace & Landscape"
+          - option "Commercial / Hospitality Project"
+      - generic [ref=f10e440]:
+        - generic [ref=f10e441]: Project Details or Ceiling Heights
+        - textbox "Tell us about room dimensions, ceiling heights, or preferred aesthetic..." [ref=f10e442]
+      - button "Submit Floor Plan Request" [ref=f10e443] [cursor=pointer]
+  - generic:
+    - generic:
+      - button "×"
+      - generic:
+        - img "Product Detail"
+      - generic:
+        - generic: Elena Vassari
+        - heading "Product Name" [level=3]
+        - generic: $0
+        - paragraph: Detailed product description goes here.
+        - table:
+          - rowgroup:
+            - row "Light Source Integrated LED 2700K CRI 95":
+              - cell "Light Source"
+              - cell "Integrated LED 2700K CRI 95"
+            - row "Output 1,850 Lumens (Warm Dimmable)":
+              - cell "Output"
+              - cell "1,850 Lumens (Warm Dimmable)"
+            - row "Voltage & Dimming 120-277V, TRIAC / 0-10V Dimmable":
+              - cell "Voltage & Dimming"
+              - cell "120-277V, TRIAC / 0-10V Dimmable"
+            - row "Origin & Warranty Handcrafted in Italy | 5-Year Factory Warranty":
+              - cell "Origin & Warranty"
+              - cell "Handcrafted in Italy | 5-Year Factory Warranty"
+        - generic:
+          - button "Add to Shopping Bag"
+  - dialog "Your Shopping Bag" [ref=f10e444]:
+    - generic [ref=f10e445]:
+      - heading "Shopping Bag (0)" [level=3] [ref=f10e450]
+      - button "Close Bag" [ref=f10e451] [cursor=pointer]: ×
+    - generic [ref=f10e452]: Add $1,500 more for Complimentary White-Glove Delivery
+    - generic [ref=f10e456]:
+      - heading "Your Shopping Bag is Empty" [level=4] [ref=f10e460]
+      - paragraph [ref=f10e461]: Explore our curated architectural luminaires and compose your space.
+      - button "Explore Spaces" [ref=f10e462] [cursor=pointer]
+    - generic [ref=f10e463]:
+      - generic [ref=f10e464]:
+        - generic [ref=f10e465]: Subtotal
+        - generic [ref=f10e466]: $0
+      - generic [ref=f10e467]:
+        - generic [ref=f10e468]: Insured White-Glove Delivery
+        - generic [ref=f10e469]: Complimentary over $1,500
+      - generic [ref=f10e470]:
+        - generic [ref=f10e471]: Total
+        - generic [ref=f10e472]: $0
+      - paragraph [ref=f10e473]: State sales tax & architectural white-glove installation calculated at final reservation.
+      - button "Proceed to Reservation Checkout →" [ref=f10e474] [cursor=pointer]
+      - button "Continue Exploring Spaces" [ref=f10e475] [cursor=pointer]
+  - generic:
+    - generic:
+      - button "×"
+      - generic: ✓
+      - generic:
+        - heading "Architectural Reservation" [level=3]
+        - paragraph: Reserve this configuration directly with our Milan atelier. An OnOff lighting specialist will confirm serials & lead times.
+      - generic:
+        - generic:
+          - textbox "Your Full Name": Arch. Matteo Rossi
+          - textbox "Email Address": m.rossi@studio-arch.it
+        - textbox "Delivery Address / Project Site": Via Montenapoleone 18, Milan, Italy
+        - button "Confirm Atelier Reservation"
+  - generic: Added to your shopping bag
+  - generic [ref=f10e476]:
+    - generic [ref=f10e477]: Shop Products
+    - generic [ref=f10e482]:
+      - generic [ref=f10e483]: Shop by Room
+      - generic [ref=f10e487]:
+        - link "All Environments (12)" [ref=f10e488] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Living Room (6)" [ref=f10e490] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Dining Room (5)" [ref=f10e492] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Bedroom (4)" [ref=f10e494] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Kitchen & Island (3)" [ref=f10e496] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Workspace (4)" [ref=f10e498] [cursor=pointer]:
+          - /url: javascript:void(0)
+        - link "Outdoor Terrace (4)" [ref=f10e500] [cursor=pointer]:
+          - /url: javascript:void(0)
+    - link "Last Call" [ref=f10e502] [cursor=pointer]:
+      - /url: index.html#categoryTrack
+    - link "Iconic Pieces" [ref=f10e503] [cursor=pointer]:
+      - /url: index.html#heroSection
+    - link "Designers" [ref=f10e504] [cursor=pointer]:
+      - /url: index.html#designerSection
+    - link "Stories" [ref=f10e505] [cursor=pointer]:
+      - /url: index.html#cultureSection
+    - link "About Us" [ref=f10e506] [cursor=pointer]:
+      - /url: aboutUs.html
+    - link "Trade Program" [ref=f10e507] [cursor=pointer]:
+      - /url: index.html#footer
+    - generic [ref=f10e508]:
+      - link "Find a Showroom" [ref=f10e509] [cursor=pointer]:
+        - /url: index.html#footer
+      - link "Client Sign In / Account" [ref=f10e514] [cursor=pointer]:
+        - /url: javascript:void(0)
+      - generic [ref=f10e519]: Global Shipping | EUR • IT
+  - contentinfo [ref=f10e520]:
+    - generic [ref=f10e521]:
+      - generic [ref=f10e522]:
+        - heading "OnOff Lighting & co." [level=4] [ref=f10e523]
+        - paragraph [ref=f10e524]: Italian architectural and decorative lighting systems since 1962. Designed in collaboration with international visionaries.
+      - generic [ref=f10e525]:
+        - heading "Spatial Collections" [level=5] [ref=f10e526]
+        - list [ref=f10e527]:
+          - listitem [ref=f10e528]:
+            - link "Living Room" [ref=f10e529] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f10e530]:
+            - link "Dining Room" [ref=f10e531] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f10e532]:
+            - link "Bedroom Suite" [ref=f10e533] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f10e534]:
+            - link "Kitchen & Island" [ref=f10e535] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f10e536]:
+            - link "Home Office" [ref=f10e537] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f10e538]:
+            - link "Outdoor Terrace" [ref=f10e539] [cursor=pointer]:
+              - /url: javascript:void(0)
+      - generic [ref=f10e540]:
+        - heading "Catalog & Story" [level=5] [ref=f10e541]
+        - list [ref=f10e542]:
+          - listitem [ref=f10e543]:
+            - link "Complete Product Catalog" [ref=f10e544] [cursor=pointer]:
+              - /url: Navbar.html
+          - listitem [ref=f10e545]:
+            - link "Forma Exhibition" [ref=f10e546] [cursor=pointer]:
+              - /url: index.html#heroSection
+          - listitem [ref=f10e547]:
+            - link "Designers Archive" [ref=f10e548] [cursor=pointer]:
+              - /url: index.html#designerSection
+          - listitem [ref=f10e549]:
+            - link "Editorial Journal" [ref=f10e550] [cursor=pointer]:
+              - /url: index.html#cultureSection
+      - generic [ref=f10e551]:
+        - heading "Client Service" [level=5] [ref=f10e552]
+        - list [ref=f10e553]:
+          - listitem [ref=f10e554]:
+            - link "Return to Home" [ref=f10e555] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=f10e556]:
+            - link "Lighting Concierge" [ref=f10e557] [cursor=pointer]:
+              - /url: "#conciergeSection"
+          - listitem [ref=f10e558]:
+            - link "BIM & Revit Downloads" [ref=f10e559] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=f10e560]:
+            - link "Shipping & Warranty" [ref=f10e561] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=f10e562]:
+      - paragraph [ref=f10e563]: © 2026 OnOff Lighting & co. S.p.A. All rights reserved.
+      - paragraph [ref=f10e564]:
+        - link "Switch to Main Story" [ref=f10e565] [cursor=pointer]:
+          - /url: index.html
+        - text: •
+        - link "Shop Products" [ref=f10e566] [cursor=pointer]:
+          - /url: Navbar.html

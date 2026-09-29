@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="onoff-logo.png">
 
 <style>
 /* ============================================================
@@ -1242,12 +1243,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   position: fixed;
   top: var(--header-height);
   left: 0; right: 0; bottom: 0;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   background: var(--color-white);
-  z-index: 999;
-  padding: 30px 24px;
+  z-index: 2000;
+  padding: 24px 20px 40px;
   transform: translateX(-100%);
   transition: transform var(--transition-medium);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.is-open { transform: translateX(0); }
@@ -1260,6 +1264,32 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   padding: 14px 0;
   border-bottom: 1px solid var(--color-light-gray);
   color: var(--color-text);
+}
+
+.mobile-menu-bottom {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu-util-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+.mobile-menu-util-link svg {
+  color: var(--color-dark-gray);
+}
+.mobile-menu-region {
+  font-size: 11px;
+  color: var(--color-mid-gray);
+  letter-spacing: 0.04em;
+  padding-top: 4px;
 }
 
 .mobile-sub-toggle {
@@ -1358,23 +1388,81 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 @media (max-width: 900px) {
-  :root { --page-padding: 24px; }
+  :root { --page-padding: 20px; --header-height: 54px; }
   .main-nav { display: none; }
   .menu-toggle { display: flex; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .modal-card { grid-template-columns: 1fr; }
-  .modal-image { min-height: 240px; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .nav-icon-desktop { display: none !important; }
+  .header-inner { padding: 0 16px; }
+  .logo { font-size: 13px; gap: 8px; }
+  .logo-img { width: 28px; height: 28px; }
+  .header-right { gap: 12px; }
+
+  .header.is-menu-open {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 2001;
+    background: var(--color-white) !important;
+    border-bottom: 1px solid var(--color-light-gray) !important;
+  }
+  .header.is-menu-open .header-inner { color: var(--color-black) !important; }
+  .header.is-menu-open .logo { color: var(--color-black) !important; }
+  .header.is-menu-open .header-icon svg { stroke: var(--color-black) !important; }
+
+  .quick-view-btn {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .catalog-toolbar {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .filter-pills-row {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filter-pills-row::-webkit-scrollbar { display: none; }
+  .filter-pills { flex-wrap: nowrap; }
+  .filter-btn { white-space: nowrap; flex-shrink: 0; }
+  .toolbar-right { width: 100%; justify-content: space-between; }
+
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .modal-card { grid-template-columns: 1fr; max-height: 88vh; }
+  .modal-image { min-height: 180px; max-height: 220px; }
+  .modal-details { padding: 20px 20px 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
 }
 
 @media (max-width: 600px) {
-  .product-grid { grid-template-columns: 1fr; }
+  .topbar {
+    padding: 0 12px;
+    font-size: 10px;
+  }
+  .topbar-full-text { display: none; }
+  .topbar-short-text { display: inline; }
+  .topbar-right span { display: none; }
+
+  .shop-hero { padding: 30px 16px 20px; }
+  .shop-hero h1 { font-size: 28px; }
+  .catalog-section { padding: 24px 16px 60px; }
+  .product-grid { grid-template-columns: 1fr; gap: 20px; }
   .footer-top { grid-template-columns: 1fr; }
-  .cart-drawer { width: 100%; }
-  .search-modal-container { max-height: 94vh; }
-  .search-modal-header { padding: 14px 16px; }
-  .search-results-scrollable { padding: 12px 16px 20px; }
-  .search-suggestions-bar { padding: 10px 16px; }
+  .cart-drawer { width: 100%; max-width: 100vw; }
+  .search-modal-container { max-height: 92vh; width: 95%; margin: 10px auto; }
+  .search-modal-header { padding: 12px 14px; }
+  .search-input-wrap input { font-size: 16px !important; }
+  .search-results-scrollable { padding: 12px 14px 20px; grid-template-columns: 1fr; }
+  .search-suggestions-bar { padding: 10px 14px; }
 }
 
 /* ============================================================
@@ -2194,7 +2282,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM6 8l2-2 2 2M6 10l2 2 2-2"/>
     </svg>
-    <span style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+    <span class="topbar-full-text" style="font-style: italic;">OnOff Lighting & co. Official Store &bull; Complimentary Delivery</span>
+    <span class="topbar-short-text" style="font-style: italic;">OnOff Official Store</span>
   </a>
   <a href="index.html#footer" class="topbar-right">
     <span>Professional Space</span>
@@ -2244,10 +2333,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
       <button class="header-icon" id="searchToggle" aria-label="Search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
       </button>
-      <button class="header-icon" aria-label="Store Locator">
+      <button class="header-icon nav-icon-desktop" aria-label="Store Locator">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       </button>
-      <button class="header-icon" aria-label="Account">
+      <button class="header-icon nav-icon-desktop" aria-label="Account">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
       <button class="header-icon" id="cartToggleBtn" aria-label="Cart" style="position: relative;">
@@ -3355,6 +3444,20 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   <a href="index.html#cultureSection" class="mobile-nav-link">Stories</a>
   <a href="aboutUs.html" class="mobile-nav-link">About Us</a>
   <a href="index.html#footer" class="mobile-nav-link">Trade Program</a>
+
+  <div class="mobile-menu-bottom">
+    <a href="#footer" class="mobile-menu-util-link" onclick="closeMobileMenu()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Client Sign In &amp; Account</span>
+    </a>
+    <a href="#footer" class="mobile-menu-util-link" onclick="closeMobileMenu()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Find a Showroom &amp; Retailers</span>
+    </a>
+    <div class="mobile-menu-region">
+      <span>United States (USD $) &bull; Complimentary Global Delivery</span>
+    </div>
+  </div>
 </div>
 
 <!-- ============================================================
@@ -4423,7 +4526,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     menuToggle.addEventListener('click', function() {
       this.classList.toggle('is-open');
       mobileMenu.classList.toggle('is-open');
-      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+      var isOpen = mobileMenu.classList.contains('is-open');
+      header.classList.toggle('is-menu-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
 
@@ -4431,9 +4536,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     if (menuToggle && mobileMenu) {
       menuToggle.classList.remove('is-open');
       mobileMenu.classList.remove('is-open');
+      if (header) header.classList.remove('is-menu-open');
       document.body.style.overflow = '';
     }
   };
+
+  // Auto close mobile drawer on link click
+  var mobileMenuLinks = mobileMenu.querySelectorAll('a');
+  mobileMenuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMobileMenu();
+    });
+  });
 
   if (mobileShopToggle && mobileShopSubmenu) {
     mobileShopToggle.addEventListener('click', function(e) {

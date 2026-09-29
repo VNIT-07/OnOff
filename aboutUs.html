@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="onoff-logo.png">
 
 <style>
 /* ============================================================
@@ -694,13 +695,18 @@ button {
 .mobile-menu {
   position: fixed;
   top: var(--header-height);
-  left: 0; right: 0; bottom: 0;
+  left: 0; right: 0;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   background: var(--color-white);
   z-index: 999;
-  padding: 30px 24px;
+  padding: 24px 20px 40px;
   transform: translateX(-100%);
   transition: transform var(--transition-medium);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-menu.is-open { transform: translateX(0); }
@@ -744,10 +750,48 @@ button {
   color: var(--color-text);
 }
 
+.mobile-menu-bottom {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu-util-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+.mobile-menu-util-link svg {
+  color: var(--color-dark-gray);
+}
+.mobile-menu-region {
+  font-size: 11px;
+  color: var(--color-mid-gray);
+  letter-spacing: 0.04em;
+  padding-top: 4px;
+}
+
 @media (max-width: 900px) {
-  :root { --page-padding: 24px; }
+  :root { --page-padding: 20px; }
   .main-nav { display: none; }
   .menu-toggle { display: flex; }
+  .nav-icon-desktop { display: none !important; }
+  .header-right { gap: 12px; }
+
+  .header.is-menu-open {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 2001;
+    background: var(--color-white) !important;
+    border-bottom: 1px solid var(--color-light-gray) !important;
+  }
+  .header.is-menu-open .logo { color: var(--color-black) !important; }
+  .header.is-menu-open .header-icon svg { stroke: var(--color-black) !important; }
 }
 
 /* ============================================================
@@ -2575,6 +2619,22 @@ button {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --page-padding: 16px;
+    --header-height: 54px;
+  }
+  .topbar { padding: 0 16px; font-size: 10px; }
+  .topbar-full-text { display: none; }
+  .topbar-short-text { display: inline !important; }
+  .logo { font-size: 13px; gap: 8px; }
+  .logo-img { width: 28px; height: 28px; }
+
+  .flos-era-title { font-size: clamp(32px, 8vw, 44px); }
+  .flos-era-chapter { padding: 56px 0; }
+  .sticky-era-nav { top: var(--header-height); }
+  .sticky-era-inner { padding: 10px 0; gap: 8px; -webkit-overflow-scrolling: touch; }
+  .era-pill { font-size: 11px; padding: 6px 12px; }
+
   .flos-grid-right {
     grid-template-columns: 1fr;
   }
@@ -2592,6 +2652,8 @@ button {
     gap: 16px;
     text-align: center;
   }
+  .cart-drawer { width: 100%; }
+  .search-input-wrap input { font-size: 16px !important; }
 }
 </style>
 </head>
@@ -2605,7 +2667,8 @@ button {
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM6 8l2-2 2 2M6 10l2 2 2-2"/>
     </svg>
-    <span style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+    <span class="topbar-full-text" style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+    <span class="topbar-short-text" style="font-style: italic; display: none;">OnOff Official</span>
   </a>
   <a href="index.html#footer" class="topbar-right">
     <span>Professional Space</span>
@@ -2654,10 +2717,10 @@ button {
       <button class="header-icon" id="searchToggle" aria-label="Search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
       </button>
-      <button class="header-icon" aria-label="Store Locator">
+      <button class="header-icon nav-icon-desktop" aria-label="Store Locator">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       </button>
-      <button class="header-icon" aria-label="Account">
+      <button class="header-icon nav-icon-desktop" aria-label="Account">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
       <button class="header-icon" id="cartToggleBtn" aria-label="Cart" style="position: relative;">
@@ -4179,6 +4242,18 @@ button {
   <a href="index.html#cultureSection" class="mobile-nav-link">Stories</a>
   <a href="aboutUs.html" class="mobile-nav-link active" style="color: var(--color-gold);">About Us</a>
   <a href="index.html#footer" class="mobile-nav-link">Trade Program</a>
+
+  <div class="mobile-menu-bottom">
+    <a href="index.html#footer" class="mobile-menu-util-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Find a Showroom</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-menu-util-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Client Sign In / Account</span>
+    </a>
+    <div class="mobile-menu-region">Global Shipping | EUR &bull; IT</div>
+  </div>
 </div>
 
 <!-- ============================================================
@@ -4814,11 +4889,13 @@ button {
   var mobileRoomsToggle = document.getElementById('mobileRoomsToggle');
   var mobileRoomsSubmenu = document.getElementById('mobileRoomsSubmenu');
 
+  var header = document.getElementById('header');
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function() {
-      this.classList.toggle('is-open');
-      mobileMenu.classList.toggle('is-open');
-      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+      var isOpen = mobileMenu.classList.toggle('is-open');
+      menuToggle.classList.toggle('is-open', isOpen);
+      if (header) header.classList.toggle('is-menu-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
 
@@ -4826,9 +4903,19 @@ button {
     if (menuToggle && mobileMenu) {
       menuToggle.classList.remove('is-open');
       mobileMenu.classList.remove('is-open');
+      if (header) header.classList.remove('is-menu-open');
       document.body.style.overflow = '';
     }
   };
+
+  if (mobileMenu) {
+    var mobileLinks = mobileMenu.querySelectorAll('a:not(.mobile-sub-toggle)');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        window.closeMobileMenu();
+      });
+    });
+  }
 
   if (mobileShopToggle && mobileShopSubmenu) {
     mobileShopToggle.addEventListener('click', function(e) {

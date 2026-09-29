@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="onoff-logo.png">
 
 <style>
 /* ============================================================
@@ -758,24 +759,53 @@ input, textarea, select { font-family: inherit; }
   left: 0;
   right: 0;
   bottom: 0;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   background: var(--color-white);
-  z-index: 999;
-  padding: 40px 24px;
+  z-index: 2000;
+  padding: 30px 24px 40px;
   transform: translateX(-100%);
   transition: transform var(--transition-medium);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.is-open { transform: translateX(0); }
 .mobile-menu .mobile-nav-link {
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   font-family: var(--font-serif);
   font-weight: 400;
-  padding: 16px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--color-light-gray);
   color: var(--color-text);
 }
 .mobile-menu .mobile-nav-link:last-child { border-bottom: none; }
+
+.mobile-menu-bottom {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu-util-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+.mobile-menu-util-link svg {
+  color: var(--color-dark-gray);
+}
+.mobile-menu-region {
+  font-size: 11px;
+  color: var(--color-mid-gray);
+  letter-spacing: 0.04em;
+  padding-top: 4px;
+}
 
 /* ============================================================
    SEARCH OVERLAY
@@ -934,6 +964,18 @@ input, textarea, select { font-family: inherit; }
 }
 .category-nav-arrow:hover { background: var(--color-black); border-color: var(--color-black); }
 .category-nav-arrow:hover svg { stroke: var(--color-white); }
+.category-nav-arrow[aria-disabled="true"] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.category-nav-arrow[aria-disabled="true"]:hover {
+  background: transparent;
+  border-color: var(--color-border);
+}
+.category-nav-arrow[aria-disabled="true"]:hover svg {
+  stroke: var(--color-text);
+}
 .category-nav-arrow svg {
   width: 14px; height: 14px;
   stroke: var(--color-text);
@@ -945,24 +987,53 @@ input, textarea, select { font-family: inherit; }
 .category-track-wrapper {
   overflow: hidden;
   padding: 0 var(--page-padding);
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .category-track {
   display: flex;
   gap: 20px;
   transition: transform var(--transition-slow);
+  will-change: transform;
+  touch-action: pan-y;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.category-track.is-dragging {
+  cursor: grabbing !important;
+  transition: none !important;
+}
+.category-track.is-dragging .category-card {
+  cursor: grabbing !important;
+}
+.category-track.is-dragging .category-card-image {
+  transform: none !important;
+  transition: none !important;
 }
 .category-card {
   flex: 0 0 calc(33.333% - 14px);
   cursor: pointer;
   position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
-.category-card-image-wrapper { overflow: hidden; }
+.category-card-image-wrapper {
+  overflow: hidden;
+  -webkit-user-drag: none;
+  user-select: none;
+}
 .category-card-image {
   width: 100%;
   aspect-ratio: 3/4;
   background-size: cover;
   background-position: center;
   transition: transform var(--transition-slow);
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 .category-card:hover .category-card-image { transform: scale(1.04); }
 .category-card-label {
@@ -972,6 +1043,8 @@ input, textarea, select { font-family: inherit; }
   text-transform: uppercase;
   margin-top: 16px;
   color: var(--color-text);
+  -webkit-user-select: none;
+  user-select: none;
 }
 .category-card-sub {
   font-size: 12px;
@@ -979,6 +1052,8 @@ input, textarea, select { font-family: inherit; }
   margin-top: 4px;
   text-decoration: underline;
   text-underline-offset: 3px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Category professional lighting photography */
@@ -1650,11 +1725,12 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 @media (max-width: 1024px) {
   :root {
-    --page-padding: 40px;
+    --page-padding: 32px;
     --section-spacing: 70px;
   }
   .main-nav { display: none; }
   .menu-toggle { display: flex; }
+  .nav-icon-desktop { display: none !important; }
 
   .hero { height: 75vh; }
   .hero-title { font-size: clamp(36px, 5vw, 56px); }
@@ -1672,62 +1748,103 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --page-padding: 24px;
-    --section-spacing: 50px;
+    --page-padding: 20px;
+    --section-spacing: 48px;
     --header-height: 54px;
   }
   .topbar {
     padding: 0 16px;
     font-size: 10px;
   }
-  .topbar-left span { display: none; }
+  .topbar-full-text { display: none; }
+  .topbar-short-text { display: inline; }
+  .topbar-right span { font-size: 10px; }
 
   .header-inner { padding: 0 16px; }
   .logo { font-size: 13px; gap: 8px; }
-  .logo-img { width: 30px; height: 30px; }
-  .header-right { gap: 14px; }
+  .logo-img { width: 28px; height: 28px; }
+  .header-right { gap: 12px; }
 
-  .hero { height: 70vh; min-height: 450px; }
-  .hero-content { padding: 0 24px 50px; }
-  .hero-title { max-width: 100%; }
+  .header.is-menu-open {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 2001;
+    background: var(--color-white) !important;
+    border-bottom: 1px solid var(--color-light-gray) !important;
+  }
+  .header.is-menu-open .header-inner { color: var(--color-black) !important; }
+  .header.is-menu-open .logo { color: var(--color-black) !important; }
+  .header.is-menu-open .header-icon svg { stroke: var(--color-black) !important; }
 
-  .section-category { padding: 60px 0 70px; }
-  .section-category .section-header { padding: 0 24px; }
-  .category-nav { padding: 0 24px; }
-  .category-track-wrapper { padding: 0 24px; }
-  .category-card { flex: 0 0 calc(80% - 10px); }
+  .hero { height: 70vh; min-height: 440px; }
+  .hero-content { padding: 0 20px 44px; }
+  .hero-title { max-width: 100%; font-size: 34px; }
 
-  .promo-hero { height: 70vh; min-height: 400px; }
-  .promo-hero-content { padding: 0 24px 50px; }
+  .section-category { padding: 50px 0 60px; }
+  .section-category .section-header { padding: 0 20px; }
+  .category-nav { padding: 0 20px; }
+  .category-track-wrapper { padding: 0 20px; }
+  .category-card { flex: 0 0 calc(85% - 8px); }
 
-  .section-editorial { padding: 70px 24px; }
-  .section-rooms { padding: 60px 24px; }
-  .rooms-grid { grid-template-columns: 1fr; gap: 30px; }
+  .promo-hero { height: 65vh; min-height: 380px; }
+  .promo-hero-content { padding: 0 20px 44px; }
+
+  .section-editorial { padding: 60px 20px; }
+  .section-rooms { padding: 50px 20px; }
+  .room-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 4px 16px 14px;
+    margin: 0 -20px 24px;
+    scrollbar-width: none;
+  }
+  .room-tabs::-webkit-scrollbar { display: none; }
+  .room-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 10px;
+    padding: 7px 14px;
+  }
+  .rooms-grid { grid-template-columns: 1fr; gap: 24px; }
   .room-card-image { aspect-ratio: 16/10; }
 
-  .section-culture { padding: 70px 24px; }
+  .section-culture { padding: 60px 20px; }
 
-  .designer-image { height: 60vh; }
-  .designer-content { left: 24px; top: 30px; }
+  .designer-image { height: 55vh; }
+  .designer-content { left: 20px; top: 24px; right: 20px; }
 
-  .section-families { padding: 60px 24px; }
+  .section-families { padding: 50px 20px; }
 
-  .section-newsletter { padding: 50px 24px; }
+  .section-newsletter { padding: 44px 20px; }
   .newsletter-form {
     grid-template-columns: 1fr;
   }
+  .newsletter-form input {
+    font-size: 16px !important;
+  }
 
-  .footer { padding: 50px 24px 24px; }
+  .footer { padding: 44px 20px 24px; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 32px;
   }
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     align-items: flex-start;
   }
   .footer-logo { order: -1; }
+  
+  .cart-drawer { width: 100%; max-width: 100vw; }
+  .search-modal-container { max-height: 92vh; width: 95%; margin: 10px auto; }
+  .search-modal-header { padding: 12px 14px; }
+  .search-input-wrap input { font-size: 16px !important; }
+  .search-results-scrollable {
+    padding: 12px 14px 20px;
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================================================
@@ -1735,32 +1852,27 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 @media (max-width: 430px) {
   :root {
-    --page-padding: 18px;
+    --page-padding: 16px;
     --header-height: 50px;
   }
-  .topbar { height: 28px; font-size: 9px; }
+  .topbar { height: 28px; font-size: 9px; padding: 0 12px; }
   .logo { font-size: 12px; gap: 6px; }
-  .logo-img { width: 26px; height: 26px; }
+  .logo-img { width: 24px; height: 24px; }
+  .topbar-right span { display: none; }
 
-  .hero { height: 65vh; min-height: 380px; }
-  .hero-content { padding: 0 18px 40px; }
-  .hero-eyebrow { font-size: 10px; margin-bottom: 10px; }
-  .hero-cta { padding: 12px 22px; font-size: 11px; }
+  .hero { height: 62vh; min-height: 360px; }
+  .hero-content { padding: 0 16px 36px; }
+  .hero-title { font-size: 28px; line-height: 1.15; }
+  .hero-eyebrow { font-size: 9px; margin-bottom: 8px; }
+  .hero-cta { padding: 11px 20px; font-size: 11px; }
 
-  .promo-hero { height: 60vh; min-height: 350px; }
-  .promo-hero-content { padding: 0 18px 40px; }
+  .promo-hero { height: 58vh; min-height: 340px; }
+  .promo-hero-content { padding: 0 16px 36px; }
 
-  .category-card { flex: 0 0 calc(85% - 6px); }
+  .category-card { flex: 0 0 calc(88% - 6px); }
 
-  .families-list { font-size: clamp(24px, 6vw, 32px); }
-
-  .newsletter-title { font-size: 24px; }
-  
-  .cart-drawer { width: 100%; }
-  .search-modal-container { max-height: 94vh; }
-  .search-modal-header { padding: 14px 16px; }
-  .search-results-scrollable { padding: 12px 16px 20px; }
-  .search-suggestions-bar { padding: 10px 16px; }
+  .families-list { font-size: clamp(22px, 6vw, 30px); }
+  .newsletter-title { font-size: 22px; }
 }
 
 /* ============================================================
@@ -2580,7 +2692,8 @@ input, textarea, select { font-family: inherit; }
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM6 8l2-2 2 2M6 10l2 2 2-2"/>
     </svg>
-    <span style="font-style: italic;">OnOff Lighting & co. Official Store</span>
+    <span class="topbar-full-text" style="font-style: italic;">OnOff Lighting & co. Official Store &bull; Complimentary Delivery</span>
+    <span class="topbar-short-text" style="font-style: italic;">OnOff Official Store</span>
   </a>
   <a href="#footer" class="topbar-right">
     <span>Professional Space</span>
@@ -2629,10 +2742,10 @@ input, textarea, select { font-family: inherit; }
       <button class="header-icon" id="searchToggle" aria-label="Search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
       </button>
-      <button class="header-icon" aria-label="Store Locator">
+      <button class="header-icon nav-icon-desktop" aria-label="Store Locator">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       </button>
-      <button class="header-icon" aria-label="Account">
+      <button class="header-icon nav-icon-desktop" aria-label="Account">
         <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </button>
       <button class="header-icon" id="cartToggleBtn" aria-label="Cart" style="position: relative;">
@@ -3253,6 +3366,20 @@ input, textarea, select { font-family: inherit; }
   <a href="#cultureSection" class="mobile-nav-link">Stories</a>
   <a href="aboutUs.html" class="mobile-nav-link">About Us</a>
   <a href="#footer" class="mobile-nav-link">Trade Program</a>
+
+  <div class="mobile-menu-bottom">
+    <a href="#footer" class="mobile-menu-util-link" onclick="closeMobileMenu()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Client Sign In &amp; Account</span>
+    </a>
+    <a href="#footer" class="mobile-menu-util-link" onclick="closeMobileMenu()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <span>Find a Showroom &amp; Retailers</span>
+    </a>
+    <div class="mobile-menu-region">
+      <span>United States (USD $) &bull; Complimentary Global Delivery</span>
+    </div>
+  </div>
 </div>
 
 <!-- ============================================================
@@ -3884,6 +4011,7 @@ input, textarea, select { font-family: inherit; }
     if (mobileMenu && mobileMenu.classList.contains('is-open')) {
       mobileMenu.classList.remove('is-open');
       if (menuToggle) menuToggle.classList.remove('is-open');
+      if (header) header.classList.remove('is-menu-open');
       document.body.style.overflow = '';
       updateHeader();
     }
@@ -3895,13 +4023,23 @@ input, textarea, select { font-family: inherit; }
   menuToggle.addEventListener('click', function() {
     this.classList.toggle('is-open');
     mobileMenu.classList.toggle('is-open');
-    document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    var isOpen = mobileMenu.classList.contains('is-open');
+    header.classList.toggle('is-menu-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     // When menu opens, ensure header isn't transparent
-    if (mobileMenu.classList.contains('is-open')) {
+    if (isOpen) {
       header.classList.remove('is-hero');
     } else {
       updateHeader();
     }
+  });
+
+  // Automatically close mobile menu when clicking any nav link inside it
+  var mobileMenuLinks = mobileMenu.querySelectorAll('a');
+  mobileMenuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMobileMenu();
+    });
   });
 
   // ============================================================
@@ -4511,14 +4649,27 @@ input, textarea, select { font-family: inherit; }
   // Initialize Cart on page load
   updateCartUI();
 
-  /* ---- CATEGORY CAROUSEL ---- */
+  /* ---- CATEGORY CAROUSEL & DRAG CONTROLLER ---- */
   var track = document.getElementById('categoryTrack');
+  var trackWrapper = document.querySelector('.category-track-wrapper');
   var prevBtn = document.getElementById('categoryPrev');
   var nextBtn = document.getElementById('categoryNext');
   var counter = document.getElementById('categoryCounter');
 
-  var categoryPage = 0;
+  var currentIndex = 0;
   var totalCards = 6;
+  var currentTranslate = 0;
+  var isDragging = false;
+  var isPointerDown = false;
+  var startX = 0;
+  var startY = 0;
+  var startTranslate = 0;
+  var lastX = 0;
+  var lastTime = 0;
+  var velocityX = 0;
+  var isHorizontalDrag = null; // null: undecided, true: horizontal drag, false: vertical scroll
+  var hasDragged = false;
+  var isTouchActive = false; // prevents synthetic mouse events after touch
 
   function getCardsPerView() {
     if (window.innerWidth <= 768) return 1;
@@ -4526,39 +4677,262 @@ input, textarea, select { font-family: inherit; }
     return 3;
   }
 
-  function updateCarousel() {
+  function getMaxIndex() {
     var perView = getCardsPerView();
-    var totalPages = Math.ceil(totalCards / perView);
-    if (categoryPage >= totalPages) categoryPage = totalPages - 1;
-    if (categoryPage < 0) categoryPage = 0;
-
-    var cards = track.querySelectorAll('.category-card');
-    if (cards.length === 0) return;
-    var cardWidth = cards[0].offsetWidth;
-    var gap = 20;
-    var offset = categoryPage * perView * (cardWidth + gap);
-    track.style.transform = 'translateX(-' + offset + 'px)';
-
-    var start = categoryPage * perView + 1;
-    var end = Math.min(start + perView - 1, totalCards);
-    counter.textContent = start + ' - ' + end + ' of ' + totalCards;
+    return Math.max(0, totalCards - perView);
   }
 
-  prevBtn.addEventListener('click', function() {
-    categoryPage--;
-    updateCarousel();
-  });
-  nextBtn.addEventListener('click', function() {
-    categoryPage++;
-    updateCarousel();
-  });
+  function getOffsetForIndex(idx) {
+    if (!track) return 0;
+    var cards = track.querySelectorAll('.category-card');
+    if (!cards || cards.length === 0) return 0;
+    var safeIdx = Math.max(0, Math.min(idx, cards.length - 1));
+    return cards[safeIdx].offsetLeft;
+  }
+
+  function getMaxScrollOffset() {
+    return getOffsetForIndex(getMaxIndex());
+  }
+
+  function updateCarousel(animate) {
+    if (!track) return;
+    var maxIndex = getMaxIndex();
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+
+    var targetOffset = getOffsetForIndex(currentIndex);
+    currentTranslate = -targetOffset;
+
+    if (animate !== false) {
+      track.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+    } else {
+      track.style.transition = 'none';
+    }
+
+    track.style.transform = 'translateX(' + currentTranslate + 'px)';
+
+    // Update Counter
+    var perView = getCardsPerView();
+    var start = currentIndex + 1;
+    var end = Math.min(currentIndex + perView, totalCards);
+    if (counter) {
+      counter.textContent = start + ' - ' + end + ' of ' + totalCards;
+    }
+
+    // Update Nav Buttons
+    if (prevBtn) {
+      var isAtStart = currentIndex === 0;
+      prevBtn.setAttribute('aria-disabled', isAtStart ? 'true' : 'false');
+    }
+    if (nextBtn) {
+      var isAtEnd = currentIndex >= maxIndex;
+      nextBtn.setAttribute('aria-disabled', isAtEnd ? 'true' : 'false');
+    }
+  }
+
+  function dragStart(clientX, clientY) {
+    if (!track) return;
+    isPointerDown = true;
+    startX = clientX;
+    startY = clientY;
+    lastX = clientX;
+    lastTime = Date.now();
+    velocityX = 0;
+    startTranslate = currentTranslate;
+    isHorizontalDrag = null;
+    hasDragged = false;
+  }
+
+  function dragMove(clientX, clientY, e) {
+    if (!isPointerDown || !track) return;
+
+    var diffX = clientX - startX;
+    var diffY = clientY - startY;
+
+    // Detect direction intent if not determined yet
+    if (isHorizontalDrag === null) {
+      var absX = Math.abs(diffX);
+      var absY = Math.abs(diffY);
+      if (absX < 6 && absY < 6) return;
+
+      if (absY >= absX) {
+        // Vertical scrolling intent - do not interfere
+        isHorizontalDrag = false;
+        return;
+      } else {
+        // Horizontal drag intent
+        isHorizontalDrag = true;
+        isDragging = true;
+        track.classList.add('is-dragging');
+        track.style.transition = 'none';
+      }
+    }
+
+    if (!isHorizontalDrag) return;
+
+    // Prevent native page scroll while dragging carousel horizontally
+    if (e && e.cancelable) {
+      e.preventDefault();
+    }
+
+    if (Math.abs(diffX) > 6) {
+      hasDragged = true;
+    }
+
+    // Calculate instantaneous velocity (px/ms)
+    var now = Date.now();
+    var dt = now - lastTime;
+    if (dt > 10) {
+      velocityX = (clientX - lastX) / dt;
+      lastX = clientX;
+      lastTime = now;
+    }
+
+    var newTranslate = startTranslate + diffX;
+    var maxScroll = getMaxScrollOffset();
+
+    // Resistance at bounds
+    if (newTranslate > 0) {
+      newTranslate = newTranslate * 0.32;
+    } else if (newTranslate < -maxScroll) {
+      var over = newTranslate - (-maxScroll);
+      newTranslate = -maxScroll + over * 0.32;
+    }
+
+    currentTranslate = newTranslate;
+    track.style.transform = 'translateX(' + newTranslate + 'px)';
+  }
+
+  function dragEnd(clientX) {
+    if (!isPointerDown) return;
+    isPointerDown = false;
+
+    if (!isHorizontalDrag || !track) {
+      isHorizontalDrag = null;
+      isDragging = false;
+      if (track) track.classList.remove('is-dragging');
+      return;
+    }
+
+    isDragging = false;
+    track.classList.remove('is-dragging');
+
+    var diffX = clientX - startX;
+    var maxIndex = getMaxIndex();
+    var cards = track.querySelectorAll('.category-card');
+
+    track.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)';
+
+    // Quick flick detection (flick velocity > 0.22 px/ms or quick swipe > 35px)
+    var isQuickFlick = Math.abs(velocityX) > 0.22 || (Date.now() - lastTime < 120 && Math.abs(diffX) > 35);
+
+    if (isQuickFlick) {
+      var dir = (velocityX < 0 || diffX < 0) ? 1 : -1;
+      var step = (window.innerWidth > 1024 ? 3 : 1);
+      currentIndex = Math.max(0, Math.min(maxIndex, currentIndex + dir * step));
+    } else {
+      // Find nearest card index based on position
+      var closestIndex = 0;
+      var minDistance = Infinity;
+      for (var i = 0; i <= maxIndex; i++) {
+        if (window.innerWidth > 1024 && i !== 0 && i !== 3) continue;
+        var cardOffset = cards[i] ? cards[i].offsetLeft : 0;
+        var dist = Math.abs(-currentTranslate - cardOffset);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestIndex = i;
+        }
+      }
+      currentIndex = closestIndex;
+    }
+
+    updateCarousel(true);
+    isHorizontalDrag = null;
+  }
+
+  if (track) {
+    // Touch Events (Mobile & Tablet touchscreens)
+    track.addEventListener('touchstart', function(e) {
+      isTouchActive = true;
+      if (e.touches.length === 1) {
+        dragStart(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', function(e) {
+      if (isPointerDown && isTouchActive && e.touches.length === 1) {
+        dragMove(e.touches[0].clientX, e.touches[0].clientY, e);
+      }
+    }, { passive: false });
+
+    window.addEventListener('touchend', function(e) {
+      if (isPointerDown && isTouchActive && e.changedTouches.length > 0) {
+        dragEnd(e.changedTouches[0].clientX);
+      }
+      setTimeout(function() { isTouchActive = false; }, 400);
+    });
+
+    window.addEventListener('touchcancel', function(e) {
+      if (isPointerDown && isTouchActive && e.changedTouches.length > 0) {
+        dragEnd(e.changedTouches[0].clientX);
+      }
+      setTimeout(function() { isTouchActive = false; }, 400);
+    });
+
+    // Mouse Events (Desktop, Tablet trackpad/mouse, and DevTools device mode)
+    track.addEventListener('mousedown', function(e) {
+      if (isTouchActive || e.button !== 0) return;
+      dragStart(e.clientX, e.clientY);
+    });
+
+    window.addEventListener('mousemove', function(e) {
+      if (isPointerDown && !isTouchActive) {
+        dragMove(e.clientX, e.clientY, e);
+      }
+    });
+
+    window.addEventListener('mouseup', function(e) {
+      if (isPointerDown && !isTouchActive) {
+        dragEnd(e.clientX);
+      }
+    });
+
+    // Prevent accidental clicks on cards during a drag
+    track.addEventListener('click', function(e) {
+      if (hasDragged) {
+        e.preventDefault();
+        e.stopPropagation();
+        hasDragged = false;
+      }
+    }, true);
+  }
+
+  // Arrow button clicks
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      var step = (window.innerWidth > 1024 ? 3 : 1);
+      currentIndex = Math.max(0, currentIndex - step);
+      updateCarousel(true);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      var step = (window.innerWidth > 1024 ? 3 : 1);
+      var maxIdx = getMaxIndex();
+      currentIndex = Math.min(maxIdx, currentIndex + step);
+      updateCarousel(true);
+    });
+  }
 
   window.addEventListener('resize', function() {
-    updateCarousel();
+    updateCarousel(false);
   });
-  
-  // Initial carousel update after layout settles
-  setTimeout(updateCarousel, 100);
+
+  // Initial carousel setup
+  setTimeout(function() {
+    updateCarousel(false);
+  }, 100);
 
   /* ---- SCROLL REVEAL ---- */
   var reveals = document.querySelectorAll('.reveal');

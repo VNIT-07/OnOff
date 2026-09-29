@@ -1,0 +1,702 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - link "OnOff Official" [ref=f8e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Professional Space" [ref=f8e7] [cursor=pointer]:
+      - /url: index.html#footer
+  - banner [ref=f8e11]:
+    - generic [ref=f8e12]:
+      - link "OnOff Lighting & co." [ref=f8e14] [cursor=pointer]:
+        - /url: index.html
+        - img "OnOff Lighting & co. Logo" [ref=f8e15]
+        - generic [ref=f8e16]: OnOff Lighting co.
+      - generic [ref=f8e17]:
+        - button "Search" [ref=f8e18] [cursor=pointer]
+        - button "Cart" [ref=f8e22] [cursor=pointer]
+        - button "Menu" [ref=f8e26] [cursor=pointer]
+  - generic [ref=f8e32]:
+    - link "Home" [ref=f8e33] [cursor=pointer]:
+      - /url: index.html
+    - generic [ref=f8e34]: /
+    - generic [ref=f8e35]: Flos Heritage (1960–Today)
+  - generic [ref=f8e37]:
+    - img "Flos Corporate Heritage Video Poster" [ref=f8e38]
+    - generic [ref=f8e39]:
+      - generic [ref=f8e40]: FLOS HERITAGE · ATELIER BRESCIA
+      - heading [level=1] [ref=f8e41]:
+        - text: At the origin of Flos there is
+        - emphasis [ref=f8e42]: a bright thought
+      - paragraph [ref=f8e43]: The idea of giving birth to objects suitable to change the way of living, not only of Italians. Sixty years of lighting revolutions where industrial discipline and artistic intuition combine into eternal form.
+      - generic [ref=f8e44]:
+        - button "Play Corporate Video" [ref=f8e45] [cursor=pointer]:
+          - generic [ref=f8e49]: Watch Heritage Film (03:10)
+        - link "Official Flos Archive ↗" [ref=f8e50] [cursor=pointer]:
+          - /url: https://flos.com/en/us/about-us-heritage.html
+  - generic [ref=f8e53]:
+    - generic [ref=f8e54]:
+      - generic [ref=f8e55]: MoMA
+      - text: Permanent Design Collection, New York
+    - generic [ref=f8e57]:
+      - generic [ref=f8e58]: Compasso d'Oro
+      - text: Arco (1962), Achille & Pier Giacomo Castiglioni
+    - generic [ref=f8e60]:
+      - generic [ref=f8e61]: Compasso d'Oro
+      - text: Parentesi (1979), Pio Manzù & Achille Castiglioni
+    - generic [ref=f8e63]:
+      - generic [ref=f8e64]: Compasso d'Oro
+      - text: Mayday (2001), Konstantin Grcic
+    - generic [ref=f8e66]:
+      - generic [ref=f8e67]: Compasso d'Oro
+      - text: Coordinates (2020), Michael Anastassiades
+    - generic [ref=f8e69]:
+      - generic [ref=f8e70]: Red Dot
+      - text: Best of the Best · Bellhop & Arrangements
+    - generic [ref=f8e72]:
+      - generic [ref=f8e73]: iF Gold Award
+      - text: Glo-Ball Collection, Jasper Morrison
+    - generic [ref=f8e75]:
+      - generic [ref=f8e76]: ADI Index
+      - text: IC Lights S2, Michael Anastassiades
+    - generic [ref=f8e78]:
+      - generic [ref=f8e79]: MoMA
+      - text: Permanent Design Collection, New York
+    - generic [ref=f8e81]:
+      - generic [ref=f8e82]: Compasso d'Oro
+      - text: Arco (1962), Achille & Pier Giacomo Castiglioni
+    - generic [ref=f8e84]:
+      - generic [ref=f8e85]: Compasso d'Oro
+      - text: Parentesi (1979), Pio Manzù & Achille Castiglioni
+    - generic [ref=f8e87]:
+      - generic [ref=f8e88]: Compasso d'Oro
+      - text: Mayday (2001), Konstantin Grcic
+    - generic [ref=f8e90]:
+      - generic [ref=f8e91]: Compasso d'Oro
+      - text: Coordinates (2020), Michael Anastassiades
+    - generic [ref=f8e93]:
+      - generic [ref=f8e94]: Red Dot
+      - text: Best of the Best · Bellhop & Arrangements
+    - generic [ref=f8e96]:
+      - generic [ref=f8e97]: iF Gold Award
+      - text: Glo-Ball Collection, Jasper Morrison
+    - generic [ref=f8e99]:
+      - generic [ref=f8e100]: ADI Index
+      - text: IC Lights S2, Michael Anastassiades
+  - navigation "Decade Timeline Navigation" [ref=f8e102]:
+    - generic [ref=f8e104]:
+      - generic [ref=f8e105]: Eras
+      - generic [ref=f8e106]:
+        - link "1960 A Bright Idea" [ref=f8e107] [cursor=pointer]:
+          - /url: "#era1960"
+        - link "1962 Becoming Flos" [ref=f8e108] [cursor=pointer]:
+          - /url: "#era1962"
+        - link "1972 MoMA & The World" [ref=f8e109] [cursor=pointer]:
+          - /url: "#era1972"
+        - link "1985 Miss Sissi" [ref=f8e110] [cursor=pointer]:
+          - /url: "#era1985"
+        - link "2000 New Millennium" [ref=f8e111] [cursor=pointer]:
+          - /url: "#era2000"
+        - link "2005 Avant-Garde LED" [ref=f8e112] [cursor=pointer]:
+          - /url: "#era2005"
+        - link "2010 Lighting Culture" [ref=f8e113] [cursor=pointer]:
+          - /url: "#era2010"
+        - link "2018 Design Holding" [ref=f8e114] [cursor=pointer]:
+          - /url: "#era2018"
+        - link "2020 Resilience" [ref=f8e115] [cursor=pointer]:
+          - /url: "#era2020"
+        - link "2022 Digital & Real" [ref=f8e116] [cursor=pointer]:
+          - /url: "#era2022"
+        - link "2023 Research & Future" [ref=f8e117] [cursor=pointer]:
+          - /url: "#era2023"
+  - main [ref=f8e118]:
+    - generic [ref=f8e120]:
+      - generic [ref=f8e121]:
+        - generic [ref=f8e122]:
+          - generic [ref=f8e123]: Genesis & Cocoon Era
+          - heading "1960 A bright idea" [level=2] [ref=f8e124]:
+            - text: "1960"
+            - generic [ref=f8e125]: A bright idea
+          - generic [ref=f8e126]:
+            - generic [ref=f8e127]: Achille Castiglioni
+            - generic [ref=f8e128]: Pier Giacomo Castiglioni
+            - generic [ref=f8e129]: Tobia Scarpa
+            - generic [ref=f8e130]: Dino Gavina
+        - generic [ref=f8e131]:
+          - paragraph [ref=f8e132]: "At the origin of Flos there is a bright thought: the idea of giving birth to objects suitable to change the way of living, not only of Italians. So at the beginning of the 60s a certain Mr Gavina, with the small producer of Merano Eisenkeil, gets in the lead — after having created many new furniture (with the brothers Achille and Pier Giacomo Castiglioni, Afra and Tobia Scarpa and other masters of design) — that it is also time to create new lamps."
+          - paragraph [ref=f8e133]:
+            - text: So the Castiglioni and the Scarpa, with the cocoon technique, conceived in the USA and experimented by Eisenkeil, begin to make lamps such as the
+            - emphasis [ref=f8e134]: Taraxacum
+            - text: or the
+            - emphasis [ref=f8e135]: Fantasma
+            - text: ". Many other lamps, beautiful and surprising, follow these first ones: so already from its prehistory Flos ("
+            - emphasis [ref=f8e136]: Fiore
+            - text: ", in Latin, name that Pier Giacomo Castiglioni chooses for her) finds himself reinventing the idea of artificial lighting."
+      - generic [ref=f8e137]:
+        - figure [ref=f8e139]:
+          - img "Gianfranco Frattini and Dino Gavina" [ref=f8e141]
+          - generic [ref=f8e142]:
+            - strong [ref=f8e143]: "1962"
+            - text: Gianfranco Frattini and Dino Gavina
+        - generic [ref=f8e144]:
+          - figure [ref=f8e145]:
+            - img "Sergio Gandini with Afra and Tobia Scarpa" [ref=f8e147]
+            - generic [ref=f8e148]:
+              - strong [ref=f8e149]: Sergio Gandini
+              - text: with Afra and Tobia Scarpa
+          - figure [ref=f8e150]:
+            - img "A. & P.G. Castiglioni with M. Breuer" [ref=f8e152]
+            - generic [ref=f8e153]:
+              - strong [ref=f8e154]: "1962"
+              - text: A. & P.G. Castiglioni with Marcel Breuer
+    - generic [ref=f8e156]:
+      - generic [ref=f8e157]:
+        - generic [ref=f8e158]:
+          - generic [ref=f8e159]: The Brescia Think Tank
+          - heading "1962 Becoming Flos" [level=2] [ref=f8e160]:
+            - text: "1962"
+            - generic [ref=f8e161]: Becoming Flos
+          - generic [ref=f8e162]:
+            - generic [ref=f8e163]: Sergio Gandini
+            - generic [ref=f8e164]: Arco Luminaire
+            - generic [ref=f8e165]: Taccia
+            - generic [ref=f8e166]: Carrara Marble
+        - generic [ref=f8e167]:
+          - paragraph [ref=f8e168]:
+            - text: "How does an industry become a laboratory where the idea of \"lamp\" is revolutionized? For Sergio Gandini, who began to manage Flos in 1963, there is no contradiction between the business project and creative imagination: combined they will lead his company to success. The industrial infrastructure of Brescia is perfect for giving designers maximum freedom of action, be it the"
+            - emphasis [ref=f8e169]: Jucker
+            - text: lamp by Tobia Scarpa — inspired by the Bauhaus — or the revolutionary
+            - emphasis [ref=f8e170]: Arco dei Castiglioni
+            - text: .
+          - paragraph [ref=f8e171]: First and for a long time unique among the Italian design industries, Flos bases its strategies on what today would be called a Think Tank. Gandini and his exclusive designers (Castiglioni, Scarpa) decide together products, communication, image... Together they trace the lines of their desires, the design lines that will lead to the creation of the most iconic lamps in the history of lighting.
+      - generic [ref=f8e172]:
+        - figure [ref=f8e174]:
+          - img "A. Castiglioni original drawing for Arco" [ref=f8e176]
+          - generic [ref=f8e177]:
+            - strong [ref=f8e178]: Achille Castiglioni
+            - text: original conceptual drawing for Arco (1962)
+        - generic [ref=f8e179]:
+          - figure [ref=f8e180]:
+            - img "Original shot for Taccia Flos catalogue 1962" [ref=f8e182]
+            - generic [ref=f8e183]:
+              - strong [ref=f8e184]: "1962"
+              - text: Taccia by A. & P.G. Castiglioni — original catalogue shot
+          - figure [ref=f8e185]:
+            - img "Flos 1962 Production Archive" [ref=f8e187]
+            - generic [ref=f8e188]:
+              - strong [ref=f8e189]: Brescia Archives
+              - text: 1962–1965 First production prototypes
+      - generic [ref=f8e190]:
+        - generic [ref=f8e191]:
+          - img "Arco Floor Lamp" [ref=f8e192]
+          - generic [ref=f8e193]:
+            - generic [ref=f8e194]: Arco Floor Lamp (1962)
+            - generic [ref=f8e195]: Achille & Pier Giacomo Castiglioni · Carrara Marble & Telescopic Stainless Steel
+        - generic [ref=f8e196]:
+          - generic [ref=f8e197]: $3,695.00
+          - button "Add to Bag" [ref=f8e198] [cursor=pointer]
+    - generic [ref=f8e200]:
+      - generic [ref=f8e201]:
+        - generic [ref=f8e202]:
+          - generic [ref=f8e203]: Global Consecration
+          - heading "1972 From MoMA to the world" [level=2] [ref=f8e204]:
+            - text: "1972"
+            - generic [ref=f8e205]: From MoMA to the world
+          - generic [ref=f8e206]:
+            - generic [ref=f8e207]: MoMA New York
+            - generic [ref=f8e208]: Pio Manzù
+            - generic [ref=f8e209]: Parentesi
+            - generic [ref=f8e210]: Gino Sarfatti Arteluce
+        - generic [ref=f8e211]:
+          - paragraph [ref=f8e212]: "The 1972 exhibition “Italy: The New Domestic Landscape” at MoMA (Museum of Modern Art) in New York, the most important contemporary art museum in America, reveals to the world an unprecedented popular Italian phenomenon in industrial and artistic culture. Flos appears in the exhibition with many lamps, especially by the Castiglioni brothers: this is its international consecration as an avant-garde enterprise and since then the popularity and development of the company go hand in hand."
+          - paragraph [ref=f8e213]: Production (with new factories), the market (with the first foreign subsidiaries) and the catalogue of products, also with the acquisition of Gino Sarfatti’s Arteluce, grew between the 1970s and the 1980s. And it is yet another exhibition, the great solo exhibition of Achille Castiglioni that since 1984 has been held in museums of eight European capitals, from Vienna to Madrid, to confirm that the Flos experience is unique, unrepeatable and unpredictable in its continuous evolution.
+      - figure [ref=f8e214]:
+        - img "1972 advertising page graphic design by Pino Tovaglia"
+        - generic [ref=f8e215]:
+          - strong [ref=f8e216]: "1972"
+          - text: Advertising campaign — Graphic design by Pino Tovaglia
+      - generic [ref=f8e217]:
+        - figure [ref=f8e219]:
+          - img "Opening of Flos store in Turin 1972" [ref=f8e221]
+          - generic [ref=f8e222]:
+            - strong [ref=f8e223]: "1972"
+            - text: Opening of the Flos store in Turin
+        - generic [ref=f8e224]:
+          - figure [ref=f8e225]:
+            - img "New Flos factory in Bovezzo Brescia" [ref=f8e227]
+            - generic [ref=f8e228]:
+              - strong [ref=f8e229]: The new Flos factory
+              - text: in Bovezzo (Brescia)
+          - figure [ref=f8e230]:
+            - img "Achille Castiglioni installation at MAK Vienna 1984" [ref=f8e232]
+            - generic [ref=f8e233]:
+              - strong [ref=f8e234]: "1984"
+              - text: Achille Castiglioni installation at the MAK museum in Vienna
+      - generic [ref=f8e235]:
+        - generic [ref=f8e236]:
+          - img "Parentesi Suspension" [ref=f8e237]
+          - generic [ref=f8e238]:
+            - generic [ref=f8e239]: Parentesi Suspension Lamp (1971)
+            - generic [ref=f8e240]: Achille Castiglioni & Pio Manzù · Compasso d'Oro 1979
+        - generic [ref=f8e241]:
+          - generic [ref=f8e242]: $595.00
+          - button "Add to Bag" [ref=f8e243] [cursor=pointer]
+    - generic [ref=f8e245]:
+      - generic [ref=f8e246]:
+        - generic [ref=f8e247]:
+          - generic [ref=f8e248]: The Postmodern Spark
+          - heading "1985 Miss Sissi & Mister Gandini" [level=2] [ref=f8e249]:
+            - text: "1985"
+            - generic [ref=f8e250]: Miss Sissi & Mister Gandini
+          - generic [ref=f8e251]:
+            - generic [ref=f8e252]: Philippe Starck
+            - generic [ref=f8e253]: Piero Gandini
+            - generic [ref=f8e254]: Jean-Baptiste Mondino
+            - generic [ref=f8e255]: Miss Sissi
+        - generic [ref=f8e256]:
+          - paragraph [ref=f8e257]:
+            - text: Every great success comes from the courage of a bet. Already in the mid-80s Sergio Gandini meets the still young Philippe Starck and starts the production of his fairy-tale lamp
+            - emphasis [ref=f8e258]: Arà
+            - text: ". His son Piero develops it industrially: he sensed the genius of the most postmodern of the new designers and decided to mass-produce a plastic object for a hotel in New York: a sort of icon of the lamp, the lamp"
+            - emphasis [ref=f8e259]: Miss Sissi
+            - text: .
+          - paragraph [ref=f8e260]: “What everyone unconsciously thinks is a lamp,” Starck will say, when it turns out to be a resounding success (8,000 pieces sold in the first 10 days, 100,000 in a year). It is the first of a long series of iconic best-sellers generated with Starck or Castiglioni, which with new technologies and materials update the Flos image and open up other avenues of research and development.
+      - generic [ref=f8e261]:
+        - figure [ref=f8e263]:
+          - img "Philippe Starck with Miss Sissi Photo by Jean-Baptiste Mondino" [ref=f8e265]
+          - generic [ref=f8e266]:
+            - strong [ref=f8e267]: Philippe Starck
+            - text: with Miss Sissi — Photography by Jean-Baptiste Mondino
+        - generic [ref=f8e268]:
+          - figure [ref=f8e269]:
+            - img "Achille Castiglioni with Brera by J.B. Mondino" [ref=f8e271]
+            - generic [ref=f8e272]:
+              - strong [ref=f8e273]: Achille Castiglioni
+              - text: with Brera — Campaign by J.B. Mondino
+          - figure [ref=f8e274]:
+            - img "Snoopy Desk Lamp Design Heritage" [ref=f8e276]
+            - generic [ref=f8e277]:
+              - strong [ref=f8e278]: Castiglioni Iconography
+              - text: The enduring playful spirit of Brescia design
+    - generic [ref=f8e280]:
+      - generic [ref=f8e281]:
+        - generic [ref=f8e282]:
+          - generic [ref=f8e283]: The Global Talents
+          - heading "2000 From one millennium to the next" [level=2] [ref=f8e284]:
+            - text: "2000"
+            - generic [ref=f8e285]: From one millennium to the next
+          - generic [ref=f8e286]:
+            - generic [ref=f8e287]: Marc Newson
+            - generic [ref=f8e288]: Jasper Morrison
+            - generic [ref=f8e289]: Konstantin Grcic
+            - generic [ref=f8e290]: Bruno Le Moult
+        - generic [ref=f8e291]:
+          - paragraph [ref=f8e292]: "Even with Piero Gandini, Flos focuses on the harmony between iconic shapes, craftsmanship and technology for the series: but the decisive step for change is to accept that there are so many languages of the contemporary object, at least as the languages of the World."
+          - paragraph [ref=f8e293]:
+            - text: "Thus Flos enlisted the most promising talents of international design: from the Australian “futuribile” Marc Newson, with the"
+            - emphasis [ref=f8e294]: Helice Lamp
+            - text: (1993), the English prophet of minimalist design Jasper Morrison, up to Konstantin Grcic, the most refined and eclectic of German designers. International talents such as the advertising superstar Bruno Le Moult and the famous photographer Jean-Baptiste Mondino are also present in the communication. When founder Sergio Gandini passed away at the turn of the millennium, Flos was already well-equipped to face the challenges of globalization.
+      - generic [ref=f8e295]:
+        - figure [ref=f8e297]:
+          - img "Sketch for Milan Flos Flagship store by Bruno Le Moult" [ref=f8e299]
+          - generic [ref=f8e300]:
+            - strong [ref=f8e301]: Bruno Le Moult
+            - text: Sketch for the Milan Flos Flagship Storefront
+        - generic [ref=f8e302]:
+          - figure [ref=f8e303]:
+            - img "1994 Milano Monforte Flos store window setup by Bruno Le Moult" [ref=f8e305]
+            - generic [ref=f8e306]:
+              - strong [ref=f8e307]: "1994"
+              - text: Milano Corso Monforte Flos flagship window setup
+          - figure [ref=f8e308]:
+            - img "Jasper Morrison Glo-Ball Minimalist Luminaire" [ref=f8e310]
+            - generic [ref=f8e311]:
+              - strong [ref=f8e312]: Jasper Morrison
+              - text: Super-normal minimalism — Glo-Ball (1998)
+    - generic [ref=f8e314]:
+      - generic [ref=f8e315]:
+        - generic [ref=f8e316]:
+          - generic [ref=f8e317]: The LED & Architecture Vanguard
+          - heading "2005 Avant-garde & the contemporary" [level=2] [ref=f8e318]:
+            - text: "2005"
+            - generic [ref=f8e319]: Avant-garde & the contemporary
+          - generic [ref=f8e320]:
+            - generic [ref=f8e321]: Antares Lighting
+            - generic [ref=f8e322]: Jenny Holzer
+            - generic [ref=f8e323]: Flos Architectural
+            - generic [ref=f8e324]: Baccarat Crystals
+        - generic [ref=f8e325]:
+          - paragraph [ref=f8e326]:
+            - text: Developing a new reality and identity for Flos also means the courage of radical choices. Facing the challenge of the invasion of LEDs on the planet Light is the first act of a second revolution in production, which begins early, in the early 2000s, when Flos acquires from Federico Martinez the Spanish company Antares, to become
+            - strong [ref=f8e327]: Flos Architectural
+            - text: ", dedicated to professional lighting for large areas, public spaces and environments."
+          - paragraph [ref=f8e328]:
+            - text: Piero Gandini discovers and hires new designers, who imagine openings, additions, autonomous lighting elements. These new designs become architecture of light, with the use of the most advanced technology. But the same technology can generate real works of art, like the sculpture lamps
+            - emphasis [ref=f8e329]: Ohhh!!!
+            - text: and
+            - emphasis [ref=f8e330]: Ahhh!!!
+            - text: "by Starck in crystal Baccarat, animated by phrases (Truisms) of the American artist Jenny Holzer that flow on LED: critical statements on the values of consumerism."
+      - generic [ref=f8e331]:
+        - figure [ref=f8e333]:
+          - img "Antares showroom in Valencia Spain" [ref=f8e335]
+          - generic [ref=f8e336]:
+            - strong [ref=f8e337]: Antares Showroom
+            - text: in Valencia (Spain) — Foundation of Flos Architectural
+        - figure [ref=f8e339]:
+          - img "Product assembling in Antares factory" [ref=f8e341]
+          - generic [ref=f8e342]:
+            - strong [ref=f8e343]: Precision LED Assembly
+            - text: inside the Antares architectural laboratory
+    - generic [ref=f8e345]:
+      - generic [ref=f8e346]:
+        - generic [ref=f8e347]:
+          - generic [ref=f8e348]: The Holistic Light Culture
+          - heading "2010 For a new lighting culture" [level=2] [ref=f8e349]:
+            - text: "2010"
+            - generic [ref=f8e350]: For a new lighting culture
+          - generic [ref=f8e351]:
+            - generic [ref=f8e352]: Michael Anastassiades
+            - generic [ref=f8e353]: Antonio Citterio
+            - generic [ref=f8e354]: Paul Cocksedge
+            - generic [ref=f8e355]: Euroluce Stand
+        - generic [ref=f8e356]:
+          - paragraph [ref=f8e357]: If the future is already today, what is the artificial light of tomorrow? Flos advances in these years with the full awareness that there are and will be more and more types of lighting, radically new. They must be studied, developed and produced with an attitude of rupture towards the existing state of the art and, at the same time, following the rigorous design culture on which the company was founded.
+          - paragraph [ref=f8e358]:
+            - text: "All artificial environments must be redefined: from the domestic realm (Decorative), to workplaces and museums (Architectural), and the spaces of nature — gardens, parks, landscapes — with"
+            - strong [ref=f8e359]: Flos Outdoor
+            - text: ". As Philippe Starck remarks:"
+            - emphasis [ref=f8e360]: “There is no difference between artificial and natural light. It’s just a matter of transmission, ions and photons are always the same.”
+            - text: Here begins the luminous collaboration with Michael Anastassiades, whose IC Lights achieve instant cultural immortality.
+      - generic:
+        - generic:
+          - img "Designers at Work Euroluce 2011 stand photo by Fabio Lovino"
+        - generic [ref=f8e361]:
+          - generic [ref=f8e362]: Designers at Work · The Flos Family
+          - generic [ref=f8e363]: Photo by Fabio Lovino for Euroluce 2011 Stand
+      - generic [ref=f8e364]:
+        - figure [ref=f8e366]:
+          - img "Belvedere design by Antonio Citterio photo Germano Borrelli" [ref=f8e368]
+          - generic [ref=f8e369]:
+            - strong [ref=f8e370]: Belvedere
+            - text: by Antonio Citterio — Outdoor architectural landscape
+        - generic [ref=f8e371]:
+          - figure [ref=f8e372]:
+            - img "Life01 by Paul Cocksedge" [ref=f8e374]
+            - generic [ref=f8e375]:
+              - strong [ref=f8e376]: Life01
+              - text: by Paul Cocksedge
+          - figure [ref=f8e377]:
+            - img "2012 Light Photon design Philippe Starck" [ref=f8e379]
+            - generic [ref=f8e380]:
+              - strong [ref=f8e381]: Light Photon (2012)
+              - text: design by Philippe Starck
+      - generic [ref=f8e382]:
+        - generic [ref=f8e383]:
+          - img "IC Lights Suspension" [ref=f8e384]
+          - generic [ref=f8e385]:
+            - generic [ref=f8e386]: IC Lights S2 Suspension (2014)
+            - generic [ref=f8e387]: Michael Anastassiades · Poised blown-glass sphere & brushed brass
+        - generic [ref=f8e388]:
+          - generic [ref=f8e389]: $945.00
+          - button "Add to Bag" [ref=f8e390] [cursor=pointer]
+    - generic [ref=f8e392]:
+      - generic [ref=f8e393]:
+        - generic [ref=f8e394]:
+          - generic [ref=f8e395]: Design Holding & Planet
+          - heading "2018 Design & sustainability" [level=2] [ref=f8e396]:
+            - text: "2018"
+            - generic [ref=f8e397]: Design & sustainability
+          - generic [ref=f8e398]:
+            - generic [ref=f8e399]: Design Holding
+            - generic [ref=f8e400]: B&B Italia
+            - generic [ref=f8e401]: Louis Poulsen
+            - generic [ref=f8e402]: Flos for Planet
+        - generic [ref=f8e403]:
+          - paragraph [ref=f8e404]: It is in the universal nature of Flos products the design DNA that leads it to assume a leadership function in the global lighting market. To support a catalogue of so many iconic products, even a historic industry must equip itself with more powerful tools, starting with financial ones.
+          - paragraph [ref=f8e405]:
+            - text: From the first alliance with Investindustrial in 2014, the global identity of Flos matures since 2018 with the foundation of
+            - strong [ref=f8e406]: Design Holding
+            - text: ", where Investindustrial joins the Carlyle Group, creating a preeminent luxury hub that unites furniture (B&B Italia, Maxalto, Azucena, Arclinea) with lighting (Flos, Louis Poulsen). Under the “Flos for Planet” commitment, circular sustainability, eco-materials and modular repairability become core industrial mandates."
+      - generic [ref=f8e407]:
+        - figure [ref=f8e409]:
+          - img "Flos & B&B Italia Design Holding" [ref=f8e411]
+          - generic [ref=f8e412]:
+            - strong [ref=f8e413]: Flos & B&B Italia
+            - text: Synergy under the Design Holding global umbrella
+        - figure [ref=f8e415]:
+          - img "Flos for Planet Sustainable Manufacturing" [ref=f8e417]
+          - generic [ref=f8e418]:
+            - strong [ref=f8e419]: Flos for Planet
+            - text: Circular disassembly, zero-glue components & recyclability
+    - generic [ref=f8e421]:
+      - generic [ref=f8e422]:
+        - generic [ref=f8e423]:
+          - generic [ref=f8e424]: The Unbroken Thread
+          - heading "2020 Resistance & innovation" [level=2] [ref=f8e425]:
+            - text: "2020"
+            - generic [ref=f8e426]: Resistance & innovation
+          - generic [ref=f8e427]:
+            - generic [ref=f8e428]: Local Connections
+            - generic [ref=f8e429]: Digital Conversations
+            - generic [ref=f8e430]: Coordinates
+            - generic [ref=f8e431]: Compasso d'Oro 2020
+        - generic [ref=f8e432]:
+          - paragraph [ref=f8e433]: The global pandemic was not only a major blow to the world economy but also a test bed for Industry 4.0 on how to survive a substantial blockage of planetary physical communications, which until then could only seem science fiction.
+          - paragraph [ref=f8e434]:
+            - text: Even in this very difficult circumstance, Flos reacted with a strong push to the development of digital dialogue with its audience and partners, through original projects and contents for e-commerce as in the creation of tools and events that a wider audience — from professional architects to private collectors — could experience. Notable initiatives include
+            - emphasis [ref=f8e435]: Local Connections
+            - text: (decentralized product unveilings in global capitals) and
+            - emphasis [ref=f8e436]: Digital Conversations
+            - text: connecting design masters with international enthusiasts.
+      - generic [ref=f8e437]:
+        - generic [ref=f8e438]:
+          - img "Coordinates Suspension" [ref=f8e439]
+          - generic [ref=f8e440]:
+            - generic [ref=f8e441]: Coordinates Suspension System (2020)
+            - generic [ref=f8e442]: Michael Anastassiades · Intersecting anodized champagne light lattices · Compasso d'Oro 2020
+        - generic [ref=f8e443]:
+          - generic [ref=f8e444]: $2,850.00
+          - button "Add to Bag" [ref=f8e445] [cursor=pointer]
+    - generic [ref=f8e447]:
+      - generic [ref=f8e448]:
+        - generic [ref=f8e449]:
+          - generic [ref=f8e450]: 60th Anniversary Retrospective
+          - heading "2022 Digital experience, analogic reality" [level=2] [ref=f8e451]:
+            - text: "2022"
+            - generic [ref=f8e452]: Digital experience, analogic reality
+          - generic [ref=f8e453]:
+            - generic [ref=f8e454]: See the Stars Again
+            - generic [ref=f8e455]: Fabbrica Orobia
+            - generic [ref=f8e456]: Patricia Urquiola
+            - generic [ref=f8e457]: Arco K Crystal
+        - generic [ref=f8e458]:
+          - paragraph [ref=f8e459]: The mechanisms of mass communication which have become increasingly complex with the break-in of social media on the market make it strategic to focus strongly on their integration in digital customer experience strategies, marketing and e-commerce, in these years strongly strengthened by Flos.
+          - paragraph [ref=f8e460]:
+            - text: "This process developed without sacrificing physical spaces calibrated instead to give maximum visibility to products: from monumental exhibitions such as"
+            - emphasis [ref=f8e461]: “See the Stars Again”
+            - text: set up at the historic Orobia industrial plant in Milan for the 60th anniversary of the company, to Flos Design Spaces worldwide. From the limited edition
+            - strong [ref=f8e462]: Arco K
+            - text: with lead-free pure crystal base, to the
+            - emphasis [ref=f8e463]: Almendra
+            - text: organic suspension by Patricia Urquiola crafted from plant-derived sustainable polycarbonate, Flos products speak the language of deeply felt ecological responsibility.
+      - generic [ref=f8e464]:
+        - figure [ref=f8e466]:
+          - img "See the Stars Again 60th Anniversary Exhibition" [ref=f8e468]
+          - generic [ref=f8e469]:
+            - strong [ref=f8e470]: See the Stars Again
+            - text: Fabbrica Orobia, Milan — Flos 60th Anniversary installation
+        - generic [ref=f8e471]:
+          - figure [ref=f8e472]:
+            - img "Arco K Limited Edition Crystal Base" [ref=f8e474]
+            - generic [ref=f8e475]:
+              - strong [ref=f8e476]: Arco K (2022)
+              - text: Limited 60th anniversary edition in lead-free optical crystal
+          - figure [ref=f8e477]:
+            - img "Almendra by Patricia Urquiola" [ref=f8e479]
+            - generic [ref=f8e480]:
+              - strong [ref=f8e481]: Almendra
+              - text: by Patricia Urquiola — Bioplastic organic lighting branches
+    - generic [ref=f8e483]:
+      - generic [ref=f8e484]:
+        - generic [ref=f8e485]:
+          - generic [ref=f8e486]: The Continuing Horizon
+          - heading "2023 Research, design & mass creativity" [level=2] [ref=f8e487]:
+            - text: "2023"
+            - generic [ref=f8e488]: Research, design & mass creativity
+          - generic [ref=f8e489]:
+            - generic [ref=f8e490]: Barbara Corti CCO
+            - generic [ref=f8e491]: Flos Stories
+            - generic [ref=f8e492]: Flos Experiences
+            - generic [ref=f8e493]: Euroluce 2023
+        - generic [ref=f8e494]:
+          - paragraph [ref=f8e495]:
+            - text: "For Flos, design research continues, transforms and is increasingly integrated with industrial programming and the creation of cultural values, both through products and media, from the press to social: then the decision to replace classic printed catalogues with the magazine"
+            - emphasis [ref=f8e496]: Flos Stories
+            - text: and, for architectural contract clients, to publish the annual book
+            - emphasis [ref=f8e497]: Flos Experiences
+            - text: .
+          - paragraph [ref=f8e498]: In line with this program is also the appointment of Barbara Corti as Chief Creative Officer, leading design strategy across all Flos divisions. The Creative & Design Team provides full technical backing to realize ever more audacious, human-centric lighting solutions. Thus artificial light and its equipment become the great environment of a well-lived daily human life, preserved and renewed under the enduring guidance of the spirit of Flos design.
+      - generic [ref=f8e499]:
+        - figure [ref=f8e501]:
+          - img "Euroluce 2023 Architectural Light Lab" [ref=f8e503]
+          - generic [ref=f8e504]:
+            - strong [ref=f8e505]: Euroluce 2023
+            - text: Spatial installation by Flos Creative Team
+        - generic [ref=f8e506]:
+          - figure [ref=f8e507]:
+            - img "Flos Stories Magazine & Editorial Direction" [ref=f8e509]
+            - generic [ref=f8e510]:
+              - strong [ref=f8e511]: Flos Stories
+              - text: Culture, research, and contemporary living monograph
+          - figure [ref=f8e512]:
+            - img "Future Luminaires Laboratory" [ref=f8e514]
+            - generic [ref=f8e515]:
+              - strong [ref=f8e516]: ONOFF × Flos
+              - text: Tomorrow’s light is already here
+  - generic [ref=f8e519]:
+    - generic [ref=f8e520]:
+      - generic [ref=f8e521]: 60+
+      - generic [ref=f8e522]: Years of Innovation
+      - generic [ref=f8e523]: From 1960 Merano cocoon to present
+    - generic [ref=f8e524]:
+      - generic [ref=f8e525]: "12"
+      - generic [ref=f8e526]: Compasso d'Oro
+      - generic [ref=f8e527]: Italy's highest industrial design honor
+    - generic [ref=f8e528]:
+      - generic [ref=f8e529]: 148+
+      - generic [ref=f8e530]: Museum Collections
+      - generic [ref=f8e531]: MoMA, Triennale, Centre Pompidou
+    - generic [ref=f8e532]:
+      - generic [ref=f8e533]: 35+
+      - generic [ref=f8e534]: Master Designers
+      - generic [ref=f8e535]: Castiglioni, Scarpa, Starck, Morrison
+  - generic [ref=f8e538]:
+    - generic [ref=f8e539]:
+      - generic [ref=f8e540]: Official Monograph Link
+      - heading "Explore the Full Flos Global Archive" [level=3] [ref=f8e541]
+      - paragraph [ref=f8e542]: Delve into high-resolution historical documents, technical patents, and the complete corporate retrospective directly on the official Flos international monograph.
+      - generic [ref=f8e543]:
+        - link "Open Flos.com Archive" [ref=f8e544] [cursor=pointer]:
+          - /url: https://flos.com/en/us/about-us-heritage.html
+        - generic [ref=f8e548]: flos.com/en/us/about-us-heritage.html
+    - img "Flos Archive Monograph" [ref=f8e550]
+  - generic [ref=f8e553]:
+    - generic [ref=f8e554]: Atelier Society
+    - heading "Join the ONOFF & Flos Circle" [level=3] [ref=f8e555]
+    - paragraph [ref=f8e556]: Receive private invitations to Euroluce previews, limited Castiglioni editions, and monograph articles on contemporary spatial illumination.
+    - generic [ref=f8e557]:
+      - textbox "Enter your architectural email" [ref=f8e558]
+      - button "Join Circle" [ref=f8e559] [cursor=pointer]
+  - contentinfo [ref=f8e560]:
+    - generic [ref=f8e561]:
+      - generic [ref=f8e562]:
+        - generic [ref=f8e563]:
+          - generic [ref=f8e564]: ONOFF × FLOS
+          - paragraph [ref=f8e565]: Official architectural lighting partner. Preserving the heritage of Italian masters since 1962 while advancing the frontiers of circadian design.
+        - generic [ref=f8e566]:
+          - generic [ref=f8e567]: Collection
+          - list [ref=f8e568]:
+            - listitem [ref=f8e569]:
+              - link "Floor Luminaires" [ref=f8e570] [cursor=pointer]:
+                - /url: Navbar.html?category=floor
+            - listitem [ref=f8e571]:
+              - link "Table & Desk" [ref=f8e572] [cursor=pointer]:
+                - /url: Navbar.html?category=table
+            - listitem [ref=f8e573]:
+              - link "Suspension & Pendants" [ref=f8e574] [cursor=pointer]:
+                - /url: Navbar.html?category=suspension
+            - listitem [ref=f8e575]:
+              - link "Wall Sconces" [ref=f8e576] [cursor=pointer]:
+                - /url: Navbar.html?category=wall
+            - listitem [ref=f8e577]:
+              - link "Full Catalog" [ref=f8e578] [cursor=pointer]:
+                - /url: Navbar.html
+        - generic [ref=f8e579]:
+          - generic [ref=f8e580]: Heritage
+          - list [ref=f8e581]:
+            - listitem [ref=f8e582]:
+              - link "1960 Genesis" [ref=f8e583] [cursor=pointer]:
+                - /url: "#era1960"
+            - listitem [ref=f8e584]:
+              - link "1962 Becoming Flos" [ref=f8e585] [cursor=pointer]:
+                - /url: "#era1962"
+            - listitem [ref=f8e586]:
+              - link "1972 MoMA Exhibition" [ref=f8e587] [cursor=pointer]:
+                - /url: "#era1972"
+            - listitem [ref=f8e588]:
+              - link "1985 Starck & Miss Sissi" [ref=f8e589] [cursor=pointer]:
+                - /url: "#era1985"
+            - listitem [ref=f8e590]:
+              - link "Flos Monograph ↗" [ref=f8e591] [cursor=pointer]:
+                - /url: https://flos.com/en/us/about-us-heritage.html
+        - generic [ref=f8e592]:
+          - generic [ref=f8e593]: Environments
+          - list [ref=f8e594]:
+            - listitem [ref=f8e595]:
+              - link "Living Room" [ref=f8e596] [cursor=pointer]:
+                - /url: ShopByRoom.html#living
+            - listitem [ref=f8e597]:
+              - link "Dining Room" [ref=f8e598] [cursor=pointer]:
+                - /url: ShopByRoom.html#dining
+            - listitem [ref=f8e599]:
+              - link "Master Suite" [ref=f8e600] [cursor=pointer]:
+                - /url: ShopByRoom.html#bedroom
+            - listitem [ref=f8e601]:
+              - link "Design Studio" [ref=f8e602] [cursor=pointer]:
+                - /url: ShopByRoom.html#office
+        - generic [ref=f8e603]:
+          - generic [ref=f8e604]: Atelier Client Care
+          - list [ref=f8e605]:
+            - listitem [ref=f8e606]:
+              - link "Architectural Consultations" [ref=f8e607] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f8e608]:
+              - link "White-Glove Delivery" [ref=f8e609] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f8e610]:
+              - link "Warranty & Restoration" [ref=f8e611] [cursor=pointer]:
+                - /url: javascript:void(0)
+            - listitem [ref=f8e612]:
+              - link "Authenticity Certificates" [ref=f8e613] [cursor=pointer]:
+                - /url: javascript:void(0)
+      - generic [ref=f8e614]:
+        - generic [ref=f8e615]: © 2026 ONOFF × Flos Lighting. All rights reserved. Historical assets courtesy of Flos S.p.A. Archives.
+        - generic [ref=f8e616]:
+          - text: "Official Reference:"
+          - link "flos.com/en/us/about-us-heritage.html" [ref=f8e617] [cursor=pointer]:
+            - /url: https://flos.com/en/us/about-us-heritage.html
+  - dialog "Your Shopping Bag" [ref=f8e618]:
+    - generic [ref=f8e619]:
+      - heading "Shopping Bag (0)" [level=3] [ref=f8e624]
+      - button "Close Bag" [ref=f8e625] [cursor=pointer]: ×
+    - generic [ref=f8e626]: Add $1,500 more for Complimentary White-Glove Delivery
+    - generic [ref=f8e630]:
+      - heading "Your Shopping Bag is Empty" [level=4] [ref=f8e634]
+      - paragraph [ref=f8e635]: Explore our heritage archives and select iconic luminaires.
+      - button "Explore Heritage" [ref=f8e636] [cursor=pointer]
+    - generic [ref=f8e637]:
+      - generic [ref=f8e638]:
+        - generic [ref=f8e639]: Subtotal
+        - generic [ref=f8e640]: $0.00
+      - generic [ref=f8e641]:
+        - generic [ref=f8e642]: Insured White-Glove Delivery
+        - generic [ref=f8e643]: Complimentary over $1,500
+      - generic [ref=f8e644]:
+        - generic [ref=f8e645]: Total
+        - generic [ref=f8e646]: $0.00
+      - paragraph [ref=f8e647]: State sales tax & architectural white-glove installation calculated at final reservation.
+      - button "Proceed to Reservation Checkout →" [ref=f8e648] [cursor=pointer]
+      - button "Continue Exploring Heritage" [ref=f8e649] [cursor=pointer]
+  - generic:
+    - generic:
+      - button "×"
+      - generic: ✓
+      - generic:
+        - heading "Architectural Reservation" [level=3]
+        - paragraph: Reserve this configuration directly with our Milan atelier. An OnOff lighting specialist will confirm serials & lead times.
+      - generic:
+        - generic:
+          - textbox "Your Full Name": Arch. Matteo Rossi
+          - textbox "Email Address": m.rossi@studio-arch.it
+        - textbox "Delivery Address / Project Site": Via Montenapoleone 18, Milan, Italy
+        - button "Confirm Atelier Reservation"
+  - generic: Added to your shopping bag
+  - generic [ref=f8e650]:
+    - generic [ref=f8e651]: Shop Products
+    - generic [ref=f8e656]: Shop by Room
+    - link "Last Call" [ref=f8e661] [cursor=pointer]:
+      - /url: index.html#categoryTrack
+    - link "Iconic Pieces" [ref=f8e662] [cursor=pointer]:
+      - /url: index.html#heroSection
+    - link "Designers" [ref=f8e663] [cursor=pointer]:
+      - /url: index.html#designerSection
+    - link "Stories" [ref=f8e664] [cursor=pointer]:
+      - /url: index.html#cultureSection
+    - link "About Us" [ref=f8e665] [cursor=pointer]:
+      - /url: aboutUs.html
+    - link "Trade Program" [ref=f8e666] [cursor=pointer]:
+      - /url: index.html#footer
+    - generic [ref=f8e667]:
+      - link "Find a Showroom" [ref=f8e668] [cursor=pointer]:
+        - /url: index.html#footer
+      - link "Client Sign In / Account" [ref=f8e673] [cursor=pointer]:
+        - /url: javascript:void(0)
+      - generic [ref=f8e678]: Global Shipping | EUR • IT

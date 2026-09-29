@@ -1,0 +1,36 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - link "OnOff Lighting & co. Official Store" [ref=f11e3] [cursor=pointer]:
+      - /url: index.html
+    - link "Contact Concierge →" [ref=f11e5] [cursor=pointer]:
+      - /url: index.html#footer
+  - banner [ref=f11e6]:
+    - link "OnOff Lighting & co." [ref=f11e8] [cursor=pointer]:
+      - /url: index.html
+      - img "OnOff Lighting & co. Logo" [ref=f11e9]
+      - generic [ref=f11e10]: OnOff Lighting co.
+  - main [ref=f11e11]:
+    - generic [ref=f11e12]:
+      - generic [ref=f11e13]: Spatial Reference Error
+      - heading "404" [level=1] [ref=f11e14]
+      - heading "Illumination Not Found" [level=2] [ref=f11e15]
+      - paragraph [ref=f11e16]: The architectural design, room composition, or editorial page you are searching for does not exist or may have been relocated in our archive.
+      - generic [ref=f11e17]:
+        - link "Return to Home" [ref=f11e18] [cursor=pointer]:
+          - /url: index.html
+        - link "Browse All Lighting" [ref=f11e19] [cursor=pointer]:
+          - /url: Navbar.html
+        - link "Explore Rooms" [ref=f11e20] [cursor=pointer]:
+          - /url: ShopByRoom.html
+      - generic [ref=f11e21]:
+        - link "Table Lamps" [ref=f11e22] [cursor=pointer]:
+          - /url: Navbar.html?category=table
+        - link "Floor Lamps" [ref=f11e23] [cursor=pointer]:
+          - /url: Navbar.html?category=floor
+        - link "Suspension" [ref=f11e24] [cursor=pointer]:
+          - /url: Navbar.html?category=suspension
+        - link "About Us Heritage" [ref=f11e25] [cursor=pointer]:
+          - /url: aboutUs.html
+  - contentinfo [ref=f11e26]:
+    - generic [ref=f11e27]: © 2026 OnOff Lighting & co. S.p.A. All rights reserved.
+    - generic [ref=f11e28]: Italian Architectural & Decorative Lighting
